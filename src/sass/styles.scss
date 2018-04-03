@@ -1,0 +1,8 @@
+@import 'mixins';
+@import 'variables';
+@import 'texts';
+@import 'notice';
+
+hr {
+  border-color: $greyborder;
+}
