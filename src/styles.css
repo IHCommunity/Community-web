@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+.home-img {
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
