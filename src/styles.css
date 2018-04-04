@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 @font-face {
   font-family: CircularStd;
   font-weight: normal;
@@ -33,37 +36,39 @@ p {
   display: flex;
   justify-content: space-between;
   margin-top: 1.5rem;
-  height: 9rem;
+  height: 9.5rem;
   position: relative; }
 
 .notice-text {
   padding: 1rem;
   overflow: hidden;
-  z-index: 1; }
+  z-index: 1;
+  flex-basis: 100%; }
+  .notice-text .notice-wrapper {
+    overflow: hidden;
+    height: 100%; }
   .notice-text h5 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-top: 0;
-    margin-bottom: 1rem; }
-  .notice-text p {
-    margin: 0; }
-
-.notice-text:after {
-  content: ' ';
-  display: block;
-  background-color: #fff;
-  height: 1rem;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  z-index: 0; }
+    margin-bottom: 0.5rem; }
+  .notice-text .notice-body {
+    margin-top: 1rem; }
+  .notice-text .notice-date {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #999999; }
 
 .notice-bar {
-  width: 40px;
+  flex-basis: 35px;
+  width: 35px;
   background-color: #999999;
   text-align: center;
   color: #fff;
-  z-index: 2; }
+  z-index: 2;
+  border-radius: 0 5px 5px 0;
+  padding: 0.5rem 0;
+  font-size: 1.25rem; }
 
 hr {
   border-color: #F8F8F8; }
