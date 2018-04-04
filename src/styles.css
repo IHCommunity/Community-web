@@ -59,16 +59,30 @@ p {
     font-size: 0.875rem;
     color: #999999; }
 
-.notice-bar {
+.notice-bar-good, .notice-bar-info, .notice-bar-alert, .notice-bar-danger, .notice-bar-neutral {
   flex-basis: 35px;
   width: 35px;
-  background-color: #999999;
   text-align: center;
   color: #fff;
   z-index: 2;
   border-radius: 0 5px 5px 0;
   padding: 0.5rem 0;
   font-size: 1.25rem; }
+
+.notice-bar-good {
+  background-color: #00DF96; }
+
+.notice-bar-info {
+  background-color: #2B63F6; }
+
+.notice-bar-alert {
+  background-color: #FFE000; }
+
+.notice-bar-danger {
+  background-color: #FE011A; }
+
+.notice-bar-neutral {
+  background-color: #999999; }
 
 hr {
   border-color: #F8F8F8; }

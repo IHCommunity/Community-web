@@ -2,17 +2,17 @@
   <div class="notice-text">
     <div class="notice-wrapper">
         <h5>
-            ¡Thank u!
+            {{ notice.title}}
         </h5>
         <p class="notice-date">
-          14/12/2018
+          {{ notice.deadline | date:'dd MMMM - y  HH:mm' }}
         </p>
         <p class="notice-body">
-          Some text that is really really really really really really really really really really really really really really really really really really really really really really really really long
+          {{ notice.description }}
         </p>
     </div>
   </div>
-  <div class="notice-bar">
+  <div class="notice-bar-{{notice.type}}">
     x
   </div>
 </div>

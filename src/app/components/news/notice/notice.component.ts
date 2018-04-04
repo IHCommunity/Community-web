@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Notice } from '../../../shared/model/notice.model';
 
 @Component({
   selector: 'app-notice',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notice.component.css']
 })
 export class NoticeComponent implements OnInit {
+  @Input() notice: Notice;
 
   constructor() { }
 

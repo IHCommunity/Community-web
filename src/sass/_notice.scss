@@ -39,14 +39,34 @@
   }
 }
 
-.notice-bar {
+%notice-bar {
   flex-basis: 35px;
   width: 35px;
-  background-color: $lightgrey;
   text-align: center;
   color: #fff;
   z-index: 2;
   border-radius: 0 5px 5px 0;
   padding: 0.5rem 0;
   font-size: 1.25rem;
+}
+
+.notice-bar-good {
+  @extend %notice-bar;
+  background-color: $green;
+}
+.notice-bar-info {
+  @extend %notice-bar;
+  background-color: $blue;
+}
+.notice-bar-alert {
+  @extend %notice-bar;
+  background-color: $yellow;
+}
+.notice-bar-danger {
+  @extend %notice-bar;
+  background-color: $red;
+}
+.notice-bar-neutral {
+  @extend %notice-bar;
+  background-color: $lightgrey;
 }
