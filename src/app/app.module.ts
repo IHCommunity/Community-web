@@ -14,6 +14,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { NewsComponent } from './components/news/news.component';
 import { NoticeComponent } from './components/news/notice/notice.component';
+import { NavbarComponent } from './components/misc/navbar/navbar.component';
 
 import { NewsService } from './shared/services/news.service';
 
@@ -24,7 +25,8 @@ import { NewsService } from './shared/services/news.service';
     SignupComponent,
     LoginComponent,
     NewsComponent,
-    NoticeComponent
+    NoticeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

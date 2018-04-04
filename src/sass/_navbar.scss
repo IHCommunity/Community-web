@@ -1,0 +1,41 @@
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  height: 4.125rem;
+
+  .navbar-list {
+    display: flex;
+    
+    %navbar-item-shared {
+      flex-basis: 25%;
+      color: $grey;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar-item {
+      @extend %navbar-item-shared;
+    }
+
+    .navbar-item-active {
+      @extend %navbar-item-shared;
+
+      background-color: $softgrey;
+      font-weight: 900;
+    }
+
+    .navbar-icon {
+      font-size: 1.5rem;
+      margin: 0;
+      height: 1.125rem;
+      margin-top: -0.375rem;
+      margin-bottom: 0.375rem;
+    }
+  }
+
+}
