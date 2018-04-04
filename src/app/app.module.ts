@@ -17,6 +17,7 @@ import { NoticeComponent } from './components/news/notice/notice.component';
 import { NavbarComponent } from './components/misc/navbar/navbar.component';
 
 import { NewsService } from './shared/services/news.service';
+import { SearchPipe } from './shared/pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NewsService } from './shared/services/news.service';
     LoginComponent,
     NewsComponent,
     NoticeComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

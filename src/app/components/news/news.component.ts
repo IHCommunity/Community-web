@@ -8,6 +8,8 @@ import { NewsService } from '../../shared/services/news.service';
 })
 export class NewsComponent implements OnInit {
   news: Array<Notice> = [];
+  visible: Boolean = false;
+  icon: String = 'search';
 
   constructor(private newsService: NewsService) { }
 
@@ -17,5 +19,15 @@ export class NewsComponent implements OnInit {
         console.log(news);
         this.news = news;
       });
+  }
+
+  toggleInput() {
+    this.visible = !this.visible;
+
+    if (this.icon === 'search') {
+      this.icon = 'close';
+    } else {
+      this.icon = 'search';
+    }
   }
 }

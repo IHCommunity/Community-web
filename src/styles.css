@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box !important; }
 
 @font-face {
   font-family: CircularStd;
@@ -90,6 +90,14 @@ p {
   margin-top: 2rem; }
   .news-title h1 {
     margin: 0; }
+
+.news-input {
+  background-color: #fff !important;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2) !important;
+  border: none !important;
+  border-radius: 5px !important;
+  margin-top: 0.75rem !important;
+  padding: 0 10px !important; }
 
 .navbar {
   position: fixed;
