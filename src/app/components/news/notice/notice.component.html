@@ -5,7 +5,7 @@
             {{ notice.title}}
         </h5>
         <p class="notice-date">
-          {{ notice.deadline | date:'dd MMMM - y  HH:mm' }}
+          <i class="material-icons">access_alarm</i> {{ notice.deadline | date:'dd MMMM y - HH:mm' }}
         </p>
         <p class="notice-body">
           {{ notice.description }}

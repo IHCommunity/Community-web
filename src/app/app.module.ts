@@ -15,6 +15,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NewsComponent } from './components/news/news.component';
 import { NoticeComponent } from './components/news/notice/notice.component';
 import { NavbarComponent } from './components/misc/navbar/navbar.component';
+import { MyHomeComponent } from './components/my-home/my-home.component';
 
 import { NewsService } from './shared/services/news.service';
 import { SearchPipe } from './shared/pipes/search.pipe';
@@ -28,7 +29,8 @@ import { SearchPipe } from './shared/pipes/search.pipe';
     NewsComponent,
     NoticeComponent,
     NavbarComponent,
-    SearchPipe
+    SearchPipe,
+    MyHomeComponent
   ],
   imports: [
     BrowserModule,

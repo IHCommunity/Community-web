@@ -5,10 +5,17 @@
 @import 'mixins';
 @import 'variables';
 @import 'texts';
+@import 'list';
 @import 'notice';
 @import 'news';
 @import 'navbar';
 
 hr {
   border-color: $greyborder;
+}
+
+.component-title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
 }

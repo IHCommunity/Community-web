@@ -4,6 +4,8 @@
   left: 0;
   background-color: #fff;
   height: 4.125rem;
+  z-index: 1000;
+  overflow: hidden;
 
   .navbar-list {
     display: flex;
