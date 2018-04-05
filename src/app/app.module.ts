@@ -16,6 +16,8 @@ import { NewsComponent } from './components/news/news.component';
 import { NoticeComponent } from './components/news/notice/notice.component';
 import { NavbarComponent } from './components/misc/navbar/navbar.component';
 import { MyHomeComponent } from './components/my-home/my-home.component';
+import { DetailComponent } from './components/news/detail/detail.component';
+import { BackComponent } from './components/misc/back/back.component';
 
 import { NewsService } from './shared/services/news.service';
 import { SearchPipe } from './shared/pipes/search.pipe';
@@ -30,7 +32,9 @@ import { SearchPipe } from './shared/pipes/search.pipe';
     NoticeComponent,
     NavbarComponent,
     SearchPipe,
-    MyHomeComponent
+    MyHomeComponent,
+    DetailComponent,
+    BackComponent
   ],
   imports: [
     BrowserModule,

@@ -3,4 +3,10 @@
   padding: 2.75rem 0;
   border-bottom: 1px solid $greyborder;
   font-size: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+
+  i {
+    color: $lightgrey;
+  }
 }

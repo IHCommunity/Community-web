@@ -17,13 +17,17 @@
   font-style: normal;
   src: url("./assets/fonts/CircularStd-Black.woff") format("woff"); }
 h1, h2, h3, h4, h5, h6, p {
-  color: #333333; }
+  color: #333333;
+  font-family: "CircularStd", Helvetica, sans-serif; }
 
 h1 {
   font-size: 1.25rem;
-  font-family: "CircularStd", Helvetica, sans-serif;
   font-weight: 900;
   margin-bottom: 0.9375rem;
+  margin: 0; }
+
+h2 {
+  font-size: 1.25rem;
   margin: 0; }
 
 p {
@@ -33,7 +37,11 @@ p {
   font-family: "CircularStd", Helvetica, sans-serif;
   padding: 2.75rem 0;
   border-bottom: 1px solid #E6E6E6;
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: space-between; }
+  .list-item i {
+    color: #999999; }
 
 .notice {
   width: 100%;
@@ -115,23 +123,24 @@ p {
   overflow: hidden; }
   .navbar .navbar-list {
     display: flex; }
-    .navbar .navbar-list .navbar-item, .navbar .navbar-list .navbar-item-active {
+    .navbar .navbar-list .navbar-item {
       flex-basis: 25%;
-      color: #333333;
       text-align: center;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      display: flex;
-      flex-direction: column; }
-    .navbar .navbar-list .navbar-item-active {
-      background-color: #F2F2F2;
-      font-weight: 900; }
+      text-transform: uppercase; }
+      .navbar .navbar-list .navbar-item a {
+        display: flex;
+        flex-direction: column;
+        color: #333333;
+        font-size: 0.75rem; }
     .navbar .navbar-list .navbar-icon {
       font-size: 1.5rem;
       margin: 0;
       height: 1.125rem;
       margin-top: -0.375rem;
       margin-bottom: 0.375rem; }
+  .navbar .active {
+    background-color: #F2F2F2;
+    font-weight: 900; }
 
 hr {
   border-color: #E6E6E6; }
