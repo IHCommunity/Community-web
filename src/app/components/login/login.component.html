@@ -1,3 +1,26 @@
-<p>
-  login works!
-</p>
+<div class="detail-background-info"></div>
+<div class="login-container">
+  <div class="component-title">
+      <h1>Log in</h1>
+  </div>
+  <form class="form login-form">
+    <div class="row form-row">
+      <div class="input-field col s12">
+        <input id="email" type="email" class="validate">
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="row form-row">
+      <div class="input-field col s12">
+        <input id="password" type="password" class="validate">
+        <label for="password">Password</label>
+      </div>
+    </div>
+    <a class="waves-effect waves-light btn">Submit</a>
+  </form>
+  <hr>
+  <div class="login-register">
+    <p>Not registered yet?</p>
+    <a [routerLink]="['/signup']">Create an Account</a>
+  </div>
+</div>

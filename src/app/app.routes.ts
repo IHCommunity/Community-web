@@ -1,3 +1,4 @@
+import { CommunityComponent } from './components/community/community.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'news', component: NewsComponent },
   { path: 'news/:id', component: DetailComponent },
-  { path: 'home', component: MyHomeComponent }
+  { path: 'home', component: MyHomeComponent },
+  { path: 'community', component: CommunityComponent }
 ];

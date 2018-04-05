@@ -41,6 +41,30 @@ p {
     font-size: 0.875rem;
     line-height: inherit; }
 
+.form {
+  margin-top: 1.5rem; }
+  .form .form-row {
+    margin-bottom: 0; }
+  .form .btn {
+    text-align: center;
+    display: block;
+    background-color: #2B63F6; }
+
+.login-form {
+  margin-bottom: 2rem; }
+
+.login-container {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin: 4rem 2rem;
+  box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.05); }
+  .login-container .login-register {
+    text-align: center;
+    margin-top: 2rem; }
+    .login-container .login-register p {
+      margin-bottom: 0.25rem; }
+
 .list-item {
   font-family: "CircularStd", Helvetica, sans-serif;
   padding: 2.75rem 0;
@@ -55,7 +79,7 @@ p {
   width: 100%;
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0px 2px 3px 0px #9c9c9c;
+  box-shadow: 0px 2px 3px 0px #C4C4C4;
   display: flex;
   justify-content: space-between;
   margin-top: 1.5rem;
@@ -184,7 +208,8 @@ p {
     font-weight: 900; }
 
 hr {
-  border-color: #E6E6E6; }
+  border-color: #E6E6E6;
+  border-style: solid; }
 
 .back-button {
   margin-right: 1.5rem; }

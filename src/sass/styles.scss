@@ -5,6 +5,7 @@
 @import 'mixins';
 @import 'variables';
 @import 'texts';
+@import 'form';
 @import 'list';
 @import 'notice';
 @import 'detail';
@@ -13,6 +14,7 @@
 
 hr {
   border-color: $greyborder;
+  border-style: solid;
 }
 
 .back-button {

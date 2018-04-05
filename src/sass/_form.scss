@@ -1,0 +1,34 @@
+.form {
+  margin-top: 1.5rem;
+
+  .form-row {
+    margin-bottom: 0;
+  }
+
+  .btn {
+    text-align: center;
+    display: block;
+    background-color: $blue;
+  }
+}
+
+.login-form {
+  margin-bottom: 2rem;
+}
+
+.login-container {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin: 4rem 2rem;
+  box-shadow: 0 0 22px 0 rgba(0,0,0,0.05);
+
+  .login-register {
+    text-align: center;
+    margin-top: 2rem;
+
+    p {
+      margin-bottom: 0.25rem;
+    }
+  }
+}
