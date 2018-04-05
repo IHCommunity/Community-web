@@ -15,10 +15,7 @@ export class NewsComponent implements OnInit {
 
   ngOnInit() {
     this.newsService.list()
-      .subscribe( (news) => {
-        console.log(news);
-        this.news = news;
-      });
+      .subscribe( (news) => this.news = news);
   }
 
   toggleInput() {

@@ -1,0 +1,56 @@
+.detail-title {
+  justify-content: flex-start !important;
+  align-items: center;
+  color: #fff;
+
+  h2 {
+    color: #fff;
+  }
+}
+
+%detail-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 12rem;
+  width: 100%;
+  z-index: -1;
+}
+
+.detail-background-good {
+  @extend %detail-background;
+  background-color: $green;
+}
+
+.detail-background-info {
+  @extend %detail-background;
+  background-color: $blue;
+}
+
+.detail-background-alert {
+  @extend %detail-background;
+  background-color: $yellow;
+}
+
+.detail-background-danger {
+  @extend %detail-background;
+  background-color: $red;
+}
+
+.detail-background-neutral {
+  @extend %detail-background;
+  background-color: $lightgrey;
+}
+
+.detail-container {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  box-shadow: 0 0 22px 0 rgba(0,0,0,0.05);
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}

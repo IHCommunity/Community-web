@@ -33,6 +33,14 @@ h2 {
 p {
   font-size: 1rem; }
 
+.date {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #999999; }
+  .date i {
+    font-size: 0.875rem;
+    line-height: inherit; }
+
 .list-item {
   font-family: "CircularStd", Helvetica, sans-serif;
   padding: 2.75rem 0;
@@ -69,13 +77,6 @@ p {
     margin-bottom: 0.5rem; }
   .notice-text .notice-body {
     margin-top: 1rem; }
-  .notice-text .notice-date {
-    margin: 0;
-    font-size: 0.875rem;
-    color: #999999; }
-    .notice-text .notice-date i {
-      font-size: 0.875rem;
-      line-height: inherit; }
 
 .notice-bar-good, .notice-bar-info, .notice-bar-alert, .notice-bar-danger, .notice-bar-neutral {
   flex-basis: 35px;
@@ -101,6 +102,46 @@ p {
 
 .notice-bar-neutral {
   background-color: #999999; }
+
+.detail-title {
+  justify-content: flex-start !important;
+  align-items: center;
+  color: #fff; }
+  .detail-title h2 {
+    color: #fff; }
+
+.detail-background-good, .detail-background-info, .detail-background-alert, .detail-background-danger, .detail-background-neutral {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 12rem;
+  width: 100%;
+  z-index: -1; }
+
+.detail-background-good {
+  background-color: #00DF96; }
+
+.detail-background-info {
+  background-color: #2B63F6; }
+
+.detail-background-alert {
+  background-color: #FFE000; }
+
+.detail-background-danger {
+  background-color: #FE011A; }
+
+.detail-background-neutral {
+  background-color: #999999; }
+
+.detail-container {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.05); }
+  .detail-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem; }
 
 .news-input {
   background-color: #fff !important;
@@ -144,6 +185,9 @@ p {
 
 hr {
   border-color: #E6E6E6; }
+
+.back-button {
+  margin-right: 1.5rem; }
 
 .component-title {
   display: flex;

@@ -1,7 +1,17 @@
+<div class="detail-background-{{notice.type}}"></div>
 <div class="container">
     <div class="component-title detail-title">
       <app-back></app-back>
       <h2>Notice details</h2>
+    </div>
+    <div class="detail-container">
+      <h1>{{ notice.title }}</h1>
+      <p class="date">
+        <i class="material-icons">access_alarm</i> {{ notice.deadline | date:'dd MMMM y - HH:mm' }}
+      </p>
+      <p class="detail-body">
+        {{ notice.description }}
+      </p>
     </div>
 </div>
 <app-navbar></app-navbar>

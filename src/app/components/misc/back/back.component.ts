@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-back',
-  templateUrl: './back.component.html',
-  styleUrls: ['./back.component.css']
+  templateUrl: './back.component.html'
 })
-export class BackComponent implements OnInit {
+export class BackComponent {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
-  ngOnInit() {
+  goBack(): void {
+    this.location.back();
   }
 
 }

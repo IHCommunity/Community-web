@@ -1,10 +1,10 @@
-<div class="notice">
+<div class="notice" [routerLink]="['/news', notice.id]">
   <div class="notice-text">
     <div class="notice-wrapper">
         <h5>
             {{ notice.title}}
         </h5>
-        <p class="notice-date">
+        <p class="date">
           <i class="material-icons">access_alarm</i> {{ notice.deadline | date:'dd MMMM y - HH:mm' }}
         </p>
         <p class="notice-body">
