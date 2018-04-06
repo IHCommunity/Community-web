@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import './rxjs.operators';
@@ -20,8 +20,12 @@ import { DetailComponent } from './components/news/detail/detail.component';
 import { BackComponent } from './components/misc/back/back.component';
 import { CommunityComponent } from './components/community/community.component';
 
-import { NewsService } from './shared/services/news.service';
 import { SearchPipe } from './shared/pipes/search.pipe';
+
+import { NewsService } from './shared/services/news.service';
+import { SessionService } from './shared/services/session.service';
+import { UsersService } from './shared/services/users.service';
+import { GlobalErrorHandlerService } from './shared/services/global-error-handler.service';
 
 @NgModule({
   declarations: [
@@ -42,9 +46,18 @@ import { SearchPipe } from './shared/pipes/search.pipe';
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
+    ReactiveFormsModule,
     HttpModule
   ],
-  providers: [NewsService],
+  providers: [
+    NewsService,
+    SessionService,
+    UsersService,
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandlerService
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,20 +3,22 @@
   <div class="component-title">
       <h1>Log in</h1>
   </div>
-  <form class="form login-form">
+  <form class="form login-form" [formGroup]="loginForm" (ngSubmit)="doLogin(loginForm)" novalidate>
     <div class="row form-row">
       <div class="input-field col s12">
-        <input id="email" type="email" class="validate">
+        <input id="email" type="email" class="validate" formControlName="email" [(ngModel)]="user.email">
         <label for="email">Email</label>
       </div>
     </div>
     <div class="row form-row">
       <div class="input-field col s12">
-        <input id="password" type="password" class="validate">
+        <input id="password" type="password" class="validate" formControlName="password" [(ngModel)]="user.password">
         <label for="password">Password</label>
+        <span *ngIf="loginForm.get('password').errors?.required" class="helper-text" data-error="wrong" data-success="right">Password is required</span>
       </div>
     </div>
-    <a class="waves-effect waves-light btn">Submit</a>
+    <button type="submit" class="waves-effect waves-light btn" [disabled]="!loginForm.valid">Submit</button>
+    {{ loginForm.valid }}
   </form>
   <hr>
   <div class="login-register">
