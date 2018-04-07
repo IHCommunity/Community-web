@@ -220,4 +220,9 @@ hr {
   justify-content: space-between;
   margin-top: 2rem; }
 
+.router-container {
+  position: relative; }
+  .router-container > * {
+    display: block; }
+
 /*# sourceMappingURL=styles.css.map */

@@ -10,10 +10,10 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'news', component: NewsComponent },
-  { path: 'news/:id', component: DetailComponent },
-  { path: 'home', component: MyHomeComponent },
-  { path: 'community', component: CommunityComponent }
+  { path: 'login', component: LoginComponent, data: { depth: 1 } },
+  { path: 'signup', component: SignupComponent, data: { depth: 2 } },
+  { path: 'news', component: NewsComponent, data: { depth: 3 } },
+  { path: 'news/:id', component: DetailComponent, data: { depth: 4 } },
+  { path: 'home', component: MyHomeComponent, data: { depth: 5 } },
+  { path: 'community', component: CommunityComponent, data: { depth: 6 } }
 ];

@@ -26,3 +26,11 @@ hr {
   justify-content: space-between;
   margin-top: 2rem;
 }
+
+.router-container {
+  position: relative;
+
+  > * {
+    display: block;
+  }
+}
