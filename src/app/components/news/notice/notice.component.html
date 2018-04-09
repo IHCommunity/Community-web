@@ -13,6 +13,7 @@
     </div>
   </div>
   <div class="notice-bar-{{notice.type}}">
-    <span (click)="toggleStore()">x</span>
+    <span *ngIf="news.includes(notice)" (click)="toggleStore()">&#x2714;</span>
+    <span *ngIf="newsStored.includes(notice)" (click)="toggleStore()">&#x2718;</span>
   </div>
 </div>
