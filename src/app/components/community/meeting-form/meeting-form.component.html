@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="component-title back-title">
+      <app-back></app-back>
+      <h2>Create new meeting</h2>
+    </div>
+    <form class="form login-form" [formGroup]="meetingForm" (ngSubmit)="createMeeting(meetingForm)" novalidate>
+      <div class="row form-row">
+        <div class="input-field col s12">
+          <input id="title" type="text" formControlName="title" [(ngModel)]="meeting.title">
+          <label for="title">Title</label>
+        </div>
+      </div>
+      <div class="row form-row">
+        <div class="input-field col s12">
+          <textarea id="description" class="materialize-textarea" formControlName="description" [(ngModel)]="meeting.description"></textarea>
+          <label for="description">Description</label>
+        </div>
+      </div>
+      <div class="row form-row">
+        <div class="input-field col s12">
+          <input id="startdate" type="text" formControlName="startDate" [(ngModel)]="meeting.startDate">
+          <label for="startdate">Start Date</label>
+        </div>
+      </div>
+      <div class="row form-row">
+        <div class="input-field col s12">
+          <input id="deadline" type="text" formControlName="deadLine" [(ngModel)]="meeting.deadLine">
+          <label for="deadline">End Date</label>
+        </div>
+      </div>
+      <button type="submit" class="waves-effect waves-light btn" [disabled]="!meetingForm.valid">Create</button>
+    </form>
+</div>

@@ -20,6 +20,7 @@ import { MyHomeComponent } from './components/my-home/my-home.component';
 import { DetailComponent } from './components/news/detail/detail.component';
 import { BackComponent } from './components/misc/back/back.component';
 import { CommunityComponent } from './components/community/community.component';
+import { MeetingFormComponent } from './components/community/meeting-form/meeting-form.component';
 
 import { SearchPipe } from './shared/pipes/search.pipe';
 
@@ -27,6 +28,7 @@ import { NewsService } from './shared/services/news.service';
 import { SessionService } from './shared/services/session.service';
 import { UsersService } from './shared/services/users.service';
 import { GlobalErrorHandlerService } from './shared/services/global-error-handler.service';
+import { MeetingsService } from './shared/services/meetings.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { GlobalErrorHandlerService } from './shared/services/global-error-handle
     MyHomeComponent,
     DetailComponent,
     BackComponent,
-    CommunityComponent
+    CommunityComponent,
+    MeetingFormComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +58,7 @@ import { GlobalErrorHandlerService } from './shared/services/global-error-handle
     NewsService,
     SessionService,
     UsersService,
+    MeetingsService,
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandlerService

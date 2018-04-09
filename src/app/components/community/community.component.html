@@ -3,6 +3,9 @@
       <h1>Community</h1>
     </div>
     <ul class="list">
+      <li *ngIf="user.role === 'admin'" class="list-item" [routerLink]="['/community', 'meetings', 'new']">
+        <span>Create new meeting</span><i class="material-icons">chevron_right</i>
+      </li>
       <li class="list-item"><span>Meetings</span><i class="material-icons">chevron_right</i></li>
       <li class="list-item"><span>Proposals</span><i class="material-icons">chevron_right</i></li>
       <li class="list-item"><span>Accounts</span><i class="material-icons">chevron_right</i></li>

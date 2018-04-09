@@ -129,8 +129,6 @@ p {
   background-color: #999999; }
 
 .detail-title {
-  justify-content: flex-start !important;
-  align-items: center;
   color: #fff; }
   .detail-title h2 {
     color: #fff; }
@@ -234,5 +232,9 @@ hr {
   position: relative; }
   .router-container > * {
     display: block; }
+
+.back-title {
+  justify-content: flex-start !important;
+  align-items: center; }
 
 /*# sourceMappingURL=styles.css.map */
