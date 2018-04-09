@@ -10,3 +10,15 @@
 .news-list {
   margin-bottom: 5.625rem;   
 }
+
+.news-list-options {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: $grey;
+}
+
+.active {
+  font-weight: 700;
+}

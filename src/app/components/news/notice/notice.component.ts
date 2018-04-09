@@ -1,5 +1,7 @@
+import { SessionService } from './../../../shared/services/session.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Notice } from '../../../shared/model/notice.model';
+import { NewsService } from '../../../shared/services/news.service';
 
 @Component({
   selector: 'app-notice',
@@ -8,10 +10,33 @@ import { Notice } from '../../../shared/model/notice.model';
 })
 export class NoticeComponent implements OnInit {
   @Input() notice: Notice;
+  @Input() newsToShow: Array<Notice>;
+  @Input() news: Array<Notice>;
+  @Input() newsStored: Array<Notice>;
 
-  constructor() { }
+  constructor(
+    private sessionService: SessionService,
+    private newsService: NewsService
+  ) { }
 
   ngOnInit() {
+    console.log(this.news);
   }
 
+  toggleStore() {
+
+    if (this.notice.stored.includes(this.sessionService.user.id)) {
+      this.notice.storeNotice = false;
+      this.newsStored.splice(this.newsStored.indexOf(this.notice), 1);
+      this.news.push(this.notice);
+      this.newsToShow = this.news;
+    } else {
+      this.notice.storeNotice = true;
+      this.news.splice(this.news.indexOf(this.notice), 1);
+      this.newsStored.push(this.notice);
+      this.newsToShow = this.newsStored;
+    }
+    this.newsService.edit(this.notice)
+      .subscribe( notice => console.log('stored') );
+  }
 }

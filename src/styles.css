@@ -179,6 +179,16 @@ p {
 .news-list {
   margin-bottom: 5.625rem; }
 
+.news-list-options {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: #333333; }
+
+.active {
+  font-weight: 700; }
+
 .navbar {
   position: fixed;
   bottom: 0;

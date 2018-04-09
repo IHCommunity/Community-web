@@ -30,4 +30,10 @@ export class NewsService extends BaseApiService {
       .map((res: Response) => res.json())
       .catch(error => this.handleError(error));
   }
+
+  edit(notice: Notice): Observable<Notice> {
+    return this.http.put(`${NewsService.NEWS_API}/${notice.id}`, JSON.stringify(notice), BaseApiService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
 }

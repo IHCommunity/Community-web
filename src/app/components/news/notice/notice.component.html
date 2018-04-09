@@ -1,5 +1,5 @@
-<div class="notice" [routerLink]="['/news', notice.id]">
-  <div class="notice-text">
+<div class="notice">
+  <div class="notice-text" [routerLink]="['/news', notice.id]">
     <div class="notice-wrapper">
         <h5>
             {{ notice.title}}
@@ -13,6 +13,6 @@
     </div>
   </div>
   <div class="notice-bar-{{notice.type}}">
-    x
+    <span (click)="toggleStore()">x</span>
   </div>
 </div>

@@ -4,4 +4,6 @@ export class Notice {
   description: string;
   deadline: Date;
   type: string;
+  stored: Array<any>;
+  storeNotice?: Boolean;
 }
