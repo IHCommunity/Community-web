@@ -20,12 +20,11 @@ export class NoticeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.news);
   }
 
   toggleStore() {
 
-    if (this.notice.stored.includes(this.sessionService.user.id)) {
+    if (this.newsStored.includes(this.notice)) {
       this.notice.storeNotice = false;
       this.newsStored.splice(this.newsStored.indexOf(this.notice), 1);
       this.news.push(this.notice);
