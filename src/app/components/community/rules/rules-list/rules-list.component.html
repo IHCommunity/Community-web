@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="component-title">
+    <app-back></app-back>
+  </div>
+  <h1>Rules</h1>
+  <ul class="list">
+    <li *ngFor="let rule of rules" class="list-item">
+      <div>
+          <span class="list-item-title">{{ rule.title }}</span>
+          <p>{{ rule.description }}</p>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { MainComponent } from './components/misc/main/main.component';
 import { NewsComponent } from './components/news/news.component';
 import { NoticeComponent } from './components/news/notice/notice.component';
 import { NavbarComponent } from './components/misc/navbar/navbar.component';
@@ -22,6 +23,7 @@ import { BackComponent } from './components/misc/back/back.component';
 import { CommunityComponent } from './components/community/community.component';
 import { MeetingsComponent } from './components/community/meetings/meetings.component';
 import { MeetingFormComponent } from './components/community/meetings/meeting-form/meeting-form.component';
+import { RulesListComponent } from './components/community/rules/rules-list/rules-list.component';
 
 import { SearchPipe } from './shared/pipes/search.pipe';
 
@@ -30,6 +32,7 @@ import { SessionService } from './shared/services/session.service';
 import { UsersService } from './shared/services/users.service';
 import { GlobalErrorHandlerService } from './shared/services/global-error-handler.service';
 import { MeetingsService } from './shared/services/meetings.service';
+import { RulesService } from './shared/services/rules.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,9 @@ import { MeetingsService } from './shared/services/meetings.service';
     BackComponent,
     CommunityComponent,
     MeetingFormComponent,
-    MeetingsComponent
+    MeetingsComponent,
+    MainComponent,
+    RulesListComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +66,7 @@ import { MeetingsService } from './shared/services/meetings.service';
     SessionService,
     UsersService,
     MeetingsService,
+    RulesService,
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandlerService

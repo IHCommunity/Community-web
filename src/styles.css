@@ -104,6 +104,10 @@ p {
   justify-content: space-between; }
   .list-item i {
     color: #999999; }
+  .list-item .list-item-title {
+    font-weight: 700; }
+  .list-item p {
+    margin-bottom: 0; }
 
 .home-img-container {
   height: 100%;
