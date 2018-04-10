@@ -5,12 +5,13 @@
 @import 'mixins';
 @import 'variables';
 @import 'texts';
+@import 'navbar';
 @import 'form';
 @import 'list';
+@import 'home';
 @import 'notice';
 @import 'detail';
 @import 'news';
-@import 'navbar';
 
 hr {
   border-color: $greyborder;

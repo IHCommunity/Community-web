@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm, FormControl } from '@angular/forms';
-import { Meeting } from '../../../shared/model/meeting.model';
-import { MeetingsService } from '../../../shared/services/meetings.service';
+import { Meeting } from '../../../../shared/model/meeting.model';
+import { MeetingsService } from '../../../../shared/services/meetings.service';
 import { Router } from '@angular/router';
 
 @Component({

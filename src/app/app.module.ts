@@ -20,7 +20,8 @@ import { MyHomeComponent } from './components/my-home/my-home.component';
 import { DetailComponent } from './components/news/detail/detail.component';
 import { BackComponent } from './components/misc/back/back.component';
 import { CommunityComponent } from './components/community/community.component';
-import { MeetingFormComponent } from './components/community/meeting-form/meeting-form.component';
+import { MeetingsComponent } from './components/community/meetings/meetings.component';
+import { MeetingFormComponent } from './components/community/meetings/meeting-form/meeting-form.component';
 
 import { SearchPipe } from './shared/pipes/search.pipe';
 
@@ -44,7 +45,8 @@ import { MeetingsService } from './shared/services/meetings.service';
     DetailComponent,
     BackComponent,
     CommunityComponent,
-    MeetingFormComponent
+    MeetingFormComponent,
+    MeetingsComponent
   ],
   imports: [
     BrowserModule,

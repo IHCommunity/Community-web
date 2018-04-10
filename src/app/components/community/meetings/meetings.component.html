@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="component-title">
+    <app-back></app-back>
+  </div>
+  <h1>Juntas</h1>
+  <ul class="list">
+    <li *ngIf="user.role === 'admin'" class="list-item" [routerLink]="['/community', 'meetings', 'new']">
+      <span>Create new meeting</span><i class="material-icons">chevron_right</i>
+    </li>
+    <li class="list-item"><span>Next meeting</span><i class="material-icons">chevron_right</i></li>
+    <li class="list-item"><span>Meetings resume</span><i class="material-icons">chevron_right</i></li>
+    <li class="list-item"><span>Voting</span><i class="material-icons">chevron_right</i></li>
+  </ul>
+</div>
