@@ -10,7 +10,7 @@
         <div (click)="toggleStoredNews($event)" class="news-stored-btn" [ngClass]="{'active': storedVisible}">Stored</div>
     </div>
     <div class="row news-list">
-        <div class="col s12" *ngFor="let notice of newsToShow | search:'title':pattern" style="padding: 0">
+        <div class="col s12" *ngFor="let notice of newsToShow | search:'title':pattern | order" style="padding: 0">
             <app-notice [notice]="notice" [newsToShow]="newsToShow" [news]="news" [newsStored]="newsStored"></app-notice>
         </div>
     </div>

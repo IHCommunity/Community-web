@@ -33,6 +33,7 @@ import { UsersService } from './shared/services/users.service';
 import { GlobalErrorHandlerService } from './shared/services/global-error-handler.service';
 import { MeetingsService } from './shared/services/meetings.service';
 import { RulesService } from './shared/services/rules.service';
+import { OrderPipe } from './shared/pipes/order.pipe';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { RulesService } from './shared/services/rules.service';
     MeetingFormComponent,
     MeetingsComponent,
     MainComponent,
-    RulesListComponent
+    RulesListComponent,
+    OrderPipe
   ],
   imports: [
     BrowserModule,
