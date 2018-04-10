@@ -38,6 +38,7 @@ import { OrderPipe } from './shared/pipes/order.pipe';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     MeetingsComponent,
     MainComponent,
     RulesListComponent,
-    OrderPipe
+    OrderPipe,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
