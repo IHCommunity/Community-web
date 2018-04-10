@@ -3,8 +3,8 @@
     <h1>Neighbors Chat</h1>
   </div>
   <ul class="list">
-    <li class="list-item" *ngFor="let user of users">
-        <div class="">
+    <li class="list-item list-item-multiple" *ngFor="let user of users">
+        <div class="list-item-user">
             <img [src]="user.avatar" class="responsive-img circle">
             <span>{{ user.name }}</span>
         </div>

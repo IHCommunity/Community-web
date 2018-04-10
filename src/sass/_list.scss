@@ -5,6 +5,7 @@
   font-size: 1.25rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   i {
     color: $lightgrey;
@@ -17,4 +18,18 @@
   p {
     margin-bottom: 0;
   }
+
+  .list-item-user {
+    display: flex;
+    align-items: center;
+
+    img {
+      max-height: 50px;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.list-item-multiple {
+  padding: 1.5rem 0;
 }

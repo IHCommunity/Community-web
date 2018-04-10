@@ -101,13 +101,23 @@ p {
   border-bottom: 1px solid #E6E6E6;
   font-size: 1.25rem;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center; }
   .list-item i {
     color: #999999; }
   .list-item .list-item-title {
     font-weight: 700; }
   .list-item p {
     margin-bottom: 0; }
+  .list-item .list-item-user {
+    display: flex;
+    align-items: center; }
+    .list-item .list-item-user img {
+      max-height: 50px;
+      margin-right: 1rem; }
+
+.list-item-multiple {
+  padding: 1.5rem 0; }
 
 .home-img-container {
   height: 100%;
