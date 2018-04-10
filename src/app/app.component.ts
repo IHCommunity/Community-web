@@ -6,7 +6,7 @@ import { trigger, transition, group, query, style, animate } from '@angular/anim
   templateUrl: './app.component.html',
   animations: [
     trigger('routerAnimation', [
-      transition('0 => 1, 0 => 2, 1 => 3, 3 => 7, 3 => 8, 3 => 10, 8 => 9', [
+      transition('0 => 1, 0 => 2, 2 => 1, 1 => 3, 3 => 7, 3 => 8, 3 => 10, 8 => 9', [
         style({ height: '!' }),
         query(':enter', style({ transform: 'translateX(100%)' })),
         query(':enter, :leave', style({ position: 'absolute', top: 0, left: 0, right: 0 })),

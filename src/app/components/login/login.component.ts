@@ -30,7 +30,7 @@ export class LoginComponent {
     });
   }
 
-  doLogin(loginForm: NgForm) {
+  doLogin(loginForm: NgForm): void {
     this.sessionService.authenticate(this.user).subscribe(
       (user) => {
         loginForm.reset();
