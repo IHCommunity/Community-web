@@ -35,6 +35,10 @@ import { MeetingsService } from './shared/services/meetings.service';
 import { RulesService } from './shared/services/rules.service';
 import { OrderPipe } from './shared/pipes/order.pipe';
 
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +65,9 @@ import { OrderPipe } from './shared/pipes/order.pipe';
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [
     NewsService,
