@@ -4,7 +4,11 @@
   </div>
   <ul class="list">
     <li class="list-item" *ngFor="let user of users">
-      <span>{{ user.name }}</span><i class="material-icons">chevron_right</i>
+        <div class="">
+            <img [src]="user.avatar" class="responsive-img circle">
+            <span>{{ user.name }}</span>
+        </div>
+        <i class="material-icons">chevron_right</i>
     </li>
   </ul>
 </div>
