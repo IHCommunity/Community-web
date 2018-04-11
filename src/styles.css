@@ -281,6 +281,9 @@ hr {
   justify-content: space-between;
   margin-top: 2rem; }
 
+.component-title-outside {
+  margin-top: 1rem; }
+
 .router-container {
   position: relative; }
   .router-container > * {

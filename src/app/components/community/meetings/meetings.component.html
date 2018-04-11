@@ -2,7 +2,7 @@
   <div class="component-title">
     <app-back></app-back>
   </div>
-  <h1>Meetings</h1>
+  <h1 class="component-title-outside">Meetings</h1>
   <ul class="list">
     <li *ngIf="user.role === 'admin'" class="list-item" [routerLink]="['/community', 'meetings', 'new']">
       <span>Create new meeting</span><i class="material-icons">chevron_right</i>
