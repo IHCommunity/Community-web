@@ -12,6 +12,7 @@ import { Routes } from '@angular/router';
 import { MeetingsComponent } from './components/community/meetings/meetings.component';
 import { MainComponent } from './components/misc/main/main.component';
 import { RulesListComponent } from './components/community/rules/rules-list/rules-list.component';
+import { ChatRoomComponent } from './components/chat/chat-room/chat-room.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, data: { depth: 0 } },
@@ -21,10 +22,11 @@ export const routes: Routes = [
     { path: 'news', component: NewsComponent, data: { depth: 4 } },
     { path: 'home', component: MyHomeComponent, data: { depth: 5 } },
     { path: 'community', component: CommunityComponent, data: { depth: 6 } },
-    { path: 'neighbors', component: ChatComponent, data: { depth: 6 } }
+    { path: 'neighbors', component: ChatComponent, data: { depth: 7 } }
   ]},
-  { path: 'news/:id', component: DetailComponent, data: { depth: 7 } },
-  { path: 'community/meetings', component: MeetingsComponent, data: { depth: 8 } },
-  { path: 'community/meetings/new', component: MeetingFormComponent, data: { depth: 9 } },
-  { path: 'community/rules', component: RulesListComponent, data: { depth: 10 } }
+  { path: 'news/:id', component: DetailComponent, data: { depth: 8 } },
+  { path: 'community/meetings', component: MeetingsComponent, data: { depth: 9 } },
+  { path: 'community/meetings/new', component: MeetingFormComponent, data: { depth: 10 } },
+  { path: 'community/rules', component: RulesListComponent, data: { depth: 11 } },
+  { path: 'room/:id', component: ChatRoomComponent, data: { depth: 12 } }
 ];

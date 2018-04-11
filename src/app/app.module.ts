@@ -33,12 +33,14 @@ import { UsersService } from './shared/services/users.service';
 import { GlobalErrorHandlerService } from './shared/services/global-error-handler.service';
 import { MeetingsService } from './shared/services/meetings.service';
 import { RulesService } from './shared/services/rules.service';
+import { ChatService } from './shared/services/chat.service';
 import { OrderPipe } from './shared/pipes/order.pipe';
 
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { ChatComponent } from './components/chat/chat.component';
+import { ChatRoomComponent } from './components/chat/chat-room/chat-room.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { ChatComponent } from './components/chat/chat.component';
     MainComponent,
     RulesListComponent,
     OrderPipe,
-    ChatComponent
+    ChatComponent,
+    ChatRoomComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +80,7 @@ import { ChatComponent } from './components/chat/chat.component';
     UsersService,
     MeetingsService,
     RulesService,
+    ChatService,
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandlerService
