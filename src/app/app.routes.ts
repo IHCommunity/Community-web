@@ -13,6 +13,7 @@ import { MeetingsComponent } from './components/community/meetings/meetings.comp
 import { MainComponent } from './components/misc/main/main.component';
 import { RulesListComponent } from './components/community/rules/rules-list/rules-list.component';
 import { ChatRoomComponent } from './components/chat/chat-room/chat-room.component';
+import { ProfileComponent } from './components/my-home/profile/profile.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, data: { depth: 0 } },
@@ -25,6 +26,7 @@ export const routes: Routes = [
     { path: 'neighbors', component: ChatComponent, data: { depth: 7 } }
   ]},
   { path: 'news/:id', component: DetailComponent, data: { depth: 8 } },
+  { path: 'home/profile/:id', component: ProfileComponent, data: { depth: 8 } },
   { path: 'community/meetings', component: MeetingsComponent, data: { depth: 9 } },
   { path: 'community/meetings/new', component: MeetingFormComponent, data: { depth: 10 } },
   { path: 'community/rules', component: RulesListComponent, data: { depth: 11 } },

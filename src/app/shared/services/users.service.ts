@@ -30,4 +30,10 @@ export class UsersService extends BaseApiService {
       .catch( error => this.handleError(error));
   }
 
+  get(id: string): Observable<User> {
+    return this.http.get(`${UsersService.USERS_API}/${id}`, BaseApiService.defaultOptions)
+      .map( (res: Response) => res.json())
+      .catch( error => this.handleError(error) );
+  }
+
 }

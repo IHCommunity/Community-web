@@ -24,8 +24,12 @@ import { CommunityComponent } from './components/community/community.component';
 import { MeetingsComponent } from './components/community/meetings/meetings.component';
 import { MeetingFormComponent } from './components/community/meetings/meeting-form/meeting-form.component';
 import { RulesListComponent } from './components/community/rules/rules-list/rules-list.component';
+import { ProfileComponent } from './components/my-home/profile/profile.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { ChatRoomComponent } from './components/chat/chat-room/chat-room.component';
 
 import { SearchPipe } from './shared/pipes/search.pipe';
+import { OrderPipe } from './shared/pipes/order.pipe';
 
 import { NewsService } from './shared/services/news.service';
 import { SessionService } from './shared/services/session.service';
@@ -34,13 +38,10 @@ import { GlobalErrorHandlerService } from './shared/services/global-error-handle
 import { MeetingsService } from './shared/services/meetings.service';
 import { RulesService } from './shared/services/rules.service';
 import { ChatService } from './shared/services/chat.service';
-import { OrderPipe } from './shared/pipes/order.pipe';
 
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { ChatComponent } from './components/chat/chat.component';
-import { ChatRoomComponent } from './components/chat/chat-room/chat-room.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { ChatRoomComponent } from './components/chat/chat-room/chat-room.compone
     RulesListComponent,
     OrderPipe,
     ChatComponent,
-    ChatRoomComponent
+    ChatRoomComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
