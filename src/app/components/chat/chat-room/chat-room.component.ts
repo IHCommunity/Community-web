@@ -9,8 +9,21 @@ import { ChatService } from '../../../shared/services/chat.service';
   styleUrls: ['./chat-room.component.css']
 })
 export class ChatRoomComponent {
+    message: string = "";
 
-  constructor(db: AngularFirestore, public _cs: ChatService) {
+  constructor(public _cs: ChatService) {
       this._cs.loadMessajes().subscribe();
+  }
+
+  sendMessage() {
+      console.log(this.message);
+
+      if( this.message.length === 0 ) {
+          return;
+      }
+
+      this._cs.addMessage(this.message)
+              .then(() => this.message = "")
+              .catch((err) => console.error('Error sending message', err));
   }
 }
