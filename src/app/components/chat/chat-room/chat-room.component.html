@@ -1,5 +1,12 @@
-<ul>
-  <li class="text" *ngFor="let chat of chats | async">
-    {{ chat.message }}
-  </li>
-</ul>
+<div class="" id="messages">
+    <div class="text" *ngFor="let chat of _cs.chats">
+        {{ chat.body }}
+    </div>
+</div>
+
+<input type="text"
+       name="msg"
+       class="news-input"
+       [(ngModel)]="message"
+       (keyup.enter)="sendMessage()"
+       placeholder="Send message...">

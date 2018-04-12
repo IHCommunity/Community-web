@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { SessionService } from './session.service';
+
+import { Message } from '../model/message.model';
 
 @Injectable()
 export class ChatService {
-  private itemsCollection: AngularFirestoreCollection<any>;
-  public chats: any[] = [];
+  private itemsCollection: AngularFirestoreCollection<Message>;
 
-  constructor(private afs: AngularFirestore) { }
-
-  loadMessajes() {
-      this.itemsCollection = this.afs.collection<any>('chats');
-      return this.itemsCollection.valueChanges();
-  }
+  constructor(private afs: AngularFirestore, private sessionService: SessionService) {}
 
 }
