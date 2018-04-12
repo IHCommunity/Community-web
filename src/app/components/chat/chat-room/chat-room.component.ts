@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { ChatService } from '../../../shared/services/chat.service';
@@ -8,11 +8,20 @@ import { ChatService } from '../../../shared/services/chat.service';
   templateUrl: './chat-room.component.html',
   styleUrls: ['./chat-room.component.css']
 })
-export class ChatRoomComponent {
+export class ChatRoomComponent implements OnInit {
     message: string = "";
+    element: any;
 
   constructor(public _cs: ChatService) {
-      this._cs.loadMessajes().subscribe();
+      this._cs.loadMessajes().subscribe(() => {
+          setTimeout(() => {
+              this.element.scrollTop = this.element.scrollHeight;
+          }, 20);
+      });
+  }
+
+  ngOnInit() {
+      this.element = document.getElementById('messages');
   }
 
   sendMessage() {
