@@ -29,8 +29,6 @@ export class ChatRoomComponent implements OnInit {
 
   ngOnInit() {
       this.element = document.getElementById('messages');
-
-      this._cs.getRoom(this.receptorId).subscribe();
   }
 
   // sendMessage() {
