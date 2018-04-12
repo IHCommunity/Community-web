@@ -1,0 +1,17 @@
+.agreement-bar {
+  width: 100%;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: $greyborder;
+  margin-top: 1rem;
+  display: flex;
+  overflow: hidden;
+
+  .disagree-bar {
+    background-color: $red;
+  }
+
+  .agree-bar {
+    background-color: $green;
+  }
+}

@@ -43,6 +43,7 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { ProfileComponent } from './components/my-home/profile/profile.component';
+import { VotingComponent } from './components/community/meetings/voting/voting.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ProfileComponent } from './components/my-home/profile/profile.component
     ChatComponent,
     ChatRoomComponent,
     FormProfileComponent,
-    ProfileComponent
+    ProfileComponent,
+    VotingComponent
   ],
   imports: [
     BrowserModule,

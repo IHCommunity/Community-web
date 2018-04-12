@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BaseApiService } from './base-api.service';
 import { Http, Response } from '@angular/http';
 import { Meeting } from '../model/meeting.model';
+import { Agreement } from '../model/agreement.model';
 
 @Injectable()
 export class MeetingsService extends BaseApiService {
@@ -16,6 +17,31 @@ export class MeetingsService extends BaseApiService {
     return this.http.post(MeetingsService.MEETINGS_API, JSON.stringify(meeting), BaseApiService.defaultOptions)
       .map((res: Response) => res.json())
       .catch(error => this.handleError(error));
+  }
+
+  getActive(): Observable<Meeting> {
+    return this.http.get(`${MeetingsService.MEETINGS_API}/active`, BaseApiService.defaultOptions)
+      .map( (res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
+
+  calculateDisagreeWidth(agreement: Agreement) {
+    const peopleDisagree: number = agreement.disagree.length;
+    const peopleAgree: number = agreement.agree.length;
+    const totalPeople: number = peopleDisagree + peopleAgree;
+    const result = peopleDisagree / totalPeople * 100;
+
+    return `${result}%`;
+
+  }
+
+  calculateAgreeWidth(agreement: Agreement) {
+    const peopleDisagree: number = agreement.disagree.length;
+    const peopleAgree: number = agreement.agree.length;
+    const totalPeople: number = peopleDisagree + peopleAgree;
+    const result = peopleAgree / totalPeople * 100;
+
+    return `${result}%`;
   }
 
 }

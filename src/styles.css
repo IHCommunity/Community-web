@@ -119,6 +119,9 @@ p {
 .list-item-multiple {
   padding: 1.5rem 0; }
 
+.list-agreement {
+  width: 100%; }
+
 .profile-img-container {
   margin-top: 1rem;
   display: flex;
@@ -290,6 +293,19 @@ p {
 
 .active {
   font-weight: 700; }
+
+.agreement-bar {
+  width: 100%;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: #E6E6E6;
+  margin-top: 1rem;
+  display: flex;
+  overflow: hidden; }
+  .agreement-bar .disagree-bar {
+    background-color: #FE011A; }
+  .agreement-bar .agree-bar {
+    background-color: #00DF96; }
 
 hr {
   border-color: #E6E6E6;
