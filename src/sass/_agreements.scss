@@ -1,3 +1,10 @@
+.voting-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
 .agreement-bar {
   width: 100%;
   height: 1.5rem;
@@ -14,4 +21,15 @@
   .agree-bar {
     background-color: $green;
   }
+}
+
+.voting-label {
+  background-color: $blue;
+  color: #fff;
+  padding: 0.25rem 1rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
 }

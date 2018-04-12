@@ -294,6 +294,12 @@ p {
 .active {
   font-weight: 700; }
 
+.voting-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem; }
+
 .agreement-bar {
   width: 100%;
   height: 1.5rem;
@@ -306,6 +312,16 @@ p {
     background-color: #FE011A; }
   .agreement-bar .agree-bar {
     background-color: #00DF96; }
+
+.voting-label {
+  background-color: #2B63F6;
+  color: #fff;
+  padding: 0.25rem 1rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: .1rem; }
 
 hr {
   border-color: #E6E6E6;
@@ -320,6 +336,9 @@ hr {
   margin-top: 2rem; }
 
 .component-title-outside {
+  margin-top: 1rem; }
+
+.component-subtitle-outside {
   margin-top: 1rem; }
 
 .router-container {

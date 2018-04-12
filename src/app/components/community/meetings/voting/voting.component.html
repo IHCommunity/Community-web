@@ -2,9 +2,13 @@
     <div class="component-title">
       <app-back></app-back>
     </div>
-    <h1 class="component-title-outside">Voting</h1>
+    <div class="voting-title-container">
+      <h1>Voting</h1>
+      <span class="voting-label">Active</span>
+    </div>
+    <h2 class="component-subtitle-outside">Agenda</h2>
     <ul class="list">
-        <li class="list-item" *ngFor="let agreement of meeting.agreements; let i = index">
+        <li class="list-item list-item-multiple" *ngFor="let agreement of meeting.agreements; let i = index">
           <div class="list-agreement">
             <span>{{i + 1}}. {{ agreement.title }}</span>
             <div class="agreement-bar">
