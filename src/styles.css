@@ -119,6 +119,28 @@ p {
 .list-item-multiple {
   padding: 1.5rem 0; }
 
+.profile-img-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem; }
+  .profile-img-container img {
+    box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.05);
+    height: 8rem; }
+
+.profile-data-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #999999; }
+
+.profile-data-body {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.profile-row {
+  margin-bottom: .75rem; }
+
 .home-img-container {
   height: 100%;
   width: 100%;

@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="component-title">
+      <app-back></app-back>
+    </div>
+    <h1 class="component-title-outside">Update your profile</h1>
+  <form class="form login-form" [formGroup]="profileForm" (ngSubmit)="updateProfile(profileForm)" novalidate>
+    <div class="row form-row">
+      <div class="input-field col s6">
+        <input id="name" type="text" formControlName="name" [(ngModel)]="user.name" placeholder="Juan">
+        <label for="name" class="active">Name</label>
+        <span
+          class="helper-text red-text text-accent-4"
+          *ngIf="profileForm.get('name').errors?.required && profileForm.get('name').touched">Required
+        </span>
+      </div>
+      <div class="input-field col s6">
+        <input id="surname" type="text" formControlName="surname" [(ngModel)]="user.surname" placeholder="Cuesta">
+        <label for="surname" class="active">Surname</label>
+        <span
+          class="helper-text red-text text-accent-4"
+          *ngIf="profileForm.get('surname').errors?.required && profileForm.get('surname').touched">Required
+        </span>
+      </div>
+    </div>
+    <div class="row form-row">
+      <div class="input-field col s6">
+        <input id="apartment" type="text" formControlName="apt" [(ngModel)]="user.apt" placeholder="2ºA">
+        <label for="apartment" class="active">Apartment</label>
+        <span
+          class="helper-text red-text text-accent-4"
+          *ngIf="profileForm.get('apt').errors?.required && profileForm.get('apt').touched">Required
+        </span>
+      </div>
+      <div class="input-field col s6">
+        <input id="phone" type="text" formControlName="phone" [(ngModel)]="user.phone" placeholder="600300900">
+        <label for="phone" class="active">Phone</label>
+        <span
+          class="helper-text red-text text-accent-4"
+          *ngIf="profileForm.get('phone').errors?.minlength && profileForm.get('phone').touched">Introduce a valid phone number
+        </span>
+      </div>
+    </div>
+    <button type="submit" class="waves-effect waves-light btn" [disabled]="!profileForm.valid">Update</button>
+  </form>

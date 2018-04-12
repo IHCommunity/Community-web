@@ -24,7 +24,7 @@ import { CommunityComponent } from './components/community/community.component';
 import { MeetingsComponent } from './components/community/meetings/meetings.component';
 import { MeetingFormComponent } from './components/community/meetings/meeting-form/meeting-form.component';
 import { RulesListComponent } from './components/community/rules/rules-list/rules-list.component';
-import { ProfileComponent } from './components/my-home/profile/profile.component';
+import { FormProfileComponent } from './components/my-home/form-profile/form-profile.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { ChatRoomComponent } from './components/chat/chat-room/chat-room.component';
 
@@ -42,6 +42,7 @@ import { ChatService } from './shared/services/chat.service';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { ProfileComponent } from './components/my-home/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     OrderPipe,
     ChatComponent,
     ChatRoomComponent,
+    FormProfileComponent,
     ProfileComponent
   ],
   imports: [
