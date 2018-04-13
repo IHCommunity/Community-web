@@ -14,6 +14,7 @@ import { ChatRoomComponent } from './components/chat/chat-room/chat-room.compone
 import { FormProfileComponent } from './components/my-home/form-profile/form-profile.component';
 import { ProfileComponent } from './components/my-home/profile/profile.component';
 import { VotingComponent } from './components/community/meetings/voting/voting.component';
+import { AgreementComponent } from './components/community/meetings/agreement/agreement.component';
 
 import { Routes } from '@angular/router';
 
@@ -32,6 +33,7 @@ export const routes: Routes = [
   { path: 'home/profile/:id/edit', component: FormProfileComponent, data: { depth: 8 } },
   { path: 'community/meetings', component: MeetingsComponent, data: { depth: 9 } },
   { path: 'community/meetings/voting', component: VotingComponent, data: { depth: 9 } },
+  { path: 'community/meetings/voting/:id', component: AgreementComponent, data: { depth: 9 } },
   { path: 'community/meetings/new', component: MeetingFormComponent, data: { depth: 10 } },
   { path: 'community/rules', component: RulesListComponent, data: { depth: 11 } },
   { path: 'room/:id', component: ChatRoomComponent, data: { depth: 12 } }

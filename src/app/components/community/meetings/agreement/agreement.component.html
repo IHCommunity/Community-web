@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="component-title back-title">
+      <app-back></app-back>
+      <h2>Voting</h2>
+    </div>
+    <div class="agreement-card">
+      <h1>{{ agreement.title }}</h1>
+      <p>{{ agreement.description }}</p>
+    </div>
+    <p class="agree-statement">Do you agree?</p>
+    <div class="voting-btn-container">
+      <button class="btn">No</button>
+      <button class="btn">Yes</button>
+    </div>
+    <p class="agree-statement">Votes</p>
+    <div class="agreement-bar">
+      <div class="disagree-bar" [ngStyle]="{'width': disagreeWidth}"></div>
+      <div class="agree-bar" [ngStyle]="{'width': agreeWidth}"></div>
+    </div>
+</div>

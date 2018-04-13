@@ -25,23 +25,4 @@ export class MeetingsService extends BaseApiService {
       .catch(error => this.handleError(error));
   }
 
-  calculateDisagreeWidth(agreement: Agreement) {
-    const peopleDisagree: number = agreement.disagree.length;
-    const peopleAgree: number = agreement.agree.length;
-    const totalPeople: number = peopleDisagree + peopleAgree;
-    const result = peopleDisagree / totalPeople * 100;
-
-    return `${result}%`;
-
-  }
-
-  calculateAgreeWidth(agreement: Agreement) {
-    const peopleDisagree: number = agreement.disagree.length;
-    const peopleAgree: number = agreement.agree.length;
-    const totalPeople: number = peopleDisagree + peopleAgree;
-    const result = peopleAgree / totalPeople * 100;
-
-    return `${result}%`;
-  }
-
 }

@@ -27,6 +27,8 @@ import { RulesListComponent } from './components/community/rules/rules-list/rule
 import { FormProfileComponent } from './components/my-home/form-profile/form-profile.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { ChatRoomComponent } from './components/chat/chat-room/chat-room.component';
+import { ProfileComponent } from './components/my-home/profile/profile.component';
+import { VotingComponent } from './components/community/meetings/voting/voting.component';
 
 import { SearchPipe } from './shared/pipes/search.pipe';
 import { OrderPipe } from './shared/pipes/order.pipe';
@@ -38,12 +40,12 @@ import { GlobalErrorHandlerService } from './shared/services/global-error-handle
 import { MeetingsService } from './shared/services/meetings.service';
 import { RulesService } from './shared/services/rules.service';
 import { ChatService } from './shared/services/chat.service';
+import { AgreementsService } from './shared/services/agreements.service';
 
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { ProfileComponent } from './components/my-home/profile/profile.component';
-import { VotingComponent } from './components/community/meetings/voting/voting.component';
+import { AgreementComponent } from './components/community/meetings/agreement/agreement.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,8 @@ import { VotingComponent } from './components/community/meetings/voting/voting.c
     ChatRoomComponent,
     FormProfileComponent,
     ProfileComponent,
-    VotingComponent
+    VotingComponent,
+    AgreementComponent
   ],
   imports: [
     BrowserModule,
@@ -85,6 +88,7 @@ import { VotingComponent } from './components/community/meetings/voting/voting.c
     SessionService,
     UsersService,
     MeetingsService,
+    AgreementsService,
     RulesService,
     ChatService,
     {

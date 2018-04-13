@@ -15,21 +15,55 @@
   overflow: hidden;
 
   .disagree-bar {
-    background-color: $red;
+    @include linear-gradient($red, $lightred);
+    transition: all 0.6s ease;
   }
 
   .agree-bar {
-    background-color: $green;
+    @include linear-gradient($lightgreen, $green);
+    transition: all 0.6s ease;
   }
 }
 
 .voting-label {
-  background-color: $blue;
   color: #fff;
-  padding: 0.25rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 2rem;
   text-transform: uppercase;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: .1rem;
+  letter-spacing: .05rem;
+  @include linear-gradient($blue, $lightblue);
+}
+
+.agreement-card {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 22px 0 rgba(0,0,0,0.05);
+
+  p {
+    font-size: 1.15rem;
+    margin: 1rem 0 0 0;
+  }
+}
+
+.agree-statement {
+  font-size: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.voting-btn-container {
+  display: flex;
+  justify-content: space-between;
+
+    .btn {
+      padding: 0rem 4rem;
+      border-radius: 2rem;
+      text-transform: capitalize;
+      font-weight: 400;
+      color: $grey;
+      background-color: #ffffff;
+      font-size: 1rem;
+    }
 }

@@ -8,7 +8,7 @@
     </div>
     <h2 class="component-subtitle-outside">Agenda</h2>
     <ul class="list">
-        <li class="list-item list-item-multiple" *ngFor="let agreement of meeting.agreements; let i = index">
+        <li class="list-item list-item-multiple" [routerLink]="['/community', 'meetings', 'voting', agreement.id]" *ngFor="let agreement of meeting.agreements; let i = index">
           <div class="list-agreement">
             <span>{{i + 1}}. {{ agreement.title }}</span>
             <div class="agreement-bar">
