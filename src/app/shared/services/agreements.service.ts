@@ -33,6 +33,7 @@ export class AgreementsService extends BaseApiService {
   }
 
   calculateAgreeWidth(agreement: Agreement) {
+    console.log(agreement);
     if (agreement.disagree === undefined || agreement.agree === undefined) {
       return '0%';
     }
@@ -43,6 +44,13 @@ export class AgreementsService extends BaseApiService {
     const result = peopleAgree / totalPeople * 100;
 
     return `${result}%`;
+  }
+
+  vote(agreement: Agreement, accept: boolean): Observable<Agreement> {
+    return this.http.put(`${AgreementsService.AGREEMENTS_API}/${agreement.id}`,
+      JSON.stringify({ accept: accept }), BaseApiService.defaultOptions)
+      .map( (res: Response) => res.json())
+      .catch(error => this.handleError(error));
   }
 
 }

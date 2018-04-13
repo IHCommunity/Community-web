@@ -9,12 +9,17 @@
     </div>
     <p class="agree-statement">Do you agree?</p>
     <div class="voting-btn-container">
-      <button class="btn">No</button>
-      <button class="btn">Yes</button>
+      <button class="btn" (click)="vote(false)" [ngClass]="{'btn-red': disagreeBol}">No</button>
+      <button class="btn" (click)="vote(true)" [ngClass]="{'btn-green': agreeBol}">Yes</button>
     </div>
     <p class="agree-statement">Votes</p>
-    <div class="agreement-bar">
-      <div class="disagree-bar" [ngStyle]="{'width': disagreeWidth}"></div>
-      <div class="agree-bar" [ngStyle]="{'width': agreeWidth}"></div>
+    <div class="agreement-bar agreement-bar-big">
+      <div class="disagree-bar bar" [ngStyle]="{'width': disagreeWidth}">
+        <p *ngIf="checkIfBigger(disagreeWidth)">{{ agreement.disagree?.length }} votes</p>
+      </div>
+      <div class="agree-bar bar" [ngStyle]="{'width': agreeWidth}">
+        <p *ngIf="checkIfBigger(agreeWidth)">{{ agreement.agree?.length }} votes</p>
+      </div>
     </div>
+    <p class="agreement-deadline">There is <span *ngIf="deadLineTime?.d > 0">{{ deadLineTime?.d }} days</span> <span *ngIf="deadLineTime?.h > 0">{{ deadLineTime?.h }} hours</span> {{ deadLineTime?.m }} min left for voting's clousure</p>
 </div>

@@ -25,4 +25,23 @@ export class MeetingsService extends BaseApiService {
       .catch(error => this.handleError(error));
   }
 
+  getDeadlineTime(agreement: Agreement) {
+    const deadLineTime = new Date(agreement.meeting.deadLine).getTime();
+    const now = new Date().getTime();
+
+    return this.convertMS(deadLineTime - now);
+  }
+
+  convertMS(ms) {
+    let d, h, m, s;
+    s = Math.floor(ms / 1000);
+    m = Math.floor(s / 60);
+    s = s % 60;
+    h = Math.floor(m / 60);
+    m = m % 60;
+    d = Math.floor(h / 24);
+    h = h % 24;
+    return  { d: d, h: h, m: m, s: s };
+  }
+
 }
