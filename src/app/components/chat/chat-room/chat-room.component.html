@@ -1,6 +1,17 @@
 <div class="" id="messages">
-    <div class="text" *ngFor="let chat of _cs.chats">
-        {{ chat.body }}
+    <div *ngFor="let chat of _cs.chats">
+        <div *ngIf="chat.senderId === this.sessionService.user.id"
+             class="right">
+            <b class="new badge teal">{{ this.sessionService.user.name }}</b>
+            <br>
+            <p>{{ chat.body }}</p>
+        </div>
+        <br>
+        <div *ngIf="chat.senderId !== this.sessionService.user.id">
+            <b class="new badge red">{{ chat.userName }}</b>
+            <br>
+            <p>{{ chat.body }}</p>
+        </div>
     </div>
 </div>
 
