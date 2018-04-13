@@ -14,6 +14,7 @@
 @import 'detail';
 @import 'news';
 @import 'agreements';
+@import 'chats';
 
 hr {
   border-color: $greyborder;
@@ -48,5 +49,10 @@ hr {
 
 .back-title {
   justify-content: flex-start !important;
+  align-items: center;
+}
+
+.chat-title {
+  justify-content: space-between !important;
   align-items: center;
 }

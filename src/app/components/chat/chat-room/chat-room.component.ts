@@ -5,6 +5,7 @@ import { ChatService } from '../../../shared/services/chat.service';
 import { UsersService } from '../../../shared/services/users.service';
 import { ActivatedRoute } from '@angular/router';
 import { SessionService } from '../../../shared/services/session.service';
+import { User } from '../../../shared/model/user.model';
 
 @Component({
   selector: 'app-chat-room',
@@ -12,9 +13,10 @@ import { SessionService } from '../../../shared/services/session.service';
   styleUrls: ['./chat-room.component.css']
 })
 export class ChatRoomComponent implements OnInit {
-    message: string = "";
+    message = '';
     element: any;
     receptorId: string;
+    userReceptor: User = new User();
 
   constructor(private sessionService: SessionService,
               public _cs: ChatService,
@@ -34,6 +36,7 @@ export class ChatRoomComponent implements OnInit {
 
   ngOnInit() {
       this.element = document.getElementById('messages');
+      this.usersService.get(this.receptorId).subscribe( user => this.userReceptor = user );
   }
 
   sendMessage() {
