@@ -1,14 +1,14 @@
 <div class="" id="messages">
-    <div *ngFor="let chat of _cs.chats">
+    <div *ngFor="let chat of _cs.chats" class="row">
         <div *ngIf="chat.senderId === this.sessionService.user.id"
-             class="right">
-            <b class="new badge teal">{{ this.sessionService.user.name }}</b>
+             class="col s12 right-align">
+            <b class="new badge teal name">{{ this.sessionService.user.name }}</b>
             <br>
             <p>{{ chat.body }}</p>
         </div>
-        <br>
-        <div *ngIf="chat.senderId !== this.sessionService.user.id">
-            <b class="new badge red">{{ chat.userName }}</b>
+        <div *ngIf="chat.senderId !== this.sessionService.user.id"
+             class="col s12">
+            <b class="new badge red name">{{ chat.userName }}</b>
             <br>
             <p>{{ chat.body }}</p>
         </div>

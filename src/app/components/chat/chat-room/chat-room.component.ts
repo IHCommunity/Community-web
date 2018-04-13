@@ -20,15 +20,16 @@ export class ChatRoomComponent implements OnInit {
               public _cs: ChatService,
               private routes: ActivatedRoute,
               private usersService: UsersService) {
-      this._cs.loadMessajes().subscribe(() => {
-          setTimeout(() => {
-              this.element.scrollTop = this.element.scrollHeight;
-          }, 20);
-      });
 
       this.routes.params.subscribe(params => {
           this.receptorId = params.id;
       })
+
+      this._cs.loadMessajes(this.receptorId).subscribe(() => {
+          setTimeout(() => {
+              this.element.scrollTop = this.element.scrollHeight;
+          }, 20);
+      });
   }
 
   ngOnInit() {

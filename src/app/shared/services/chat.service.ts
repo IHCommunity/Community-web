@@ -11,12 +11,20 @@ export class ChatService {
 
   constructor(private afs: AngularFirestore, private sessionService: SessionService) {}
 
-  loadMessajes() {
+  loadMessajes(id: string) {
       this.itemsCollection = this.afs.collection<Message>('chats', ref => ref.orderBy('date', 'desc').limit(20));
 
       return this.itemsCollection.valueChanges()
                                  .map(messages => {
                                      this.chats = [];
+                                     messages = messages.filter((message) => {
+                                         if(message.receiverId === id && message.senderId === this.sessionService.user.id ||
+                                            message.receiverId === this.sessionService.user.id && message.senderId === id) {
+                                             return true;
+                                         } else {
+                                             return false;
+                                         }
+                                     })
 
                                      for(let msg of messages) {
                                          this.chats.unshift(msg);
