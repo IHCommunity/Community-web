@@ -1,7 +1,9 @@
 import { User } from './user.model';
 
 export class Message {
-  userName: string;
-  body: string;
-  date: number;
+    senderId: string;
+    receiverId: string;
+    userName: string;
+    body: string;
+    date: number;
 }

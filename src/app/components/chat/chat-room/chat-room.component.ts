@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { ChatService } from '../../../shared/services/chat.service';
 import { UsersService } from '../../../shared/services/users.service';
 import { ActivatedRoute } from '@angular/router';
+import { SessionService } from '../../../shared/services/session.service';
 
 @Component({
   selector: 'app-chat-room',
@@ -15,12 +16,15 @@ export class ChatRoomComponent implements OnInit {
     element: any;
     receptorId: string;
 
-  constructor(public _cs: ChatService, private routes: ActivatedRoute, private usersService: UsersService) {
-      // this._cs.loadMessajes().subscribe(() => {
-      //     setTimeout(() => {
-      //         this.element.scrollTop = this.element.scrollHeight;
-      //     }, 20);
-      // });
+  constructor(private sessionService: SessionService,
+              public _cs: ChatService,
+              private routes: ActivatedRoute,
+              private usersService: UsersService) {
+      this._cs.loadMessajes().subscribe(() => {
+          setTimeout(() => {
+              this.element.scrollTop = this.element.scrollHeight;
+          }, 20);
+      });
 
       this.routes.params.subscribe(params => {
           this.receptorId = params.id;
@@ -31,14 +35,14 @@ export class ChatRoomComponent implements OnInit {
       this.element = document.getElementById('messages');
   }
 
-  // sendMessage() {
-  //
-  //     if( this.message.length === 0 ) {
-  //         return;
-  //     }
-  //
-  //     this._cs.addMessage(this.message, this.receptorId)
-  //             .then(() => this.message = "")
-  //             .catch((err) => console.error('Error sending message', err));
-  // }
+  sendMessage() {
+
+      if( this.message.length === 0 ) {
+          return;
+      }
+
+      this._cs.addMessage(this.message, this.receptorId)
+              .then(() => this.message = "")
+              .catch((err) => console.error('Error sending message', err));
+  }
 }
