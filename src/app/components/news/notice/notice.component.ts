@@ -38,4 +38,9 @@ export class NoticeComponent implements OnInit {
     this.newsService.edit(this.notice)
       .subscribe( notice => console.log('stored') );
   }
+
+  check() {
+    this.newsService.check(this.notice).subscribe( notice => console.log('checked'));
+    this.news.splice(this.news.indexOf(this.notice), 1);
+  }
 }

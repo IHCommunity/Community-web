@@ -6,4 +6,5 @@ export class Notice {
   type: string;
   stored: Array<any>;
   storeNotice?: Boolean;
+  checkedByAdmin: Boolean;
 }

@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="component-title">
+        <h1>News proposals</h1>
+        <i (click)="toggleInput()" class="material-icons">{{icon}}</i>
+    </div>
+    <input class="news-input" [(ngModel)]="pattern" placeholder="Type to search news..." type="text" *ngIf="visible">
+    <hr>
+    <div class="row news-list">
+        <div class="col s12" *ngFor="let notice of news | search:'title':pattern | order" style="padding: 0">
+            <app-notice [notice]="notice" [news]="news"></app-notice>
+        </div>
+    </div>
+</div>

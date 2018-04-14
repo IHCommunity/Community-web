@@ -17,6 +17,7 @@ import { VotingComponent } from './components/community/meetings/voting/voting.c
 import { AgreementComponent } from './components/community/meetings/agreement/agreement.component';
 
 import { Routes } from '@angular/router';
+import { ProposalsNewsComponent } from './components/community/proposals/proposals-news/proposals-news.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, data: { depth: 0 } },
@@ -35,6 +36,7 @@ export const routes: Routes = [
   { path: 'community/meetings/voting', component: VotingComponent, data: { depth: 9 } },
   { path: 'community/meetings/voting/:id', component: AgreementComponent, data: { depth: 9 } },
   { path: 'community/meetings/new', component: MeetingFormComponent, data: { depth: 10 } },
+  { path: 'community/proposals/review', component: ProposalsNewsComponent, data: { depth: 11 } },
   { path: 'community/rules', component: RulesListComponent, data: { depth: 11 } },
   { path: 'room/:id', component: ChatRoomComponent, data: { depth: 12 } }
 ];

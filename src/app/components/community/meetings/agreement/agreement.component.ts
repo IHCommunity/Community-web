@@ -55,7 +55,6 @@ export class AgreementComponent implements OnInit {
   }
 
   vote(accept: boolean) {
-    console.log(this.agreement);
     this.agreementsService.vote(this.agreement, accept).subscribe(agreement => {
       this.agreement = agreement;
       if (accept) {

@@ -46,6 +46,7 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AgreementComponent } from './components/community/meetings/agreement/agreement.component';
+import { ProposalsNewsComponent } from './components/community/proposals/proposals-news/proposals-news.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { AgreementComponent } from './components/community/meetings/agreement/ag
     FormProfileComponent,
     ProfileComponent,
     VotingComponent,
-    AgreementComponent
+    AgreementComponent,
+    ProposalsNewsComponent
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,7 @@ export class NewsComponent implements OnInit, OnChanges {
     private sessionService: SessionService) { }
 
   ngOnInit() {
-    this.newsService.list()
+    this.newsService.listChecked()
       .subscribe( (news) => {
         this.news = news.filter(notice => !notice.stored.includes(this.sessionService.user.id));
         this.newsToShow = this.news;

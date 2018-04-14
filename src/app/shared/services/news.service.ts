@@ -19,6 +19,18 @@ export class NewsService extends BaseApiService {
       .catch(error => this.handleError(error));
   }
 
+  listChecked(): Observable<Array<Notice>> {
+    return this.http.get(`${NewsService.NEWS_API}/checked`, BaseApiService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
+
+  listUnchecked(): Observable<Array<Notice>> {
+    return this.http.get(`${NewsService.NEWS_API}/unchecked`, BaseApiService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
+
   get(id: string): Observable<Notice> {
     return this.http.get(`${NewsService.NEWS_API}/${id}`, BaseApiService.defaultOptions)
       .map((res: Response) => res.json())
@@ -33,6 +45,12 @@ export class NewsService extends BaseApiService {
 
   edit(notice: Notice): Observable<Notice> {
     return this.http.put(`${NewsService.NEWS_API}/${notice.id}`, JSON.stringify(notice), BaseApiService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
+
+  check(notice: Notice): Observable<Notice> {
+    return this.http.put(`${NewsService.NEWS_API}/${notice.id}/check`, JSON.stringify(notice), BaseApiService.defaultOptions)
       .map((res: Response) => res.json())
       .catch(error => this.handleError(error));
   }

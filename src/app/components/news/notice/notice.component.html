@@ -13,7 +13,8 @@
     </div>
   </div>
   <div class="notice-bar-{{notice.type}}">
-    <span *ngIf="news.includes(notice)" (click)="toggleStore()">&#x2714;</span>
-    <span *ngIf="newsStored.includes(notice)" (click)="toggleStore()">&#x2718;</span>
+    <span *ngIf="news.includes(notice) && notice.checkedByAdmin === true" (click)="toggleStore()">&#x2714;</span>
+    <span *ngIf="news.includes(notice) && notice.checkedByAdmin === false" (click)="check()">&#x2714;</span>
+    <span *ngIf="newsStored?.includes(notice)" (click)="toggleStore()">&#x2718;</span>
   </div>
 </div>

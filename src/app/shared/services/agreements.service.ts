@@ -33,7 +33,6 @@ export class AgreementsService extends BaseApiService {
   }
 
   calculateAgreeWidth(agreement: Agreement) {
-    console.log(agreement);
     if (agreement.disagree === undefined || agreement.agree === undefined) {
       return '0%';
     }
