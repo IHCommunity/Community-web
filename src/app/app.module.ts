@@ -41,12 +41,14 @@ import { MeetingsService } from './shared/services/meetings.service';
 import { RulesService } from './shared/services/rules.service';
 import { ChatService } from './shared/services/chat.service';
 import { AgreementsService } from './shared/services/agreements.service';
+import { PaymentsService } from './shared/services/payments.service';
 
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AgreementComponent } from './components/community/meetings/agreement/agreement.component';
 import { ProposalsNewsComponent } from './components/community/proposals/proposals-news/proposals-news.component';
+import { PaymentsComponent } from './components/my-home/payments/payments.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,8 @@ import { ProposalsNewsComponent } from './components/community/proposals/proposa
     ProfileComponent,
     VotingComponent,
     AgreementComponent,
-    ProposalsNewsComponent
+    ProposalsNewsComponent,
+    PaymentsComponent
   ],
   imports: [
     BrowserModule,
@@ -93,6 +96,7 @@ import { ProposalsNewsComponent } from './components/community/proposals/proposa
     AgreementsService,
     RulesService,
     ChatService,
+    PaymentsService,
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandlerService

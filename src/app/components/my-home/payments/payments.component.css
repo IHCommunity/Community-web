@@ -1,0 +1,9 @@
+#description {
+  font-size: 0.7em;
+  color: grey;
+}
+
+#payment-title-description {
+  display: flex;
+  flex-direction: column;
+}
