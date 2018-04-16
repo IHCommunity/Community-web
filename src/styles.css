@@ -1,6 +1,17 @@
 * {
   box-sizing: border-box !important; }
 
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  opacity: 0; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 @font-face {
   font-family: CircularStd;
   font-weight: normal;
@@ -155,6 +166,7 @@ p {
 
 .home-img {
   min-height: 100vh;
+  min-width: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -219,6 +231,8 @@ p {
   border-radius: 0 5px 5px 0;
   padding: 0.5rem 0;
   font-size: 1.25rem; }
+  .notice-bar-good span, .notice-bar-info span, .notice-bar-alert span, .notice-bar-danger span, .notice-bar-neutral span {
+    display: block; }
 
 .notice-bar-good {
   background-color: #00DF96; }
@@ -398,11 +412,6 @@ p {
   margin-left: auto;
   margin-right: auto; }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
 .chat-title {
   margin-bottom: 1.5rem; }
   .chat-title img {

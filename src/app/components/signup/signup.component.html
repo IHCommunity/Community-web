@@ -90,4 +90,5 @@
     </div>
     <button type="submit" class="waves-effect waves-light btn" [disabled]="!signupForm.valid">Submit</button>
   </form>
+  <span class="center-align red-text text-accent-4 form-help" *ngIf="apiError">Fill the fields correctly</span>
 </div>

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../../shared/model/user.model';
 import { UsersService } from '../../../shared/services/users.service';
-import { ActivatedRoute } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form-profile',
@@ -15,6 +15,7 @@ export class FormProfileComponent implements OnInit {
 
   constructor(
     private routes: ActivatedRoute,
+    private router: Router,
     private usersService: UsersService) { }
 
   ngOnInit() {
@@ -30,6 +31,18 @@ export class FormProfileComponent implements OnInit {
       phone: new FormControl('', Validators.minLength(9)),
       apt: new FormControl('', Validators.required)
     });
+  }
+
+  updateProfile(form: NgForm): void {
+    this.usersService.edit(this.user).subscribe(
+      (user) => {
+        this.profileForm.reset();
+        this.router.navigate(['/home', 'profile', this.user.id]);
+      },
+      (error) => {
+        this.apiError = error.message;
+      }
+    );
   }
 
 }

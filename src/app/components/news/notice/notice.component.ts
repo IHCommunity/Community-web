@@ -2,6 +2,7 @@ import { SessionService } from './../../../shared/services/session.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Notice } from '../../../shared/model/notice.model';
 import { NewsService } from '../../../shared/services/news.service';
+import { User } from '../../../shared/model/user.model';
 
 @Component({
   selector: 'app-notice',
@@ -13,6 +14,7 @@ export class NoticeComponent implements OnInit {
   @Input() newsToShow: Array<Notice>;
   @Input() news: Array<Notice>;
   @Input() newsStored: Array<Notice>;
+  user: User = this.sessionService.user;
 
   constructor(
     private sessionService: SessionService,
@@ -42,5 +44,15 @@ export class NoticeComponent implements OnInit {
   check() {
     this.newsService.check(this.notice).subscribe( notice => console.log('checked'));
     this.news.splice(this.news.indexOf(this.notice), 1);
+  }
+
+  delete() {
+    this.newsService.delete(this.notice.id).subscribe( () => {
+      if (this.news.includes(this.notice)) {
+        this.news.splice(this.news.indexOf(this.notice), 1);
+      } else {
+        this.newsStored.splice(this.newsStored.indexOf(this.notice), 1);
+      }
+    });
   }
 }
