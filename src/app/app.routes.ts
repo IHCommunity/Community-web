@@ -21,22 +21,22 @@ import { ProposalsNewsComponent } from './components/community/proposals/proposa
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, data: { depth: 0 } },
-  { path: 'login', component: LoginComponent, data: { depth: 1 } },
-  { path: 'signup', component: SignupComponent, data: { depth: 2 } },
+  { path: 'login', component: LoginComponent, data: { depth: 2 } },
+  { path: 'signup', component: SignupComponent, data: { depth: 1 } },
   { path: '', component: MainComponent, data: { depth: 3 }, children: [
-    { path: 'news', component: NewsComponent, data: { depth: 4 } },
-    { path: 'home', component: MyHomeComponent, data: { depth: 5 } },
-    { path: 'community', component: CommunityComponent, data: { depth: 6 } },
-    { path: 'neighbors', component: ChatComponent, data: { depth: 7 } }
+    { path: 'news', component: NewsComponent, data: { depth: 3 } },
+    { path: 'home', component: MyHomeComponent, data: { depth: 3 } },
+    { path: 'community', component: CommunityComponent, data: { depth: 3 } },
+    { path: 'neighbors', component: ChatComponent, data: { depth: 3 } }
   ]},
-  { path: 'news/:id', component: DetailComponent, data: { depth: 8 } },
-  { path: 'home/profile/:id', component: ProfileComponent, data: { depth: 8 } },
-  { path: 'home/profile/:id/edit', component: FormProfileComponent, data: { depth: 8 } },
-  { path: 'community/meetings', component: MeetingsComponent, data: { depth: 9 } },
-  { path: 'community/meetings/voting', component: VotingComponent, data: { depth: 9 } },
-  { path: 'community/meetings/voting/:id', component: AgreementComponent, data: { depth: 9 } },
-  { path: 'community/meetings/new', component: MeetingFormComponent, data: { depth: 10 } },
-  { path: 'community/proposals/review', component: ProposalsNewsComponent, data: { depth: 11 } },
-  { path: 'community/rules', component: RulesListComponent, data: { depth: 11 } },
-  { path: 'room/:id', component: ChatRoomComponent, data: { depth: 12 } }
+  { path: 'news/:id', component: DetailComponent, data: { depth: 4 } },
+  { path: 'home/profile/:id', component: ProfileComponent, data: { depth: 5 } },
+  { path: 'home/profile/:id/edit', component: FormProfileComponent, data: { depth: 6 } },
+  { path: 'community/meetings', component: MeetingsComponent, data: { depth: 4 } },
+  { path: 'community/meetings/voting', component: VotingComponent, data: { depth: 5 } },
+  { path: 'community/meetings/voting/:id', component: AgreementComponent, data: { depth: 6 } },
+  { path: 'community/meetings/new', component: MeetingFormComponent, data: { depth: 5 } },
+  { path: 'community/proposals/review', component: ProposalsNewsComponent, data: { depth: 4 } },
+  { path: 'community/rules', component: RulesListComponent, data: { depth: 4 } },
+  { path: 'room/:id', component: ChatRoomComponent, data: { depth: 5 } }
 ];

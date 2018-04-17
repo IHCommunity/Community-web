@@ -25,3 +25,17 @@
 .profile-row {
   margin-bottom: .75rem;
 }
+
+.profile-latch {
+  h5 {
+    margin: 1rem 0;
+    font-size: 1rem;
+    color: $lightgrey;
+    font-weight: 700;
+  }
+
+  .profile-latch-feedback {
+    display: flex;
+    align-items: center;
+  }
+}

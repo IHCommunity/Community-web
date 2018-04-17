@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../../shared/services/session.service';
 import { User } from '../../../shared/model/user.model';
 import { UsersService } from '../../../shared/services/users.service';
+import { FormGroup, Validators, FormControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -11,6 +12,10 @@ import { UsersService } from '../../../shared/services/users.service';
 export class ProfileComponent implements OnInit {
   currentUser: User = this.sessionService.user;
   user: User = new User();
+  latchVisible: Boolean = false;
+  latchForm: FormGroup;
+  code: string;
+  apiError: string;
 
   constructor(
     private sessionService: SessionService,
@@ -24,6 +29,27 @@ export class ProfileComponent implements OnInit {
       .subscribe( params => {
         this.usersService.get(params['id']).subscribe( user => this.user = user );
       });
+
+    this.latchForm = new FormGroup({
+      code: new FormControl('', Validators.required)
+    });
+  }
+
+  toggleLatch() {
+    this.latchVisible = !this.latchVisible;
+  }
+
+  pair(latchForm: NgForm) {
+    this.usersService.pair(this.code, this.user).subscribe(
+      (user) => {
+        this.latchForm.reset();
+        this.latchVisible = false;
+        this.user = user;
+      },
+      (error) => {
+        this.apiError = error.message;
+      }
+    );
   }
 
 }

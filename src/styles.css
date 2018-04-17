@@ -85,11 +85,12 @@ p {
   margin-top: 1.5rem; }
   .form .form-row {
     margin-bottom: 0; }
-  .form .btn {
-    text-align: center;
-    display: block;
-    width: 100%;
-    background-color: #2B63F6; }
+
+.btn {
+  text-align: center;
+  display: block;
+  width: 100%;
+  background-color: #2B63F6; }
 
 .login-form {
   margin-bottom: 2rem; }
@@ -154,6 +155,15 @@ p {
 
 .profile-row {
   margin-bottom: .75rem; }
+
+.profile-latch h5 {
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #999999;
+  font-weight: 700; }
+.profile-latch .profile-latch-feedback {
+  display: flex;
+  align-items: center; }
 
 .home-img-container {
   height: 100%;

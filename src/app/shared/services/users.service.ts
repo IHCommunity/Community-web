@@ -42,4 +42,10 @@ export class UsersService extends BaseApiService {
       .catch( error => this.handleError(error));
   }
 
+  pair(code, user: User): Observable<User> {
+    return this.http.put(`${UsersService.USERS_API}/${user.id}/latch`, JSON.stringify({code: code}), BaseApiService.defaultOptions)
+      .map( (res: Response) => res.json())
+      .catch( error => this.handleError(error));
+  }
+
 }
