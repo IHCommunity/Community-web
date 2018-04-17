@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="component-title">
+    <app-back></app-back>
+  </div>
+  <h1 class="component-title-outside">Payments</h1>
+  <ul class="list">
+    <li class="list-item" *ngFor="let payment of payments">
+      <div id="payment-title-description">
+        <span>{{ payment.title }}</span>
+        <span id="description">{{ payment.description }}</span>
+      </div>
+      <span>{{ payment.amount }}&#8364;<i class="material-icons">chevron_right</i></span>
+    </li>
+  </ul>
+</div>

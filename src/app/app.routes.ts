@@ -15,6 +15,7 @@ import { FormProfileComponent } from './components/my-home/form-profile/form-pro
 import { ProfileComponent } from './components/my-home/profile/profile.component';
 import { VotingComponent } from './components/community/meetings/voting/voting.component';
 import { AgreementComponent } from './components/community/meetings/agreement/agreement.component';
+import { PaymentsComponent } from './components/my-home/payments/payments.component';
 
 import { Routes } from '@angular/router';
 import { ProposalsNewsComponent } from './components/community/proposals/proposals-news/proposals-news.component';
@@ -32,6 +33,7 @@ export const routes: Routes = [
   { path: 'news/:id', component: DetailComponent, data: { depth: 4 } },
   { path: 'home/profile/:id', component: ProfileComponent, data: { depth: 5 } },
   { path: 'home/profile/:id/edit', component: FormProfileComponent, data: { depth: 6 } },
+  { path: 'home/payments', component: PaymentsComponent, data: { depth: 5 } },
   { path: 'community/meetings', component: MeetingsComponent, data: { depth: 4 } },
   { path: 'community/meetings/voting', component: VotingComponent, data: { depth: 5 } },
   { path: 'community/meetings/voting/:id', component: AgreementComponent, data: { depth: 6 } },
