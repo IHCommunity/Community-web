@@ -5,34 +5,34 @@
   </div>
   <h1 class="component-title-outside">Your profile</h1>
   <div class="profile-img-container">
-    <img [src]="user.avatar" class="circle responsive-img">
+    <img src="{{user.avatar}}" class="circle responsive-img">
   </div>
   <div class="row profile-row">
     <div class="col s6">
       <h5 class="profile-data-title">Name</h5>
-      <p class="profile-data-body">{{ user.name }}</p>
+      <p class="profile-data-body">{{ user?.name }}</p>
     </div>
     <div class="col s6">
       <h5 class="profile-data-title">Surname</h5>
-      <p class="profile-data-body">{{ user.surname }}</p>
+      <p class="profile-data-body">{{ user?.surname }}</p>
     </div>
   </div>
   <hr>
   <div class="row profile-row">
     <div class="col s6">
       <h5 class="profile-data-title">Apartment</h5>
-      <p class="profile-data-body">{{ user.apt }}</p>
+      <p class="profile-data-body">{{ user?.apt }}</p>
     </div>
     <div class="col s6" *ngIf="user.phone">
       <h5 class="profile-data-title">Phone</h5>
-      <p class="profile-data-body">{{ user.phone }}</p>
+      <p class="profile-data-body">{{ user?.phone }}</p>
     </div>
   </div>
   <hr>
   <div class="row profile-row">
     <div class="col s12">
       <h5 class="profile-data-title">Email</h5>
-      <p class="profile-data-body">{{ user.email }}</p>
+      <p class="profile-data-body">{{ user?.email }}</p>
     </div>
   </div>
   <hr>
@@ -56,6 +56,7 @@
           </div>
           <button type="submit" class="waves-effect waves-light btn" [disabled]="!latchForm.valid">Pair</button>
       </form>
+      <p class="red-text text-accent-4 fadeIn">{{ apiError }}</p>
     </div>
   </div>
 </div>

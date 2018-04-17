@@ -7,5 +7,6 @@ export class User {
   phone?: string;
   avatar: string;
   apt: string;
-  LatchId?: string;
+  latchId?: string;
+  paired: boolean;
 }

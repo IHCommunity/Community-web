@@ -44,7 +44,7 @@ export class ProfileComponent implements OnInit {
       (user) => {
         this.latchForm.reset();
         this.latchVisible = false;
-        this.user = user;
+        this.user.paired = true;
       },
       (error) => {
         this.apiError = error.message;

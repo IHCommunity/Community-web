@@ -3,9 +3,16 @@
     <h1>Home</h1>
   </div>
   <ul class="list">
-    <li class="list-item" [routerLink]="['/home', 'profile', user.id]"><span>My profile</span><i class="material-icons">chevron_right</i></li>
-    <li class="list-item" [routerLink]="['/home', 'payments']"><span>Payments</span><i class="material-icons">chevron_right</i></li>
-    <li class="list-item"><span>Configuration</span><i class="material-icons">chevron_right</i></li>
-    <li class="list-item" (click)="onClickLogout()"><span class="red-text text-accent-4">Log out</span></li>
+    <li class="list-item" [routerLink]="['/home', 'profile', user.id]">
+      <span>My profile</span>
+      <i class="material-icons">chevron_right</i>
+    </li>
+    <li class="list-item" [routerLink]="['/home', 'payments']">
+      <span>Payments</span>
+      <i class="material-icons">chevron_right</i>
+    </li>
+    <li class="list-item" (click)="onClickLogout()">
+      <span class="red-text text-accent-4">Log out</span>
+    </li>
   </ul>
 </div>
