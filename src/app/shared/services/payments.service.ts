@@ -18,4 +18,10 @@ export class PaymentsService extends BaseApiService {
       .catch(error => this.handleError(error));
   }
 
+  get(id: string): Observable<Payment> {
+    return this.http.get(`${PaymentsService.PAYMENTS_API}/${id}`, BaseApiService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
+
 }

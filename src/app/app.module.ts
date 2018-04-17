@@ -49,6 +49,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AgreementComponent } from './components/community/meetings/agreement/agreement.component';
 import { ProposalsNewsComponent } from './components/community/proposals/proposals-news/proposals-news.component';
 import { PaymentsComponent } from './components/my-home/payments/payments.component';
+import { SinglePaymentComponent } from './components/my-home/payments/single-payment/single-payment.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { PaymentsComponent } from './components/my-home/payments/payments.compon
     VotingComponent,
     AgreementComponent,
     ProposalsNewsComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    SinglePaymentComponent
   ],
   imports: [
     BrowserModule,

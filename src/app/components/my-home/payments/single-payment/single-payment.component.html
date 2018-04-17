@@ -1,0 +1,19 @@
+<div class="detail-background-info grey darken-1"></div>
+    <div class="container">
+        <div class="component-title detail-title back-title">
+            <app-back></app-back>
+            <h2>Payment</h2>
+        </div>
+    <div class="detail-container">
+        <h1>{{ payment.title }}</h1>
+        <p class="date">
+            Neighbors must pay before payment's deadline, otherwise might lose
+            Community privileges.
+        </p>
+        <p class="detail-body">{{ payment.description }}</p>
+    </div>
+</div>
+<div class="row">
+    <p class="status center col s12">Right now you <span style="color: red;">haven't</span> paid this...</p>
+    <button type="button" class="btn-large waves-effect blue col s6 offset-s3">Pay with Paypal</button>
+</div>
