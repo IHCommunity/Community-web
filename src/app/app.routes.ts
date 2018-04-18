@@ -23,16 +23,17 @@ import { ProposalsFormComponent } from './components/community/proposals/proposa
 
 import { Routes } from '@angular/router';
 import { MeetingItemComponent } from './components/community/meetings/meeting-item/meeting-item.component';
+import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, data: { depth: 0 } },
   { path: 'login', component: LoginComponent, data: { depth: 2 } },
   { path: 'signup', component: SignupComponent, data: { depth: 1 } },
-  { path: '', component: MainComponent, data: { depth: 3 }, children: [
-    { path: 'news', component: NewsComponent, data: { depth: 3 } },
-    { path: 'home', component: MyHomeComponent, data: { depth: 3 } },
-    { path: 'community', component: CommunityComponent, data: { depth: 3 } },
-    { path: 'neighbors', component: ChatComponent, data: { depth: 3 } }
+  { path: '', component: MainComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 3 }, children: [
+    { path: 'news', component: NewsComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 3 } },
+    { path: 'home', component: MyHomeComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 3 } },
+    { path: 'community', component: CommunityComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 3 } },
+    { path: 'neighbors', component: ChatComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 3 } }
   ]},
   { path: 'news/:id', component: DetailComponent, data: { depth: 4 } },
   { path: 'home/profile/:id', component: ProfileComponent, data: { depth: 5 } },

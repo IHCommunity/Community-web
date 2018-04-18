@@ -43,4 +43,8 @@ export class SessionService extends BaseApiService {
     this.user = null;
     localStorage.removeItem(CURRENT_USER_KEY);
   }
+
+  isAuthenticated(): boolean {
+    return this.user ? true : false;
+  }
 }

@@ -53,6 +53,7 @@ import { ProposalsFormComponent } from './components/community/proposals/proposa
 import { SinglePaymentComponent } from './components/my-home/payments/single-payment/single-payment.component';
 import { MeetingsResumeComponent } from './components/community/meetings/meetings-resume/meetings-resume.component';
 import { MeetingItemComponent } from './components/community/meetings/meeting-item/meeting-item.component';
+import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
 
 @NgModule({
   declarations: [
@@ -104,6 +105,7 @@ import { MeetingItemComponent } from './components/community/meetings/meeting-it
     AgreementsService,
     RulesService,
     ChatService,
+    IsAuthenticatedGuard,
     PaymentsService,
     {
       provide: ErrorHandler,
