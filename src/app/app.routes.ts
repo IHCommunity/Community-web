@@ -51,6 +51,7 @@ export const routes: Routes = [
   { path: 'community/meetings/new', component: MeetingFormComponent, data: { depth: 5 } },
   { path: 'community/meetings/resume', component: MeetingsResumeComponent, data: { depth: 5 } },
   { path: 'community/meetings/resume/:id', component: MeetingItemComponent, data: { depth: 6 } },
+  { path: 'community/meetings/resume/:meeting/:id', component: AgreementComponent, data: { depth: 7 } },
   { path: 'community/proposals/review', component: ProposalsNewsComponent, data: { depth: 4 } },
   { path: 'community/proposals/create', component: ProposalsFormComponent, data: { depth: 4 } },
   { path: 'community/rules', component: RulesListComponent, data: { depth: 4 } },

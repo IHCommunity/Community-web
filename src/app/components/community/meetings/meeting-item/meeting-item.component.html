@@ -12,11 +12,11 @@
   </div>
 
   <div class="meeting-agreements-container">
-    <div class="agreement-card" *ngFor="let agreement of meeting.agreements; let i = index">
+    <div class="agreement-card" *ngFor="let agreement of meeting.agreements; let i = index" [routerLink]="['/community', 'meetings', 'resume', meeting.id, agreement.id]">
       <h2>{{ i + 1 }}. {{ agreement.title }}</h2>
       <div class="agreement-bar">
-        <div class="disagree-bar bar" [ngStyle]="{'width': agreeWidths[i]}"></div>
-        <div class="agree-bar bar" [ngStyle]="{'width': disagreeWidths[i]}"></div>
+        <div class="disagree-bar bar" [ngStyle]="{'width': disagreeWidths[i]}"></div>
+        <div class="agree-bar bar" [ngStyle]="{'width': agreeWidths[i]}"></div>
       </div>
     </div>
   </div>
