@@ -19,6 +19,7 @@ import { PaymentsComponent } from './components/my-home/payments/payments.compon
 
 import { Routes } from '@angular/router';
 import { ProposalsNewsComponent } from './components/community/proposals/proposals-news/proposals-news.component';
+import { ProposalsFormComponent } from './components/community/proposals/proposals-form/proposals-form.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, data: { depth: 0 } },
@@ -39,6 +40,7 @@ export const routes: Routes = [
   { path: 'community/meetings/voting/:id', component: AgreementComponent, data: { depth: 6 } },
   { path: 'community/meetings/new', component: MeetingFormComponent, data: { depth: 5 } },
   { path: 'community/proposals/review', component: ProposalsNewsComponent, data: { depth: 4 } },
+  { path: 'community/proposals/create', component: ProposalsFormComponent, data: { depth: 4 } },
   { path: 'community/rules', component: RulesListComponent, data: { depth: 4 } },
   { path: 'room/:id', component: ChatRoomComponent, data: { depth: 5 } }
 ];

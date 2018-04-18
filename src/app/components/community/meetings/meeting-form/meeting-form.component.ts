@@ -31,7 +31,7 @@ export class MeetingFormComponent implements OnInit {
 
   createMeeting(form: NgForm) {
     this.meetingsService.create(this.meeting).subscribe(
-      (user) => {
+      (meeting) => {
         form.reset();
         this.router.navigate(['/news']);
       },
