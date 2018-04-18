@@ -334,7 +334,8 @@ p {
   overflow: hidden; }
   .agreement-bar .bar {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    width: 0%; }
     .agreement-bar .bar p {
       margin: 0 1.5rem 0 1.5rem;
       color: #fff;

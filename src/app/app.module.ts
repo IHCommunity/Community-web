@@ -51,6 +51,8 @@ import { ProposalsNewsComponent } from './components/community/proposals/proposa
 import { PaymentsComponent } from './components/my-home/payments/payments.component';
 import { ProposalsFormComponent } from './components/community/proposals/proposals-form/proposals-form.component';
 import { SinglePaymentComponent } from './components/my-home/payments/single-payment/single-payment.component';
+import { MeetingsResumeComponent } from './components/community/meetings/meetings-resume/meetings-resume.component';
+import { MeetingItemComponent } from './components/community/meetings/meeting-item/meeting-item.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +82,9 @@ import { SinglePaymentComponent } from './components/my-home/payments/single-pay
     ProposalsNewsComponent,
     PaymentsComponent,
     ProposalsFormComponent,
-    SinglePaymentComponent
+    SinglePaymentComponent,
+    MeetingsResumeComponent,
+    MeetingItemComponent
   ],
   imports: [
     BrowserModule,

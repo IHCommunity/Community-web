@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="component-title back-title">
+    <app-back></app-back>
+    <h2>Meeting information</h2>
+  </div>
+  <div class="agreement-card">
+    <h1>{{ meeting.title }}</h1>
+    <p class="date">
+      <i class="material-icons">access_alarm</i> {{ meeting.startDate | date:'dd MMMM y - HH:mm' }}h
+    </p>
+    <p>{{ meeting.description }}</p>
+  </div>
+
+  <div class="meeting-agreements-container">
+    <div class="agreement-card" *ngFor="let agreement of meeting.agreements; let i = index">
+      <h2>{{ i + 1 }}. {{ agreement.title }}</h2>
+      <div class="agreement-bar">
+        <div class="disagree-bar bar" [ngStyle]="{'width': agreeWidths[i]}"></div>
+        <div class="agree-bar bar" [ngStyle]="{'width': disagreeWidths[i]}"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -44,4 +44,16 @@ export class MeetingsService extends BaseApiService {
     return  { d: d, h: h, m: m, s: s };
   }
 
+  listResume(): Observable<Array<Meeting>> {
+    return this.http.get(`${MeetingsService.MEETINGS_API}/resume`, BaseApiService.defaultOptions)
+      .map( (res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
+
+  get(id: string): Observable<Meeting> {
+    return this.http.get(`${MeetingsService.MEETINGS_API}/${id}`, BaseApiService.defaultOptions)
+      .map( (res: Response) => res.json() )
+      .catch(error => this.handleError(error));
+  }
+
 }

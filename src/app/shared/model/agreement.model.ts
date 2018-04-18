@@ -8,4 +8,6 @@ export class Agreement {
   meeting: Meeting;
   agree: Array<User>;
   disagree: Array<User>;
+  agreeWidth?: string;
+  disagreeWidth?: string;
 }

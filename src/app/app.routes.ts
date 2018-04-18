@@ -1,3 +1,4 @@
+import { MeetingsResumeComponent } from './components/community/meetings/meetings-resume/meetings-resume.component';
 import { CommunityComponent } from './components/community/community.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -17,10 +18,11 @@ import { VotingComponent } from './components/community/meetings/voting/voting.c
 import { AgreementComponent } from './components/community/meetings/agreement/agreement.component';
 import { PaymentsComponent } from './components/my-home/payments/payments.component';
 import { SinglePaymentComponent } from './components/my-home/payments/single-payment/single-payment.component';
-
-import { Routes } from '@angular/router';
 import { ProposalsNewsComponent } from './components/community/proposals/proposals-news/proposals-news.component';
 import { ProposalsFormComponent } from './components/community/proposals/proposals-form/proposals-form.component';
+
+import { Routes } from '@angular/router';
+import { MeetingItemComponent } from './components/community/meetings/meeting-item/meeting-item.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, data: { depth: 0 } },
@@ -41,6 +43,8 @@ export const routes: Routes = [
   { path: 'community/meetings/voting', component: VotingComponent, data: { depth: 5 } },
   { path: 'community/meetings/voting/:id', component: AgreementComponent, data: { depth: 6 } },
   { path: 'community/meetings/new', component: MeetingFormComponent, data: { depth: 5 } },
+  { path: 'community/meetings/resume', component: MeetingsResumeComponent, data: { depth: 5 } },
+  { path: 'community/meetings/resume/:id', component: MeetingItemComponent, data: { depth: 6 } },
   { path: 'community/proposals/review', component: ProposalsNewsComponent, data: { depth: 4 } },
   { path: 'community/proposals/create', component: ProposalsFormComponent, data: { depth: 4 } },
   { path: 'community/rules', component: RulesListComponent, data: { depth: 4 } },

@@ -8,7 +8,9 @@
       <span>Create new meeting</span><i class="material-icons">chevron_right</i>
     </li>
     <li class="list-item"><span>Next meeting</span><i class="material-icons">chevron_right</i></li>
-    <li class="list-item"><span>Meetings resume</span><i class="material-icons">chevron_right</i></li>
+    <li class="list-item" [routerLink]="['/community', 'meetings', 'resume']">
+      <span>Meetings resume</span><i class="material-icons">chevron_right</i>
+    </li>
     <li class="list-item" *ngIf="activeMeeting.active" [routerLink]="['/community', 'meetings', 'voting']">
       <span>Voting</span><i class="material-icons">chevron_right</i>
     </li>
