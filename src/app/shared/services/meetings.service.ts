@@ -56,4 +56,12 @@ export class MeetingsService extends BaseApiService {
       .catch(error => this.handleError(error));
   }
 
+  getClosest(): Observable<Meeting> {
+    return this.http.get(`${MeetingsService.MEETINGS_API}/closest`, BaseApiService.defaultOptions)
+      .map( (res: Response) => {
+        return res.json();
+      })
+      .catch(error => this.handleError(error));
+  }
+
 }

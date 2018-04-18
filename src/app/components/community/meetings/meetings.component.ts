@@ -11,6 +11,7 @@ import { Meeting } from '../../../shared/model/meeting.model';
 export class MeetingsComponent implements OnInit {
   user: User = this.sessionService.user;
   activeMeeting: Meeting = new Meeting();
+  closestMeeting: Meeting = new Meeting();
 
   constructor(
     private sessionService: SessionService,
@@ -18,6 +19,7 @@ export class MeetingsComponent implements OnInit {
 
   ngOnInit() {
     this.meetingsService.getActive().subscribe( (meeting) => this.activeMeeting = meeting);
+    this.meetingsService.getClosest().subscribe( (meeting) => this.closestMeeting = meeting);
   }
 
 }

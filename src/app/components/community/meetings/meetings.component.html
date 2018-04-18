@@ -7,7 +7,15 @@
     <li *ngIf="user.role === 'admin'" class="list-item" [routerLink]="['/community', 'meetings', 'new']">
       <span>Create new meeting</span><i class="material-icons">chevron_right</i>
     </li>
-    <li class="list-item"><span>Next meeting</span><i class="material-icons">chevron_right</i></li>
+    <li class="list-item" [routerLink]="['/community', 'meetings', 'resume', closestMeeting.id]" *ngIf="closestMeeting.id">
+      <div>
+        <span>Next meeting</span>
+        <p class="date">
+          {{ closestMeeting.startDate | date:'dd MMMM y' }}
+        </p>
+      </div>
+      <i class="material-icons">chevron_right</i>
+    </li>
     <li class="list-item" [routerLink]="['/community', 'meetings', 'resume']">
       <span>Meetings resume</span><i class="material-icons">chevron_right</i>
     </li>
