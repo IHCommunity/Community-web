@@ -12,7 +12,11 @@
       <span>Meetings resume</span><i class="material-icons">chevron_right</i>
     </li>
     <li class="list-item" *ngIf="activeMeeting.active" [routerLink]="['/community', 'meetings', 'voting']">
-      <span>Voting</span><i class="material-icons">chevron_right</i>
+      <span>Voting</span>
+      <div style="display: flex; align-items: center">
+        <span class="voting-label">Active</span>
+        <i class="material-icons">chevron_right</i>
+      </div>
     </li>
   </ul>
 </div>
