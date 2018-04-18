@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="component-title">
+        <app-back></app-back>
+      </div>
+      <h1 class="component-title-outside">Create new payment</h1>
+    <form class="form login-form" [formGroup]="paymentForm" (ngSubmit)="createPayment(paymentForm)" novalidate>
+      <div class="row form-row">
+        <div class="input-field col s12">
+          <input id="title" type="text" formControlName="title" [(ngModel)]="payment.title" placeholder="Monthly payment">
+          <label for="title" class="active">Title</label>
+          <span
+            class="helper-text red-text text-accent-4"
+            *ngIf="paymentForm.get('title').errors?.required && paymentForm.get('title').touched">Required
+          </span>
+        </div>
+      </div>
+      <div class="row form-row">
+        <div class="input-field col s12">
+          <textarea id="description" class="materialize-textarea" formControlName="description" [(ngModel)]="payment.description" placeholder="Monthly fee for maintaining the building"></textarea>
+          <label for="description" class="active">Description</label>
+          <span
+            class="helper-text red-text text-accent-4"
+            *ngIf="paymentForm.get('description').errors?.required && paymentForm.get('description').touched">Required
+          </span>
+        </div>
+      </div>
+      <div class="row form-row">
+        <div class="input-field col s12">
+          <input id="amount" type="number" min="0" formControlName="amount" [(ngModel)]="payment.amount" placeholder="Amount that will be payed">
+          <label for="amount" class="active">Amount(€)</label>
+          <span
+            class="helper-text red-text text-accent-4"
+            *ngIf="paymentForm.get('amount').errors?.required && paymentForm.get('amount').touched">Required
+          </span>
+          <span
+            class="helper-text red-text text-accent-4"
+            *ngIf="paymentForm.get('amount').errors?.min && paymentForm.get('amount').touched">Amount must be greater than 0€
+          </span>
+        </div>
+      </div>
+      <button type="submit" class="waves-effect waves-light btn" [disabled]="!paymentForm.valid">Create payment</button>
+    </form>
+    <span class="center-align red-text text-accent-4 fadeIn" *ngIf="apiError">Fill the fields correctly</span>

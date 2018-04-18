@@ -11,6 +11,10 @@
       <span>Payments</span>
       <i class="material-icons">chevron_right</i>
     </li>
+    <li class="list-item" [routerLink]="['/home', 'payments', 'new']" *ngIf="user.role === 'admin'">
+      <span>Create new payment</span>
+      <i class="material-icons">chevron_right</i>
+    </li>
     <li class="list-item" (click)="onClickLogout()">
       <span class="red-text text-accent-4">Log out</span>
     </li>

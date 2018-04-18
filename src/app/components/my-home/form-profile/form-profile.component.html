@@ -42,3 +42,4 @@
     </div>
     <button type="submit" class="waves-effect waves-light btn" [disabled]="!profileForm.valid">Update</button>
   </form>
+  <span class="center-align red-text text-accent-4 fadeIn" *ngIf="apiError">Fill the fields correctly</span>

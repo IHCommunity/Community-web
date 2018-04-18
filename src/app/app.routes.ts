@@ -24,6 +24,7 @@ import { ProposalsFormComponent } from './components/community/proposals/proposa
 import { Routes } from '@angular/router';
 import { MeetingItemComponent } from './components/community/meetings/meeting-item/meeting-item.component';
 import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
+import { PaymentFormComponent } from './components/my-home/payments/payment-form/payment-form.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, data: { depth: 0 } },
@@ -38,6 +39,7 @@ export const routes: Routes = [
   { path: 'news/:id', component: DetailComponent, data: { depth: 4 } },
   { path: 'home/profile/:id', component: ProfileComponent, data: { depth: 4 } },
   { path: 'home/profile/:id/edit', component: FormProfileComponent, data: { depth: 5 } },
+  { path: 'home/payments/new', component: PaymentFormComponent, data: { depth: 4 } },
   { path: 'home/payments', component: PaymentsComponent, data: { depth: 4 } },
   { path: 'home/payments/:id', component: SinglePaymentComponent, data: { depth: 5 } },
   { path: 'community/meetings', component: MeetingsComponent, data: { depth: 4 } },

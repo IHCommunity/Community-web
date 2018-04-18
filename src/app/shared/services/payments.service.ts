@@ -31,4 +31,10 @@ export class PaymentsService extends BaseApiService {
       .catch(error => this.handleError(error));
   }
 
+  create(payment: Payment): Observable<Payment> {
+    return this.http.post(PaymentsService.PAYMENTS_API, JSON.stringify(payment), BaseApiService.defaultOptions)
+      .map( (res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
+
 }

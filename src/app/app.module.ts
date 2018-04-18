@@ -54,6 +54,7 @@ import { SinglePaymentComponent } from './components/my-home/payments/single-pay
 import { MeetingsResumeComponent } from './components/community/meetings/meetings-resume/meetings-resume.component';
 import { MeetingItemComponent } from './components/community/meetings/meeting-item/meeting-item.component';
 import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
+import { PaymentFormComponent } from './components/my-home/payments/payment-form/payment-form.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
     ProposalsFormComponent,
     SinglePaymentComponent,
     MeetingsResumeComponent,
-    MeetingItemComponent
+    MeetingItemComponent,
+    PaymentFormComponent
   ],
   imports: [
     BrowserModule,
