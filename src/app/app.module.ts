@@ -50,6 +50,7 @@ import { AgreementComponent } from './components/community/meetings/agreement/ag
 import { ProposalsNewsComponent } from './components/community/proposals/proposals-news/proposals-news.component';
 import { PaymentsComponent } from './components/my-home/payments/payments.component';
 import { ProposalsFormComponent } from './components/community/proposals/proposals-form/proposals-form.component';
+import { SinglePaymentComponent } from './components/my-home/payments/single-payment/single-payment.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { ProposalsFormComponent } from './components/community/proposals/proposa
     AgreementComponent,
     ProposalsNewsComponent,
     PaymentsComponent,
-    ProposalsFormComponent
+    ProposalsFormComponent,
+    SinglePaymentComponent
   ],
   imports: [
     BrowserModule,

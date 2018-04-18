@@ -4,7 +4,7 @@
   </div>
   <h1 class="component-title-outside">Payments</h1>
   <ul class="list">
-    <li class="list-item" *ngFor="let payment of payments">
+    <li class="list-item" *ngFor="let payment of payments" [routerLink]="['/home', 'payments', payment.id]">
       <div id="payment-title-description">
         <span>{{ payment.title }}</span>
         <span id="description">{{ payment.description }}</span>

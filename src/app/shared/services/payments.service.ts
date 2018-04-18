@@ -7,6 +7,7 @@ import { Payment } from '../model/payment.model';
 @Injectable()
 export class PaymentsService extends BaseApiService {
   private static readonly PAYMENTS_API = `${BaseApiService.BASE_API}/payment`;
+  private static readonly PAYPAL_API = `${BaseApiService.BASE_API}/paypal`;
 
   constructor(private http: Http) {
     super();
@@ -14,6 +15,18 @@ export class PaymentsService extends BaseApiService {
 
   list(): Observable<Array<Payment>> {
     return this.http.get(PaymentsService.PAYMENTS_API, BaseApiService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
+
+  get(id: string): Observable<Payment> {
+    return this.http.get(`${PaymentsService.PAYMENTS_API}/${id}`, BaseApiService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
+
+  pay(id: string): any {
+    return this.http.post(`${PaymentsService.PAYPAL_API}/${id}`, JSON.stringify({id}), BaseApiService.defaultOptions)
       .map((res: Response) => res.json())
       .catch(error => this.handleError(error));
   }
