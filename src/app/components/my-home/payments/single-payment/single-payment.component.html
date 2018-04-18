@@ -15,5 +15,7 @@
 </div>
 <div class="row">
     <p class="status center col s12">Right now you <span style="color: red;">haven't</span> paid this...</p>
-    <button type="button" class="btn-large waves-effect blue col s6 offset-s3">Pay with Paypal</button>
+    <button (click)="pay(payment.id)" 
+            type="button"
+            class="btn-large waves-effect blue col s6 offset-s3">Pay with Paypal</button>
 </div>
