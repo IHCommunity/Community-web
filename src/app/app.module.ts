@@ -55,6 +55,7 @@ import { MeetingsResumeComponent } from './components/community/meetings/meeting
 import { MeetingItemComponent } from './components/community/meetings/meeting-item/meeting-item.component';
 import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
 import { PaymentFormComponent } from './components/my-home/payments/payment-form/payment-form.component';
+import { PositiveFeedbackComponent } from './components/my-home/payments/feedback/positive-feedback/positive-feedback.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { PaymentFormComponent } from './components/my-home/payments/payment-form
     SinglePaymentComponent,
     MeetingsResumeComponent,
     MeetingItemComponent,
-    PaymentFormComponent
+    PaymentFormComponent,
+    PositiveFeedbackComponent
   ],
   imports: [
     BrowserModule,

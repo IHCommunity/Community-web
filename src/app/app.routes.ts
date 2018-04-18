@@ -25,6 +25,7 @@ import { Routes } from '@angular/router';
 import { MeetingItemComponent } from './components/community/meetings/meeting-item/meeting-item.component';
 import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
 import { PaymentFormComponent } from './components/my-home/payments/payment-form/payment-form.component';
+import { PositiveFeedbackComponent } from './components/my-home/payments/feedback/positive-feedback/positive-feedback.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, data: { depth: 0 } },
@@ -41,6 +42,8 @@ export const routes: Routes = [
   { path: 'home/profile/:id/edit', component: FormProfileComponent, data: { depth: 5 } },
   { path: 'home/payments/new', component: PaymentFormComponent, data: { depth: 4 } },
   { path: 'home/payments', component: PaymentsComponent, data: { depth: 4 } },
+  { path: 'home/payments/good', component: PositiveFeedbackComponent, data: { depth: 4, feedback: 'good' } },
+  { path: 'home/payments/wrong', component: PositiveFeedbackComponent, data: { depth: 4, feedback: 'wrong' } },
   { path: 'home/payments/:id', component: SinglePaymentComponent, data: { depth: 5 } },
   { path: 'community/meetings', component: MeetingsComponent, data: { depth: 4 } },
   { path: 'community/meetings/voting', component: VotingComponent, data: { depth: 5 } },
