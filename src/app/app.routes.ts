@@ -36,10 +36,10 @@ export const routes: Routes = [
     { path: 'neighbors', component: ChatComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 3 } }
   ]},
   { path: 'news/:id', component: DetailComponent, data: { depth: 4 } },
-  { path: 'home/profile/:id', component: ProfileComponent, data: { depth: 5 } },
-  { path: 'home/profile/:id/edit', component: FormProfileComponent, data: { depth: 6 } },
-  { path: 'home/payments', component: PaymentsComponent, data: { depth: 5 } },
-  { path: 'home/payments/:id', component: SinglePaymentComponent, data: { depth: 6 } },
+  { path: 'home/profile/:id', component: ProfileComponent, data: { depth: 4 } },
+  { path: 'home/profile/:id/edit', component: FormProfileComponent, data: { depth: 5 } },
+  { path: 'home/payments', component: PaymentsComponent, data: { depth: 4 } },
+  { path: 'home/payments/:id', component: SinglePaymentComponent, data: { depth: 5 } },
   { path: 'community/meetings', component: MeetingsComponent, data: { depth: 4 } },
   { path: 'community/meetings/voting', component: VotingComponent, data: { depth: 5 } },
   { path: 'community/meetings/voting/:id', component: AgreementComponent, data: { depth: 6 } },
@@ -49,5 +49,5 @@ export const routes: Routes = [
   { path: 'community/proposals/review', component: ProposalsNewsComponent, data: { depth: 4 } },
   { path: 'community/proposals/create', component: ProposalsFormComponent, data: { depth: 4 } },
   { path: 'community/rules', component: RulesListComponent, data: { depth: 4 } },
-  { path: 'room/:id', component: ChatRoomComponent, data: { depth: 5 } }
+  { path: 'room/:id', component: ChatRoomComponent, data: { depth: 4 } }
 ];
