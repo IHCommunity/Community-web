@@ -1,0 +1,70 @@
+.notice {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 3px 0px #C4C4C4;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  height: 9.5rem;
+  position: relative;
+}
+
+.notice-text {
+  padding: 1rem;
+  overflow: hidden;
+  z-index: 1;
+  flex-basis: 100%;
+
+  .notice-wrapper {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .notice-body {
+    margin-top: 1rem;
+  }
+}
+
+%notice-bar {
+  flex-basis: 35px;
+  width: 35px;
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  border-radius: 0 5px 5px 0;
+  padding: 0.5rem 0;
+  font-size: 1.25rem;
+
+  span {
+    display: block;
+  }
+}
+
+.notice-bar-good {
+  @extend %notice-bar;
+  background-color: $green;
+}
+.notice-bar-info {
+  @extend %notice-bar;
+  background-color: $blue;
+}
+.notice-bar-alert {
+  @extend %notice-bar;
+  background-color: $yellow;
+}
+.notice-bar-danger {
+  @extend %notice-bar;
+  background-color: $red;
+}
+.notice-bar-neutral {
+  @extend %notice-bar;
+  background-color: $lightgrey;
+}

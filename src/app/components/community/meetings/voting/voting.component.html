@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="component-title">
+      <app-back></app-back>
+    </div>
+    <div class="voting-title-container">
+      <h1>Voting</h1>
+      <span class="voting-label">Active</span>
+    </div>
+    <h2 class="component-subtitle-outside">Agenda</h2>
+    <ul class="list">
+        <li class="list-item list-item-multiple" [routerLink]="['/community', 'meetings', 'voting', agreement.id]" *ngFor="let agreement of meeting.agreements; let i = index">
+          <div class="list-agreement">
+            <span>{{i + 1}}. {{ agreement.title }}</span>
+            <div class="agreement-bar">
+              <div class="disagree-bar" [ngStyle]="{'width': disagree(agreement)}"></div>
+              <div class="agree-bar" [ngStyle]="{'width': agree(agreement)}"></div>
+            </div>
+          </div>
+          <i class="material-icons">chevron_right</i>
+        </li>
+    </ul>
+</div>

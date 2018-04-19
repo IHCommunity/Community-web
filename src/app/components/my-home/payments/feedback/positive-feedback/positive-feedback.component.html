@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="component-title">
+    <h1 class="component-title-outside" *ngIf="feedback === 'good'">Correct payment</h1>
+    <h1 class="component-title-outside" *ngIf="feedback === 'wrong'">Wrong payment</h1>
+  </div>
+  <img src="./assets/img/money.png" alt="money" class="responsive-img" style="margin-top: 2rem">
+  <p class="green-text center-align" *ngIf="feedback === 'good'">Your payment have been receive! Thank you for being up to date.</p>
+  <p class="red-text text-accent-4 center-align" *ngIf="feedback === 'wrong'">There was an error! Try again.</p>
+  <button class="waves-effect waves-light btn" [routerLink]="['/news']">Continue</button>
+</div>

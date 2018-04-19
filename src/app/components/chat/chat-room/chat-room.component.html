@@ -1,0 +1,43 @@
+<div class="chat-title-container">
+    <div class="container">
+            <div class="component-title chat-title back-title">
+                <app-back></app-back>
+                <div class="chat-user-info">
+                    <img [src]="userReceptor.avatar" class="circle responsive-img">
+                    <h2>{{ userReceptor.name }}</h2>
+                </div>
+                <i class="material-icons">more_vert</i>
+            </div>
+        </div>
+</div>
+
+<div class="" id="messages">
+    <div *ngFor="let chat of _cs.chats" class="row chat-row">
+        <div *ngIf="chat.senderId === this.sessionService.user.id"
+             class="col s12 right-align chat-message-container chat-sender-message">
+            <!-- <b class="new badge teal name">{{ this.sessionService.user.name }}</b> -->
+            <!-- <br> -->
+            <p class="chat-message">{{ chat.body }}</p>
+        </div>
+        <div *ngIf="chat.senderId !== this.sessionService.user.id"
+             class="col s12">
+            <!-- <b class="new badge red name">{{ chat.userName }}</b> -->
+            <!-- <br> -->
+            <p class="chat-message">{{ chat.body }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="chat-input-container grey lighten-5">
+    <div class="container chat-input-group">
+        <input type="text"
+        name="msg"
+        class="news-input chat-input"
+        [(ngModel)]="message"
+        (keyup.enter)="sendMessage()"
+        placeholder="Send message...">
+
+        <i class="material-icons" (click)="sendMessage()">send</i>
+    </div>
+</div>
+

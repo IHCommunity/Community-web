@@ -1,0 +1,36 @@
+<div class="detail-background-info"></div>
+<div class="login-container">
+  <div class="component-title">
+      <h1>Log in</h1>
+  </div>
+  <form class="form login-form" [formGroup]="loginForm" (ngSubmit)="doLogin(loginForm)" novalidate>
+    <div class="row form-row">
+      <div class="input-field col s12">
+        <input id="email" type="email" class="validate" formControlName="email" [(ngModel)]="user.email">
+        <label for="email">Email</label>
+        <span
+        *ngIf="loginForm.get('email').errors?.required && loginForm.get('password').touched"
+        class="helper-text red-text text-accent-4 fadeIn">Email is required</span>
+        <span
+        *ngIf="loginForm.get('email').errors?.email && loginForm.get('password').touched"
+        class="helper-text red-text text-accent-4 fadeIn">Introduce a valid email</span>
+      </div>
+    </div>
+    <div class="row form-row">
+      <div class="input-field col s12">
+        <input id="password" type="password" class="validate" formControlName="password" [(ngModel)]="user.password">
+        <label for="password">Password</label>
+        <span
+        *ngIf="loginForm.get('password').errors?.required && loginForm.get('password').touched"
+        class="helper-text red-text text-accent-4 fadeIn">Password is required</span>
+      </div>
+    </div>
+    <button type="submit" class="waves-effect waves-light btn" [disabled]="!loginForm.valid">Submit</button>
+  </form>
+  <span class="center-align red-text text-accent-4 fadeIn" *ngIf="apiError"> {{ apiError }}</span>
+  <hr>
+  <div class="login-register">
+    <p>Not registered yet?</p>
+    <a [routerLink]="['/signup']">Create an Account</a>
+  </div>
+</div>

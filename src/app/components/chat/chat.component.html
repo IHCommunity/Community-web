@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="component-title">
+    <h1>Neighbors Chat</h1>
+  </div>
+  <ul class="list">
+    <li class="list-item list-item-multiple" *ngFor="let user of users" [routerLink]="['/room', user.id]">
+        <div class="list-item-user">
+            <img [src]="user.avatar" class="responsive-img circle">
+            <span>{{ user.name }}</span>
+        </div>
+        <i class="material-icons">chevron_right</i>
+    </li>
+  </ul>
+</div>

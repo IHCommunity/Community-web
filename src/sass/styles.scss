@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box !important;
+}
+
+@import 'mixins';
+@import 'variables';
+@import 'animations';
+@import 'texts';
+@import 'navbar';
+@import 'form';
+@import 'list';
+@import 'profile';
+@import 'home';
+@import 'notice';
+@import 'detail';
+@import 'news';
+@import 'agreements';
+@import 'chats';
+
+hr {
+  border-color: $greyborder;
+  border-style: solid;
+}
+
+.back-button {
+  margin-right: 1.5rem;
+}
+
+.component-title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.component-title-outside {
+  margin-top: 1rem;
+}
+
+.component-subtitle-outside {
+  margin-top: 1rem;
+}
+
+.router-container {
+  position: relative;
+
+  > * {
+    display: block;
+  }
+}
+
+.back-title {
+  justify-content: flex-start !important;
+  align-items: center;
+}
+
+.chat-title {
+  justify-content: space-between !important;
+  align-items: center;
+}

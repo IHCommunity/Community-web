@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="component-title back-title">
+    <app-back></app-back>
+    <h2>Propose a new notice</h2>
+  </div>
+  <form class="form login-form" [formGroup]="noticeForm" (ngSubmit)="createNotice(noticeForm)" novalidate>
+      <div class="row form-row">
+        <div class="input-field col s12">
+          <input id="title" type="text" formControlName="title" [(ngModel)]="notice.title" placeholder="Introduce the title of this notice">
+          <label for="title" class="active">Title</label>
+          <span
+            class="helper-text red-text text-accent-4"
+            *ngIf="noticeForm.get('title').errors?.required && noticeForm.get('title').touched">Required
+          </span>
+        </div>
+      </div>
+      <div class="row form-row">
+        <div class="input-field col s12">
+          <textarea id="description" class="materialize-textarea" formControlName="description" [(ngModel)]="notice.description" placeholder="Introduce the description of this notice"></textarea>
+          <label for="description" class="active">Description</label>
+          <span
+            class="helper-text red-text text-accent-4"
+            *ngIf="noticeForm.get('description').errors?.required && noticeForm.get('description').touched">Required
+          </span>
+        </div>
+      </div>
+      <div class="row form-row">
+        <div class="input-field col s12">
+          <input id="deadline" class="datepicker" type="text" formControlName="deadline" [(ngModel)]="notice.deadline" placeholder="Introduce the deadline day">
+          <input id="time" class="timepicker" type="text" placeholder="Introduce the deadline time">
+          <label for="deadline" class="active">Deadline</label>
+        </div>
+      </div>
+      <div class="row form-row">
+        <div class="input-field col s12">
+          <select id="type" [(ngModel)]="notice.type" formControlName="type" >
+            <option *ngFor="let type of types" value={{type}}  [selected]="type === 'neutral'">{{type}}</option>
+          </select>
+          <label for="type">Type</label>
+        </div>
+      </div>
+      <button type="submit" class="waves-effect waves-light btn">Propose notice</button>
+    </form>
+    <span class="center-align red-text text-accent-4 form-help" *ngIf="apiError">There was an error, fill the fields correctly</span>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="component-title">
+        <h1>News</h1>
+        <i (click)="toggleInput()" class="material-icons">{{icon}}</i>
+    </div>
+    <input class="news-input" [(ngModel)]="pattern" placeholder="Type to search news..." type="text" *ngIf="visible">
+    <hr>
+    <div class="news-list-options">
+        <div (click)="toggleStoredNews($event)" class="news-received-btn" [ngClass]="{'active': !storedVisible}">Received</div>
+        <div (click)="toggleStoredNews($event)" class="news-stored-btn" [ngClass]="{'active': storedVisible}">Stored</div>
+    </div>
+    <div class="row news-list">
+        <div class="col s12" *ngFor="let notice of newsToShow | search:'title':pattern | order" style="padding: 0">
+            <app-notice [notice]="notice" [newsToShow]="newsToShow" [news]="news" [newsStored]="newsStored"></app-notice>
+        </div>
+    </div>
+</div>

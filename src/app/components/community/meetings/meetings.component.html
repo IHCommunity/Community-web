@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="component-title">
+    <app-back></app-back>
+  </div>
+  <h1 class="component-title-outside">Meetings</h1>
+  <ul class="list">
+    <li *ngIf="user.role === 'admin'" class="list-item" [routerLink]="['/community', 'meetings', 'new']">
+      <span>Create new meeting</span><i class="material-icons">chevron_right</i>
+    </li>
+    <li class="list-item" [routerLink]="['/community', 'meetings', 'resume', closestMeeting.id]" *ngIf="closestMeeting.id">
+      <div>
+        <span>Next meeting</span>
+        <p class="date">
+          {{ closestMeeting.startDate | date:'dd MMMM y' }}
+        </p>
+      </div>
+      <i class="material-icons">chevron_right</i>
+    </li>
+    <li class="list-item" [routerLink]="['/community', 'meetings', 'resume']">
+      <span>Meetings resume</span><i class="material-icons">chevron_right</i>
+    </li>
+    <li class="list-item" *ngIf="activeMeeting.active" [routerLink]="['/community', 'meetings', 'voting']">
+      <span>Voting</span>
+      <div style="display: flex; align-items: center">
+        <span class="voting-label">Active</span>
+        <i class="material-icons">chevron_right</i>
+      </div>
+    </li>
+  </ul>
+</div>

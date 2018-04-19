@@ -1,0 +1,47 @@
+.home-img-container {
+  height: 100%;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  z-index: -1;
+}
+
+.home-img {
+  min-height: 100vh;
+  min-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.home-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  text-transform: uppercase;
+
+  a {
+    padding: .75rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+
+.home-logo {
+  text-align: center;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.5rem;
+  width: 70%;
+  max-width: 500px;
+}

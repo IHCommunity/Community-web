@@ -1,0 +1,39 @@
+.list-item {
+  font-family: "CircularStd", Helvetica, sans-serif;
+  padding: 2.75rem 0;
+  border-bottom: 1px solid $greyborder;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  i {
+    color: $lightgrey;
+  }
+
+  .list-item-title {
+    font-weight: 700;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .list-item-user {
+    display: flex;
+    align-items: center;
+
+    img {
+      max-height: 50px;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.list-item-multiple {
+  padding: 1.5rem 0;
+}
+
+.list-agreement {
+  width: 100%;
+}

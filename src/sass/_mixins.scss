@@ -1,0 +1,18 @@
+@mixin font-face($font-family, $file-name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url("./assets/fonts/#{$file-name}.woff") format("woff");
+  }
+}
+
+@mixin linear-gradient($from, $to) {
+  background: $to;
+	background: -moz-linear-gradient(left, $from 0%, $to 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,$from), color-stop(100%,$to));
+	background: -webkit-linear-gradient(left, $from 0%,$to 100%);
+	background: -o-linear-gradient(left, $from 0%,$to 100%);
+	background: linear-gradient(to right, $from 0%,$to 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#{$from}, endColorstr=#{$to})
+}

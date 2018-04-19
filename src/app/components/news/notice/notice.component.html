@@ -1,0 +1,21 @@
+<div class="notice">
+  <div class="notice-text" [routerLink]="['/news', notice.id]">
+    <div class="notice-wrapper">
+        <h5>
+            {{ notice.title}}
+        </h5>
+        <p class="date">
+          <i class="material-icons">access_alarm</i> {{ notice.deadline | date:'dd MMMM y - HH:mm' }}
+        </p>
+        <p class="notice-body">
+          {{ notice.description }}
+        </p>
+    </div>
+  </div>
+  <div class="notice-bar-{{notice.type}}">
+    <span *ngIf="news.includes(notice) && notice.checkedByAdmin === true" (click)="toggleStore()">&#x2714;</span>
+    <span *ngIf="news.includes(notice) && notice.checkedByAdmin === false" (click)="check()">&#x2714;</span>
+    <span *ngIf="newsStored?.includes(notice)" (click)="toggleStore()">&#x2190;</span>
+    <span *ngIf="(news.includes(notice) || newsStored?.includes(notice)) && user.role === 'admin'" (click)="delete()">&#x2718;</span>
+  </div>
+</div>

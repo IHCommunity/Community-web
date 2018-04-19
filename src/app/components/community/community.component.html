@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="component-title">
+    <h1>Community</h1>
+  </div>
+  <ul class="list">
+    <li class="list-item" [routerLink]="['/community', 'meetings']">
+      <span>Meetings</span><i class="material-icons">chevron_right</i>
+    </li>
+    <li class="list-item" [routerLink]="['/community', 'proposals', 'review']" *ngIf="user.role === 'admin'">
+      <span>News proposals</span><i class="material-icons">chevron_right</i>
+    </li>
+    <li class="list-item" [routerLink]="['/community', 'proposals', 'create']" *ngIf="user.role === 'user'">
+      <span>News proposals</span><i class="material-icons">chevron_right</i>
+    </li>
+    <li class="list-item" [routerLink]="['/community', 'rules']">
+      <span>Rules</span><i class="material-icons">chevron_right</i>
+    </li>
+  </ul>
+</div>
