@@ -199,11 +199,13 @@ p {
 .home-logo {
   text-align: center;
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  width: 70%;
+  max-width: 500px; }
 
 .notice {
   width: 100%;
