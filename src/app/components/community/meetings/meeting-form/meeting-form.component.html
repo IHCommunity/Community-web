@@ -6,28 +6,39 @@
     <form class="form login-form" [formGroup]="meetingForm" (ngSubmit)="createMeeting(meetingForm)" novalidate>
       <div class="row form-row">
         <div class="input-field col s12">
-          <input id="title" type="text" formControlName="title" [(ngModel)]="meeting.title">
-          <label for="title">Title</label>
+          <input id="title" type="text" formControlName="title" [(ngModel)]="meeting.title" placeholder="Introduce the title of the meeting">
+          <label for="title" class="active">Title</label>
+          <span
+            class="helper-text red-text text-accent-4"
+            *ngIf="meetingForm.get('title').errors?.required && meetingForm.get('title').touched">Required
+          </span>
         </div>
       </div>
       <div class="row form-row">
         <div class="input-field col s12">
-          <textarea id="description" class="materialize-textarea" formControlName="description" [(ngModel)]="meeting.description"></textarea>
-          <label for="description">Description</label>
+          <textarea id="description" class="materialize-textarea" formControlName="description" [(ngModel)]="meeting.description" placeholder="Introduce a description for the meeting"></textarea>
+          <label for="description" class="active">Description</label>
+          <span
+            class="helper-text red-text text-accent-4"
+            *ngIf="meetingForm.get('description').errors?.required && meetingForm.get('description').touched">Required
+          </span>
         </div>
       </div>
       <div class="row form-row">
         <div class="input-field col s12">
-          <input id="startdate" type="text" formControlName="startDate" [(ngModel)]="meeting.startDate">
-          <label for="startdate">Start Date</label>
+          <input id="startdate" class="datepicker" type="text" formControlName="startDate" [(ngModel)]="meeting.startDate" placeholder="Introduce the day the meeting will start">
+          <input id="start-time" class="timepicker" type="text" placeholder="Introduce the time the meeting will start">
+          <label for="startdate" class="active">Start Date</label>
         </div>
       </div>
       <div class="row form-row">
         <div class="input-field col s12">
-          <input id="deadline" type="text" formControlName="deadLine" [(ngModel)]="meeting.deadLine">
-          <label for="deadline">End Date</label>
+          <input id="deadline" class="datepicker" type="text" formControlName="deadLine" [(ngModel)]="meeting.deadLine" placeholder="Introduce the day the voting will end">
+          <input id="deadline-time" class="timepicker" type="text" placeholder="Introduce the time the voting will end">
+          <label for="deadline" class="active">End Date</label>
         </div>
       </div>
-      <button type="submit" class="waves-effect waves-light btn" [disabled]="!meetingForm.valid">Create</button>
+      <button type="submit" class="waves-effect waves-light btn">Create meeting</button>
     </form>
+    <span class="center-align red-text text-accent-4 form-help" *ngIf="apiError">There was an error, fill the fields correctly</span>
 </div>

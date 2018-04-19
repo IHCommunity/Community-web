@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="component-title">
+      <h1>Create new agreement</h1>
+    </div>
+    <form class="form login-form" [formGroup]="agreementForm" (ngSubmit)="createAgreement(agreementForm)" novalidate>
+      <div class="row form-row">
+        <div class="input-field col s12">
+          <input id="title" type="text" formControlName="title" [(ngModel)]="agreement.title" placeholder="Introduce the title of the agreement">
+          <label for="title" class="active">Title</label>
+          <span
+            class="helper-text red-text text-accent-4"
+            *ngIf="agreementForm.get('title').errors?.required && agreementForm.get('title').touched">Required
+          </span>
+        </div>
+      </div>
+      <div class="row form-row">
+        <div class="input-field col s12">
+          <textarea id="description" class="materialize-textarea" formControlName="description" [(ngModel)]="agreement.description" placeholder="Introduce a description for the agreement"></textarea>
+          <label for="description" class="active">Description</label>
+          <span
+            class="helper-text red-text text-accent-4"
+            *ngIf="agreementForm.get('description').errors?.required && agreementForm.get('description').touched">Required
+          </span>
+        </div>
+      </div>
+      <button type="submit" class="waves-effect waves-light btn" [disabled]="!agreementForm.valid">Create agreement</button>
+    </form>
+    <span class="center-align red-text text-accent-4 fadeIn" *ngIf="apiError">There was an error, fill the fields correctly</span>
+    <span class="center-align green-text fadeIn" *ngIf="created">You correctly created an agreement for this meeting</span>
+    <a [routerLink]="['/news']">There are enough agreements for this meeting, bring me back to the app!</a>
+</div>

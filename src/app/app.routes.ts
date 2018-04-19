@@ -26,6 +26,7 @@ import { MeetingItemComponent } from './components/community/meetings/meeting-it
 import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
 import { PaymentFormComponent } from './components/my-home/payments/payment-form/payment-form.component';
 import { PositiveFeedbackComponent } from './components/my-home/payments/feedback/positive-feedback/positive-feedback.component';
+import { AgreementFormComponent } from './components/community/meetings/agreement-form/agreement-form.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, data: { depth: 0 } },
@@ -49,6 +50,7 @@ export const routes: Routes = [
   { path: 'community/meetings/voting', component: VotingComponent, data: { depth: 5 } },
   { path: 'community/meetings/voting/:id', component: AgreementComponent, data: { depth: 6 } },
   { path: 'community/meetings/new', component: MeetingFormComponent, data: { depth: 5 } },
+  { path: 'community/meetings/new/:id/agreements', component: AgreementFormComponent, data: { depth: 6 } },
   { path: 'community/meetings/resume', component: MeetingsResumeComponent, data: { depth: 5 } },
   { path: 'community/meetings/resume/:id', component: MeetingItemComponent, data: { depth: 6 } },
   { path: 'community/meetings/resume/:meeting/:id', component: AgreementComponent, data: { depth: 7 } },

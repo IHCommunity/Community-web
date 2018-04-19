@@ -45,7 +45,7 @@ export class ProposalsFormComponent implements OnInit, AfterViewInit {
     let deadline: any = document.getElementById('deadline');
     const time: any = document.getElementById('time');
     if (deadline.value) {
-      time.value = !time.value ? '23:59' : '';
+      time.value = !time.value ? '23:59' : time.value;
       deadline = `${deadline.value}T${time.value}:00.810`;
       this.notice.deadline = new Date(deadline);
     }
