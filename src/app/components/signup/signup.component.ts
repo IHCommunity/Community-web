@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   user: User = new User();
-  signupForm: FormGroup;
+  signupForm;
 
   apiError: string;
 

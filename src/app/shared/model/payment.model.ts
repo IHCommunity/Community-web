@@ -3,4 +3,5 @@ export class Payment {
   title: string;
   description: string;
   debtors?: Array<string>;
+  amount: number;
 }

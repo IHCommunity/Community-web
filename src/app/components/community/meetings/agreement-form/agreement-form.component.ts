@@ -10,7 +10,7 @@ import { FormGroup, Validators, FormControl, NgForm } from '@angular/forms';
 })
 export class AgreementFormComponent implements OnInit {
   agreement: Agreement = new Agreement();
-  agreementForm: FormGroup;
+  agreementForm;
   meetingId: string;
 
   created: Boolean = false;

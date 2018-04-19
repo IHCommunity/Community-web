@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   user: User = new User();
-  loginForm: FormGroup;
+  loginForm;
 
   apiError: string;
 

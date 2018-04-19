@@ -14,6 +14,7 @@ export class NewsComponent implements OnInit, OnChanges {
   visible: Boolean = false;
   icon: String = 'search';
   storedVisible: Boolean = false;
+  pattern: String;
 
   constructor(
     private newsService: NewsService,

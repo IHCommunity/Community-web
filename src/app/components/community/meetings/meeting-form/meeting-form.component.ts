@@ -11,7 +11,7 @@ declare var M: any;
 })
 export class MeetingFormComponent implements OnInit, AfterViewInit {
   meeting: Meeting = new Meeting();
-  meetingForm: FormGroup;
+  meetingForm;
 
   apiError: string;
 

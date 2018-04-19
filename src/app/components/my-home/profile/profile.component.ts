@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   currentUser: User = this.sessionService.user;
   user: User = new User();
   latchVisible: Boolean = false;
-  latchForm: FormGroup;
+  latchForm;
   code: string;
   apiError: string;
 

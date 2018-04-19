@@ -9,6 +9,7 @@ export class User {
   apt: string;
   latchId?: string;
   paired: boolean;
+  role: string;
 
   static fromJson(user: User): User {
     return Object.assign(new User(), user);

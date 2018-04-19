@@ -10,7 +10,7 @@ import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 })
 export class FormProfileComponent implements OnInit {
   user: User = new User();
-  profileForm: FormGroup;
+  profileForm;
   apiError: string;
 
   @ViewChild('avatarFile') avatarFile;

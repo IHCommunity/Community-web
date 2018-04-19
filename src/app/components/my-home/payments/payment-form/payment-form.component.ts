@@ -9,7 +9,7 @@ import { PaymentsService } from '../../../../shared/services/payments.service';
   templateUrl: './payment-form.component.html'
 })
 export class PaymentFormComponent implements OnInit {
-  paymentForm: FormGroup;
+  paymentForm;
   payment: Payment = new Payment();
   apiError: string;
 

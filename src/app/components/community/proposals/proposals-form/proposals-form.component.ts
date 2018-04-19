@@ -11,7 +11,7 @@ declare var M: any;
 })
 export class ProposalsFormComponent implements OnInit, AfterViewInit {
   notice: Notice = new Notice();
-  noticeForm: FormGroup;
+  noticeForm;
   types = ['good', 'info', 'alert', 'danger', 'neutral'];
 
   apiError: string;

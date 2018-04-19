@@ -10,6 +10,7 @@ export class ProposalsNewsComponent implements OnInit {
   news: Array<Notice> = [];
   visible: Boolean = false;
   icon: String = 'search';
+  pattern: String;
 
   constructor(
     private newsService: NewsService
