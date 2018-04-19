@@ -2,7 +2,7 @@ import { User } from './../model/user.model';
 import { Observable } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { BaseApiService } from './base-api.service';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class UsersService extends BaseApiService {
@@ -20,7 +20,7 @@ export class UsersService extends BaseApiService {
 
   list(): Observable<Array<User>> {
     return this.http.get(UsersService.USERS_API, BaseApiService.defaultOptions)
-      .map( res => res.json() )
+      .map(res => res.json())
       .catch(error => this.handleError(error));
   }
 
@@ -37,7 +37,8 @@ export class UsersService extends BaseApiService {
   }
 
   edit(user: User): Observable<User> {
-    return this.http.put(`${UsersService.USERS_API}/${user.id}`, JSON.stringify(user), BaseApiService.defaultOptions)
+    user = User.fromJson(user);
+    return this.http.post(`${UsersService.USERS_API}/${user.id}`, user.asFormData(), new RequestOptions({ withCredentials: true}))
       .map( (res: Response) => res.json())
       .catch( error => this.handleError(error));
   }

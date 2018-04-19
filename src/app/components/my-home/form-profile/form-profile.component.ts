@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from '../../../shared/model/user.model';
 import { UsersService } from '../../../shared/services/users.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,6 +12,8 @@ export class FormProfileComponent implements OnInit {
   user: User = new User();
   profileForm: FormGroup;
   apiError: string;
+
+  @ViewChild('avatarFile') avatarFile;
 
   constructor(
     private routes: ActivatedRoute,
@@ -29,14 +31,21 @@ export class FormProfileComponent implements OnInit {
       name: new FormControl('', Validators.required),
       surname: new FormControl('', Validators.required),
       phone: new FormControl('', Validators.minLength(9)),
-      apt: new FormControl('', Validators.required)
+      apt: new FormControl('', Validators.required),
+      avatar: new FormControl()
     });
   }
 
   updateProfile(form: NgForm): void {
+    const avatarFile = this.avatarFile.nativeElement;
+
+    if (avatarFile.files && avatarFile.files[0]) {
+      this.user.avatar = avatarFile.files[0];
+    }
+
     this.usersService.edit(this.user).subscribe(
       (user) => {
-        this.profileForm.reset();
+        form.reset();
         this.router.navigate(['/home', 'profile', this.user.id]);
       },
       (error) => {
