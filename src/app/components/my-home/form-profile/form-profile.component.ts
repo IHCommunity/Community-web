@@ -46,7 +46,7 @@ export class FormProfileComponent implements OnInit {
     this.usersService.edit(this.user).subscribe(
       (user) => {
         form.reset();
-        this.router.navigate(['/home', 'profile', this.user.id]);
+        this.router.navigate(['/home']);
       },
       (error) => {
         this.apiError = error.message;

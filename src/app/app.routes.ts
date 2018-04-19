@@ -65,5 +65,6 @@ export const routes: Routes = [
   { path: 'community/proposals/review', component: ProposalsNewsComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: 'community/proposals/create', component: ProposalsFormComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: 'community/rules', component: RulesListComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
-  { path: 'room/:id', component: ChatRoomComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } }
+  { path: 'room/:id', component: ChatRoomComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
+  { path: '**', component: HomeComponent, data: { depth: 0 } }
 ];
