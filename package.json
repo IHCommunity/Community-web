@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod --aot --base-href 'https://IHCommunity.github.io/community-web/' && rm dist/3rdpartylicenses.txt && ngh --no-silent"
+    "deploy": "ng build --prod --aot --base-href 'https://ihcommunity.github.io/Community-web/' && rm dist/3rdpartylicenses.txt && ngh --no-silent"
   },
   "private": true,
   "dependencies": {
