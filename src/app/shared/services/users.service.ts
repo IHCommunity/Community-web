@@ -1,4 +1,5 @@
 import { User } from './../model/user.model';
+import { Notification } from './../model/notification.model';
 import { Observable } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { BaseApiService } from './base-api.service';
@@ -8,7 +9,7 @@ import { NotificationsToastsService } from './notifications.service';
 @Injectable()
 export class UsersService extends BaseApiService {
   private static readonly USERS_API = `${BaseApiService.BASE_API}/users`;
-  private message: Object = {
+  private message: Notification = {
       type: 'success',
       title: 'User Account',
       content: 'Your account has been successfully created'

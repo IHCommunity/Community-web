@@ -4,12 +4,13 @@ import { BaseApiService } from './base-api.service';
 import { Http, Response } from '@angular/http';
 import { Meeting } from '../model/meeting.model';
 import { Agreement } from '../model/agreement.model';
+import { Notification } from './../model/notification.model';
 import { NotificationsToastsService } from './notifications.service';
 
 @Injectable()
 export class MeetingsService extends BaseApiService {
   private static readonly MEETINGS_API = `${BaseApiService.BASE_API}/meetings/`;
-  private message: Object = {
+  private message: Notification = {
       type: 'success',
       title: 'New Meeting',
       content: 'Meeting successfully created'
