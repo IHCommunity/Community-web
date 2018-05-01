@@ -4,6 +4,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { SimpleNotificationsModule } from 'angular2-notifications';
 
 import './rxjs.operators';
 
@@ -42,6 +43,7 @@ import { RulesService } from './shared/services/rules.service';
 import { ChatService } from './shared/services/chat.service';
 import { AgreementsService } from './shared/services/agreements.service';
 import { PaymentsService } from './shared/services/payments.service';
+import { NotificationsToastsService } from './shared/services/notifications.service';
 
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
@@ -101,7 +103,8 @@ import { AgreementFormComponent } from './components/community/meetings/agreemen
     ReactiveFormsModule,
     HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    SimpleNotificationsModule.forRoot()
   ],
   providers: [
     NewsService,
@@ -113,6 +116,7 @@ import { AgreementFormComponent } from './components/community/meetings/agreemen
     ChatService,
     IsAuthenticatedGuard,
     PaymentsService,
+    NotificationsToastsService,
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandlerService
