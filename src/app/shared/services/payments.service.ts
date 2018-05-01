@@ -10,9 +10,9 @@ export class PaymentsService extends BaseApiService {
   private static readonly PAYMENTS_API = `${BaseApiService.BASE_API}/payment`;
   private static readonly PAYPAL_API = `${BaseApiService.BASE_API}/paypal`;
   private message: Object = {
-      type: 'info',
+      type: 'success',
       title: 'New Payment',
-      content: 'The Admin has created a new payment'
+      content: 'Payment successfuly created'
   }
 
   constructor(private http: Http, private _notifService: NotificationsToastsService) {
