@@ -12,7 +12,7 @@ export class PaymentsService extends BaseApiService {
   private message: Object = {
       type: 'success',
       title: 'New Payment',
-      content: 'Payment successfuly created'
+      content: 'Payment successfully created'
   }
 
   constructor(private http: Http, private _notifService: NotificationsToastsService) {

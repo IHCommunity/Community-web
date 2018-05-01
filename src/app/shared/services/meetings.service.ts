@@ -12,7 +12,7 @@ export class MeetingsService extends BaseApiService {
   private message: Object = {
       type: 'success',
       title: 'New Meeting',
-      content: 'Meeting successfuly created'
+      content: 'Meeting successfully created'
   }
 
   constructor(private http: Http, private _notifService: NotificationsToastsService) {

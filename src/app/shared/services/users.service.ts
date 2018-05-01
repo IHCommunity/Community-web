@@ -3,18 +3,27 @@ import { Observable } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { BaseApiService } from './base-api.service';
 import { Http, Response, RequestOptions } from '@angular/http';
+import { NotificationsToastsService } from './notifications.service';
 
 @Injectable()
 export class UsersService extends BaseApiService {
   private static readonly USERS_API = `${BaseApiService.BASE_API}/users`;
+  private message: Object = {
+      type: 'success',
+      title: 'User Account',
+      content: 'Your account has been successfully created'
+  }
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private _notifService: NotificationsToastsService) {
     super();
   }
 
   create(user: User): Observable<User> {
     return this.http.post( UsersService.USERS_API, JSON.stringify(user), BaseApiService.defaultOptions )
-      .map( res => res.json() )
+      .map( res => {
+         this._notifService.create(this.message);
+         return res.json();
+      })
       .catch( error => this.handleError(error) );
   }
 
