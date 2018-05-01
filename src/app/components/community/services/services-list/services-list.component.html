@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="component-title">
+    <app-back></app-back>
+  </div>
+  <h1 class="component-title-outside">Services</h1>
+  <ul class="list">
+    <li *ngFor="let service of services" class="list-item">
+      <div>
+          <span class="list-item-title">{{ service.title }}</span>
+          <p>{{ service.description }}</p>
+      </div>
+    </li>
+  </ul>
+</div>

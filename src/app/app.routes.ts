@@ -1,3 +1,4 @@
+import { ServicesListComponent } from './components/community/services/services-list/services-list.component';
 import { MeetingsResumeComponent } from './components/community/meetings/meetings-resume/meetings-resume.component';
 import { CommunityComponent } from './components/community/community.component';
 import { HomeComponent } from './components/home/home.component';
@@ -65,6 +66,7 @@ export const routes: Routes = [
   { path: 'community/proposals/review', component: ProposalsNewsComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: 'community/proposals/create', component: ProposalsFormComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: 'community/rules', component: RulesListComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
+  { path: 'community/services', component: ServicesListComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: 'room/:id', component: ChatRoomComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: '**', component: HomeComponent, data: { depth: 0 } }
 ];
