@@ -3,13 +3,19 @@ import { Injectable } from '@angular/core';
 import { BaseApiService } from './base-api.service';
 import { Http, Response } from '@angular/http';
 import { Payment } from '../model/payment.model';
+import { NotificationsToastsService } from './notifications.service';
 
 @Injectable()
 export class PaymentsService extends BaseApiService {
   private static readonly PAYMENTS_API = `${BaseApiService.BASE_API}/payment`;
   private static readonly PAYPAL_API = `${BaseApiService.BASE_API}/paypal`;
+  private message: Object = {
+      type: 'info',
+      title: 'New Payment',
+      content: 'The Admin has created a new payment'
+  }
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private _notifService: NotificationsToastsService) {
     super();
   }
 
@@ -33,7 +39,10 @@ export class PaymentsService extends BaseApiService {
 
   create(payment: Payment): Observable<Payment> {
     return this.http.post(PaymentsService.PAYMENTS_API, JSON.stringify(payment), BaseApiService.defaultOptions)
-      .map( (res: Response) => res.json())
+      .map( (res: Response) => {
+         this._notifService.create(this.message);
+         return res.json();
+      })
       .catch(error => this.handleError(error));
   }
 
