@@ -42,6 +42,7 @@ import { MeetingsService } from './shared/services/meetings.service';
 import { RulesService } from './shared/services/rules.service';
 import { ChatService } from './shared/services/chat.service';
 import { AgreementsService } from './shared/services/agreements.service';
+import { ServicesService } from './shared/services/services.service';
 import { PaymentsService } from './shared/services/payments.service';
 import { NotificationsToastsService } from './shared/services/notifications.service';
 
@@ -59,6 +60,7 @@ import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
 import { PaymentFormComponent } from './components/my-home/payments/payment-form/payment-form.component';
 import { PositiveFeedbackComponent } from './components/my-home/payments/feedback/positive-feedback/positive-feedback.component';
 import { AgreementFormComponent } from './components/community/meetings/agreement-form/agreement-form.component';
+import { ServicesListComponent } from './components/community/services/services-list/services-list.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +95,8 @@ import { AgreementFormComponent } from './components/community/meetings/agreemen
     MeetingItemComponent,
     PaymentFormComponent,
     PositiveFeedbackComponent,
-    AgreementFormComponent
+    AgreementFormComponent,
+    ServicesListComponent
   ],
   imports: [
     BrowserModule,
@@ -117,6 +120,7 @@ import { AgreementFormComponent } from './components/community/meetings/agreemen
     IsAuthenticatedGuard,
     PaymentsService,
     NotificationsToastsService,
+    ServicesService,
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandlerService

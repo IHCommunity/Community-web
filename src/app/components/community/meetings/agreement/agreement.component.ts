@@ -18,6 +18,10 @@ export class AgreementComponent implements OnInit {
   user: User = this.sessionService.user;
   agreeBol = false;
   disagreeBol = false;
+  agreeVotersList: Boolean = false;
+  disagreeVotersList: Boolean = false;
+  agreeVoters: Array<string> = [];
+  disagreeVoters: Array<string> = [];
 
   constructor(
     private routes: ActivatedRoute,
@@ -30,7 +34,15 @@ export class AgreementComponent implements OnInit {
     this.routes
       .params
       .subscribe( params => {
-        this.agreementsService.get(params['id']).subscribe( agreement => this.agreement = agreement );
+        this.agreementsService.get(params['id']).subscribe( agreement => {
+          this.agreement = agreement;
+          this.agreeVoters = this.agreement.agree.map(user => {
+            return `${user.apt} - ${user.name} ${user.surname}`;
+          });
+          this.disagreeVoters = this.agreement.disagree.map(user => {
+            return `${user.apt} - ${user.name} ${user.surname}`;
+          });
+        });
       });
 
     setTimeout(() => {
@@ -84,5 +96,17 @@ export class AgreementComponent implements OnInit {
 
   checkIfBigger(width: string) {
     return parseInt(width, 10) > 30;
+  }
+
+  showAgreeVoters(): void {
+    this.agreeVotersList = !this.agreeVotersList;
+
+    this.disagreeVotersList = this.disagreeVotersList ? false : false;
+  }
+
+  showDisagreeVoters(): void {
+    this.disagreeVotersList = !this.disagreeVotersList;
+
+    this.agreeVotersList = this.agreeVotersList ? false : false;
   }
 }

@@ -333,7 +333,8 @@ p {
   background-color: #E6E6E6;
   margin-top: 1rem;
   display: flex;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 0.75rem; }
   .agreement-bar .bar {
     display: flex;
     align-items: center;
@@ -365,6 +366,57 @@ p {
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#28f9b3, endColorstr=#00DF96);
     transition: all 0.6s ease;
     justify-content: flex-end; }
+
+.statement-voters-container {
+  position: absolute;
+  width: 100%; }
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  clear: both; }
+
+.triangle-red {
+  border-bottom: 10px solid #FE011A;
+  margin-left: 1rem; }
+
+.triangle-green {
+  border-bottom: 10px solid #00DF96;
+  float: right;
+  margin-right: 1rem; }
+
+.statement-voters {
+  padding: 1rem;
+  border-radius: 0.3125rem;
+  width: fit-content;
+  clear: both; }
+  .statement-voters p {
+    color: #fff;
+    margin-bottom: 0; }
+  .statement-voters p:first-child {
+    margin-top: 0; }
+
+.disagree-voters {
+  background: #fe3448;
+  background: -moz-linear-gradient(left, #FE011A 0%, #fe3448 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #FE011A), color-stop(100%, #fe3448));
+  background: -webkit-linear-gradient(left, #FE011A 0%, #fe3448 100%);
+  background: -o-linear-gradient(left, #FE011A 0%, #fe3448 100%);
+  background: linear-gradient(to right, #FE011A 0%, #fe3448 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#FE011A, endColorstr=#fe3448); }
+
+.agree-voters {
+  background: #00DF96;
+  background: -moz-linear-gradient(left, #28f9b3 0%, #00DF96 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #28f9b3), color-stop(100%, #00DF96));
+  background: -webkit-linear-gradient(left, #28f9b3 0%, #00DF96 100%);
+  background: -o-linear-gradient(left, #28f9b3 0%, #00DF96 100%);
+  background: linear-gradient(to right, #28f9b3 0%, #00DF96 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#28f9b3, endColorstr=#00DF96);
+  float: right; }
 
 .agreement-bar-big {
   height: 3rem; }
@@ -423,7 +475,8 @@ p {
   color: #999999;
   text-align: center;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  clear: both; }
 
 .chat-title {
   margin-bottom: 1.5rem; }

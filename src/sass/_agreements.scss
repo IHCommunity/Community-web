@@ -13,6 +13,7 @@
   margin-top: 1rem;
   display: flex;
   overflow: hidden;
+  margin-bottom: 0.75rem;
 
   .bar {
     display: flex;
@@ -41,6 +42,56 @@
     
     justify-content: flex-end;
   }
+}
+
+.statement-voters-container {
+  position: absolute;
+  width: 100%;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  clear: both;
+}
+
+.triangle-red {
+  border-bottom: 10px solid $red;
+  margin-left: 1rem;
+}
+
+.triangle-green {
+  border-bottom: 10px solid $green;
+  float: right;
+  margin-right: 1rem;
+}
+
+.statement-voters {
+  padding: 1rem;
+  border-radius: 0.3125rem;
+  width: fit-content;
+  clear: both;
+
+  p {
+    color: #fff;
+    margin-bottom: 0;
+  }
+
+  p:first-child {
+    margin-top: 0;
+  }
+}
+
+.disagree-voters {
+  @include linear-gradient($red, $lightred);
+}
+
+.agree-voters {
+  @include linear-gradient($lightgreen, $green);
+  float: right;
 }
 
 .agreement-bar-big {
@@ -108,4 +159,5 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  clear: both;
 }
