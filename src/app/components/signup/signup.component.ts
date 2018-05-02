@@ -55,8 +55,6 @@ export class SignupComponent implements OnInit {
   }
 
   emailInUse(control: FormControl): Promise<any> | Observable <any> {
-    console.log('hola');
-    console.log(this.signupForm.get('email'));
     let emailFromBack;
 
     this.usersService.checkEmail({email: control.value}).subscribe(
