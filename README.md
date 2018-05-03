@@ -1,27 +1,43 @@
 # CommunityWeb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
+This project was designed by [Alba Díaz Díaz](https://www.linkedin.com/in/diazaltriangulo/) and developed by [Marco Monzón Ipaguirre](https://www.linkedin.com/in/marcomonzon/) and [Pablo Laso Cortabitarte](https://www.linkedin.com/in/pablolaso/).
 
-## Development server
+Community is a digital product to improve neighborhood coexistence.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![Community](https://res.cloudinary.com/plasocloud/image/upload/v1525340341/home.png)
 
-## Code scaffolding
+## Technologies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This project has been develop using Angular 5 as a Javascript framework. Besides, we used SASS as a CSS preprocessor, Paypal for the payments, Node for our backend and Firebase to implement the chat.
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### Bulletin board
 
-## Running unit tests
+Users can propose news that will be aproved or not by admins. Besides, they can assign the priority of the notice.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Bulletin board](https://res.cloudinary.com/plasocloud/image/upload/v1525340894/news.png)
 
-## Running end-to-end tests
+### Payments
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Admins can create payments so the community account will be managed from the app. The payments are done via Paypal.
 
-## Further help
+![Payments](https://res.cloudinary.com/plasocloud/image/upload/v1525341172/payment.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Rules
+
+Instead of having a paper with the rules, you can have your rules published in the app.
+
+![Rules](https://res.cloudinary.com/plasocloud/image/upload/v1525341523/rules.png)
+
+### Meetings
+
+Traditional meetings can be replaced by our digitized ones. Admins create the meeting with an starting and ending hour in order to be able to vote for the different meetings agreements.
+
+![Meetings](https://res.cloudinary.com/plasocloud/image/upload/v1525341994/voting.png)
+
+### Chat
+
+We provide users a chat feature so they can communicate with their neighboors even if they don't have their number.
+
+![Chat](https://res.cloudinary.com/plasocloud/image/upload/v1525342402/chat.png)
