@@ -1,6 +1,6 @@
 # CommunityWeb
 
-This project was designed by [Alba Díaz Díaz](https://www.linkedin.com/in/diazaltriangulo/) and developed by [Marco Monzón Ipaguirre](https://www.linkedin.com/in/marcomonzon/) and [Pablo Laso Cortabitarte](https://www.linkedin.com/in/pablolaso/).
+This project was designed by [Alba Díaz Díaz](https://www.linkedin.com/in/diazaltriangulo/) and developed by [Marco Monzón Iparraguirre](https://www.linkedin.com/in/marcomonzon/) and [Pablo Laso Cortabitarte](https://www.linkedin.com/in/pablolaso/).
 
 Community is a digital product to improve neighborhood coexistence.
 
