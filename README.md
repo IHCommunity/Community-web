@@ -8,7 +8,12 @@ Community is a digital product to improve neighborhood coexistence.
 
 ## Technologies
 
-This project has been develop using Angular 5 as a Javascript framework. Besides, we used SASS as a CSS preprocessor, Paypal for the payments, Node for our backend and Firebase to implement the chat.
+* This project has been develop using Angular 5 as a Javascript framework.
+* We used SASS as a CSS preprocessor
+* Paypal for the payments 
+* Node for our backend and Firebase to implement the chat.
+* Passport with local strategy for authentication.
+* Cloudinary to host our images.
 
 ## Features
 
