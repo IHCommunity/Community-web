@@ -13,9 +13,11 @@
     </div>
   </div>
   <div class="notice-bar-{{notice.type}}">
-    <span *ngIf="news.includes(notice) && notice.checkedByAdmin === true" (click)="toggleStore()">&#x2714;</span>
-    <span *ngIf="news.includes(notice) && notice.checkedByAdmin === false" (click)="check()">&#x2714;</span>
-    <span *ngIf="newsStored?.includes(notice)" (click)="toggleStore()">&#x2190;</span>
-    <span *ngIf="(news.includes(notice) || newsStored?.includes(notice)) && user.role === 'admin'" (click)="delete()">&#x2718;</span>
+    <div>
+      <span *ngIf="news.includes(notice) && notice.checkedByAdmin === true" (click)="toggleStore()"><i class="material-icons">check</i></span>
+      <span *ngIf="news.includes(notice) && notice.checkedByAdmin === false" (click)="check()"><i class="material-icons">check</i></span>
+      <span *ngIf="newsStored?.includes(notice)" (click)="toggleStore()"><i class="material-icons">arrow_back</i></span>
+    </div>
+    <span *ngIf="(news.includes(notice) || newsStored?.includes(notice)) && user.role === 'admin'" (click)="delete()"><i class="material-icons">close</i></span>
   </div>
 </div>

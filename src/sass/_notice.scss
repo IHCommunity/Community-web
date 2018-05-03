@@ -8,6 +8,10 @@
   margin-top: 1.5rem;
   height: 9.5rem;
   position: relative;
+
+  i {
+    font-weight: 700;
+  }
 }
 
 .notice-text {
@@ -42,6 +46,9 @@
   border-radius: 0 5px 5px 0;
   padding: 0.5rem 0;
   font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   span {
     display: block;
