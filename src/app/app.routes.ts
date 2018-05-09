@@ -21,6 +21,7 @@ import { PaymentsComponent } from './components/my-home/payments/payments.compon
 import { SinglePaymentComponent } from './components/my-home/payments/single-payment/single-payment.component';
 import { ProposalsNewsComponent } from './components/community/proposals/proposals-news/proposals-news.component';
 import { ProposalsFormComponent } from './components/community/proposals/proposals-form/proposals-form.component';
+import { BotComponent } from './components/bot/bot.component';
 
 import { Routes } from '@angular/router';
 import { MeetingItemComponent } from './components/community/meetings/meeting-item/meeting-item.component';
@@ -68,5 +69,6 @@ export const routes: Routes = [
   { path: 'community/rules', component: RulesListComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: 'community/services', component: ServicesListComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: 'room/:id', component: ChatRoomComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
+  { path: '[*_*]', component: BotComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: '**', component: HomeComponent, data: { depth: 0 } }
 ];
