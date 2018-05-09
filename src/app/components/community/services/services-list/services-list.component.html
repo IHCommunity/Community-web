@@ -4,7 +4,7 @@
   </div>
   <h1 class="component-title-outside">Services</h1>
   <ul class="list">
-    <li *ngFor="let service of services" class="list-item">
+    <li *ngFor="let service of services" class="list-item" [routerLink]="['/community', 'services', service.id]">
       <div>
           <span class="list-item-title">{{ service.title }}</span>
           <p>{{ service.description }}</p>

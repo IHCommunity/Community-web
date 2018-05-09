@@ -17,4 +17,10 @@ export class ServicesService extends BaseApiService {
       .map((res: Response) => res.json())
       .catch(error => this.handleError(error));
   }
+
+  get(id): Observable<Service> {
+    return this.http.get(`${ServicesService.SERVICES_API}/${id}`, BaseApiService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
 }

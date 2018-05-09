@@ -61,6 +61,7 @@ import { PaymentFormComponent } from './components/my-home/payments/payment-form
 import { PositiveFeedbackComponent } from './components/my-home/payments/feedback/positive-feedback/positive-feedback.component';
 import { AgreementFormComponent } from './components/community/meetings/agreement-form/agreement-form.component';
 import { ServicesListComponent } from './components/community/services/services-list/services-list.component';
+import { ServicesItemComponent } from './components/community/services/services-item/services-item.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { ServicesListComponent } from './components/community/services/services-
     PaymentFormComponent,
     PositiveFeedbackComponent,
     AgreementFormComponent,
-    ServicesListComponent
+    ServicesListComponent,
+    ServicesItemComponent
   ],
   imports: [
     BrowserModule,
