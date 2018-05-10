@@ -1,6 +1,6 @@
 <nav class="navbar">
   <ul class="navbar-list">
-    
+
     <li class="navbar-item" routerLinkActive="active">
       <a [routerLink]="['/news']">
         <div class="navbar-icon">
@@ -9,7 +9,7 @@
         <span>news</span>
       </a>
     </li>
-    
+
     <li class="navbar-item" routerLinkActive="active">
       <a [routerLink]="['/home']">
         <div class="navbar-icon">
@@ -18,7 +18,7 @@
         <span>home</span>
       </a>
     </li>
-    
+
     <li class="navbar-item" routerLinkActive="active">
       <a [routerLink]="['/community']">
         <div class="navbar-icon">
@@ -27,13 +27,22 @@
         <span>community</span>
       </a>
     </li>
-    
+
     <li class="navbar-item" routerLinkActive="active">
       <a [routerLink]="['/neighbors']">
         <div class="navbar-icon">
           <img src="https://res.cloudinary.com/plasocloud/image/upload/v1525360566/building.png" alt="">
         </div>
         <span>neighbors</span>
+      </a>
+    </li>
+
+    <li class="navbar-item" routerLinkActive="active">
+      <a [routerLink]="['/[*_*]']">
+        <div class="navbar-icon">
+          <img src="http://blogs.aspect.com/wp-content/uploads/2016/12/Chatbot-icon-002.png" alt="">
+        </div>
+        <span>bot</span>
       </a>
     </li>
   </ul>
