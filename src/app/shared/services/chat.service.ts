@@ -9,7 +9,8 @@ export class ChatService {
   private itemsCollection: AngularFirestoreCollection<Message>;
   chats: Message[] = [];
 
-  constructor(private afs: AngularFirestore, private sessionService: SessionService) {}
+  constructor(private afs: AngularFirestore,
+              private sessionService: SessionService) {}
 
   loadMessajes(id: string) {
     this.itemsCollection = this.afs.collection<Message>('chats', ref => ref.orderBy('date', 'desc').limit(20));
