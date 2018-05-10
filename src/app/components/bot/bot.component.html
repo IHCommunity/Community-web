@@ -13,14 +13,9 @@
 
 <div class="" id="messages">
     <div *ngFor="let msg of messages | async" class="row chat-row">
-        <div *ngIf="msg.sentBy === 'bot'"
-             class="col s12 right-align chat-message-container chat-sender-message">
-             <p class="chat-message">{{ msg.content }}</p>
-        </div>
-    </div>
-    <div *ngFor="let msg of messages | async" class="row chat-row">
-        <div *ngIf="msg.sentBy === this.sessionService.user.name"
-             class="col s12 right-align chat-message-container chat-sender-message">
+        <div [ngClass]="{ 'col s12 right-align chat-message-container chat-sender-message': msg.sentBy === this.sessionService.user.name,
+                          'col s12': msg.sentBy === 'bot'}">
+
              <p class="chat-message">{{ msg.content }}</p>
         </div>
     </div>
