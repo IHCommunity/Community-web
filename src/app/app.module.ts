@@ -63,6 +63,7 @@ import { PositiveFeedbackComponent } from './components/my-home/payments/feedbac
 import { AgreementFormComponent } from './components/community/meetings/agreement-form/agreement-form.component';
 import { ServicesListComponent } from './components/community/services/services-list/services-list.component';
 import { BotComponent } from './components/bot/bot.component';
+import { ServicesItemComponent } from './components/community/services/services-item/services-item.component';
 
 @NgModule({
   declarations: [
@@ -99,11 +100,8 @@ import { BotComponent } from './components/bot/bot.component';
     PositiveFeedbackComponent,
     AgreementFormComponent,
     ServicesListComponent,
-<<<<<<< HEAD
-    BotComponent
-=======
+    BotComponent,
     ServicesItemComponent
->>>>>>> cc0d99b54200d642da82c31bc3c1cc257c9ad039
   ],
   imports: [
     BrowserModule,
