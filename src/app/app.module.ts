@@ -99,7 +99,11 @@ import { BotComponent } from './components/bot/bot.component';
     PositiveFeedbackComponent,
     AgreementFormComponent,
     ServicesListComponent,
+<<<<<<< HEAD
     BotComponent
+=======
+    ServicesItemComponent
+>>>>>>> cc0d99b54200d642da82c31bc3c1cc257c9ad039
   ],
   imports: [
     BrowserModule,
