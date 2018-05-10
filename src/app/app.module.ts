@@ -45,6 +45,7 @@ import { AgreementsService } from './shared/services/agreements.service';
 import { ServicesService } from './shared/services/services.service';
 import { PaymentsService } from './shared/services/payments.service';
 import { NotificationsToastsService } from './shared/services/notifications.service';
+import { BotService } from './shared/services/bot.service';
 
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
@@ -61,7 +62,7 @@ import { PaymentFormComponent } from './components/my-home/payments/payment-form
 import { PositiveFeedbackComponent } from './components/my-home/payments/feedback/positive-feedback/positive-feedback.component';
 import { AgreementFormComponent } from './components/community/meetings/agreement-form/agreement-form.component';
 import { ServicesListComponent } from './components/community/services/services-list/services-list.component';
-import { ServicesItemComponent } from './components/community/services/services-item/services-item.component';
+import { BotComponent } from './components/bot/bot.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,11 @@ import { ServicesItemComponent } from './components/community/services/services-
     PositiveFeedbackComponent,
     AgreementFormComponent,
     ServicesListComponent,
+<<<<<<< HEAD
+    BotComponent
+=======
     ServicesItemComponent
+>>>>>>> cc0d99b54200d642da82c31bc3c1cc257c9ad039
   ],
   imports: [
     BrowserModule,
@@ -123,6 +128,7 @@ import { ServicesItemComponent } from './components/community/services/services-
     PaymentsService,
     NotificationsToastsService,
     ServicesService,
+    BotService,
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandlerService
