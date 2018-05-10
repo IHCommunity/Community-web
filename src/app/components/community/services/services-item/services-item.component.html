@@ -10,3 +10,8 @@
     <p class="date l-margin"><i class="material-icons">email</i> {{ service.email }}</p>
     <p class="date l-margin"><i class="material-icons">phone</i> {{ service.phone }}</p>
   </div>
+
+  <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="14">
+    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+  </agm-map>
+</div>

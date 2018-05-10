@@ -9,6 +9,8 @@ import { Service } from '../../../../shared/model/service.model';
 })
 export class ServicesItemComponent implements OnInit {
   service: Service = new Service();
+  latitude;
+  longitude;
 
   constructor(
     private routes: ActivatedRoute,
@@ -19,7 +21,11 @@ export class ServicesItemComponent implements OnInit {
     this.routes.params
       .subscribe( params => {
         this.servicesService.get(params['id'])
-          .subscribe( service => this.service = service);
+          .subscribe( service => {
+            this.service = service;
+            this.latitude = service.location.coordinates[0];
+            this.longitude = service.location.coordinates[1];
+          });
       });
   }
 

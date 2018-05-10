@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { AgmCoreModule } from '@agm/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -109,7 +110,10 @@ import { ServicesItemComponent } from './components/community/services/services-
     HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    SimpleNotificationsModule.forRoot()
+    SimpleNotificationsModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBr6gNOXmXOJxMjpeI4cQtsuYlT9nEYkx0';
+    })
   ],
   providers: [
     NewsService,

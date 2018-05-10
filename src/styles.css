@@ -550,6 +550,14 @@ p {
 p.l-margin {
   margin-top: 0.25rem; }
 
+agm-map {
+  height: 300px; }
+  agm-map > div {
+    box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.15); }
+
+.service-info {
+  margin-bottom: 1.5rem; }
+
 hr {
   border-color: #E6E6E6;
   border-style: solid; }
