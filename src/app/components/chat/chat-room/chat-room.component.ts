@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { ChatService } from '../../../shared/services/chat.service';
@@ -12,7 +12,7 @@ import { User } from '../../../shared/model/user.model';
   templateUrl: './chat-room.component.html',
   styleUrls: ['./chat-room.component.css']
 })
-export class ChatRoomComponent implements OnInit {
+export class ChatRoomComponent implements OnInit, AfterViewChecked {
     message = '';
     element: any;
     receptorId: string;
@@ -35,8 +35,12 @@ export class ChatRoomComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.element = document.getElementById('messages');
+      this.element = document.querySelector('html');
       this.usersService.get(this.receptorId).subscribe( user => this.userReceptor = user );
+  }
+
+  ngAfterViewChecked() {
+      this.element.scrollTop = this.element.scrollHeight;
   }
 
   sendMessage() {
