@@ -49,8 +49,11 @@ export class ChatRoomComponent implements OnInit, AfterViewChecked {
           return;
       }
 
-      this._cs.addMessage(this.message, this.receptorId)
-              .then(() => this.message = '')
+      let sendingMsg = this.message;
+      this.message = '';
+
+      this._cs.addMessage(sendingMsg, this.receptorId)
+              .then(() => sendingMsg = '')
               .catch((err) => console.error('Error sending message', err));
   }
 }

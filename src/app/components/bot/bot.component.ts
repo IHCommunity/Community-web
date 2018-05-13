@@ -10,7 +10,7 @@ import { SessionService } from '../../shared/services/session.service';
   styleUrls: ['./bot.component.css']
 })
 export class BotComponent implements OnInit, AfterViewChecked {
-  message: string = '';
+  message: string;
   messages: Observable<Msg[]>;
   messageDiv: any;
 
@@ -22,7 +22,7 @@ export class BotComponent implements OnInit, AfterViewChecked {
       this.messages = this.bot.conversation.asObservable()
         .scan((acc, val) => {
             return acc.concat(val);
-        })
+        });
   }
 
   ngAfterViewChecked() {

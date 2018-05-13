@@ -1,94 +1,98 @@
-<div class="detail-background-info"></div>
-<div class="login-container">
-  <div class="component-title">
-      <h1>Register</h1>
+<div class="row">
+  <div class="detail-background-img col s12 l6 detail-background-signup"></div>
+  <div class="col s12 l6">
+    <div class="login-container">
+      <div class="component-title">
+          <h1>Register</h1>
+      </div>
+      <form class="form login-form" [formGroup]="signupForm" (ngSubmit)="doSignup(signupForm)" novalidate>
+        <div class="row form-row">
+          <div class="input-field col s6">
+            <input id="name" type="text" formControlName="name" [(ngModel)]="user.name" placeholder="Juan">
+            <label for="name" class="active">Name</label>
+            <span
+              class="helper-text red-text text-accent-4"
+              *ngIf="signupForm.get('name').errors?.required && signupForm.get('name').touched">Required
+            </span>
+          </div>
+          <div class="input-field col s6">
+            <input id="surname" type="text" formControlName="surname" [(ngModel)]="user.surname" placeholder="Cuesta">
+            <label for="surname" class="active">Surname</label>
+            <span
+              class="helper-text red-text text-accent-4"
+              *ngIf="signupForm.get('surname').errors?.required && signupForm.get('surname').touched">Required
+            </span>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="input-field col s12">
+            <input id="email" type="email" formControlName="email" [(ngModel)]="user.email" placeholder="juancuesta@gmail.com">
+            <label for="email" class="active">Email</label>
+            <span
+              class="helper-text red-text text-accent-4"
+              *ngIf="signupForm.get('email').errors?.required && signupForm.get('email').touched">Required
+            </span>
+            <span
+              class="helper-text red-text text-accent-4"
+              *ngIf="signupForm.get('email').pending">Searching...
+            </span>
+            <span
+              class="helper-text red-text text-accent-4"
+              *ngIf="signupForm.get('email').errors?.exists">Email is already in use
+            </span>
+            <span
+              class="helper-text green-text text-accent-4"
+              *ngIf="!signupForm.get('email').pending && signupForm.get('email').dirty && !signupForm.get('email').errors?.exists && !signupForm.get('email').errors?.email">You can use this email
+            </span>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="input-field col s12">
+            <input id="password" type="password" formControlName="password" [(ngModel)]="user.password" placeholder="At least 6 letters, numbers or symbols">
+            <label for="password" class="active">Password</label>
+            <span
+              class="helper-text red-text text-accent-4"
+              *ngIf="signupForm.get('password').errors?.required && signupForm.get('password').touched">Required
+            </span>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="input-field col s12">
+            <input id="password2" type="password" formControlName="password2" placeholder="Repeat the password you have chosen">
+            <label for="password2" class="active">Repeat password</label>
+            <span
+              class="helper-text red-text text-accent-4"
+              *ngIf="signupForm.get('password2').errors?.passwords && signupForm.get('password2').touched">
+              Passwords must match
+            </span>
+            <span
+              class="helper-text green-text text-accent-4"
+              *ngIf="!signupForm.get('password2').errors?.passwords">
+              Passwords match
+            </span>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="input-field col s6">
+            <input id="apartment" type="text" formControlName="apt" [(ngModel)]="user.apt" placeholder="2ºA">
+            <label for="apartment" class="active">Apartment</label>
+            <span
+              class="helper-text red-text text-accent-4"
+              *ngIf="signupForm.get('apt').errors?.required && signupForm.get('apt').touched">Required
+            </span>
+          </div>
+          <div class="input-field col s6">
+            <input id="phone" type="text" formControlName="phone" [(ngModel)]="user.phone" placeholder="600300900">
+            <label for="phone" class="active">Phone</label>
+            <span
+              class="helper-text red-text text-accent-4"
+              *ngIf="signupForm.get('phone').errors?.minlength && signupForm.get('phone').touched">Introduce a valid phone number
+            </span>
+          </div>
+        </div>
+        <button type="submit" class="waves-effect waves-light btn" [disabled]="!signupForm.valid">Submit</button>
+      </form>
+      <span class="center-align red-text text-accent-4 fadeIn" *ngIf="apiError">Fill the fields correctly</span>
+    </div>
   </div>
-  <form class="form login-form" [formGroup]="signupForm" (ngSubmit)="doSignup(signupForm)" novalidate>
-    <div class="row form-row">
-      <div class="input-field col s6">
-        <input id="name" type="text" formControlName="name" [(ngModel)]="user.name" placeholder="Juan">
-        <label for="name" class="active">Name</label>
-        <span
-          class="helper-text red-text text-accent-4"
-          *ngIf="signupForm.get('name').errors?.required && signupForm.get('name').touched">Required
-        </span>
-      </div>
-      <div class="input-field col s6">
-        <input id="surname" type="text" formControlName="surname" [(ngModel)]="user.surname" placeholder="Cuesta">
-        <label for="surname" class="active">Surname</label>
-        <span
-          class="helper-text red-text text-accent-4"
-          *ngIf="signupForm.get('surname').errors?.required && signupForm.get('surname').touched">Required
-        </span>
-      </div>
-    </div>
-    <div class="row form-row">
-      <div class="input-field col s12">
-        <input id="email" type="email" formControlName="email" [(ngModel)]="user.email" placeholder="juancuesta@gmail.com">
-        <label for="email" class="active">Email</label>
-        <span
-          class="helper-text red-text text-accent-4"
-          *ngIf="signupForm.get('email').errors?.required && signupForm.get('email').touched">Required
-        </span>
-        <span
-          class="helper-text red-text text-accent-4"
-          *ngIf="signupForm.get('email').pending">Searching...
-        </span>
-        <span
-          class="helper-text red-text text-accent-4"
-          *ngIf="signupForm.get('email').errors?.exists">Email is already in use
-        </span>
-        <span
-          class="helper-text green-text text-accent-4"
-          *ngIf="!signupForm.get('email').pending && signupForm.get('email').dirty && !signupForm.get('email').errors?.exists && !signupForm.get('email').errors?.email">You can use this email
-        </span>
-      </div>
-    </div>
-    <div class="row form-row">
-      <div class="input-field col s12">
-        <input id="password" type="password" formControlName="password" [(ngModel)]="user.password" placeholder="At least 6 letters, numbers or symbols">
-        <label for="password" class="active">Password</label>
-        <span
-          class="helper-text red-text text-accent-4"
-          *ngIf="signupForm.get('password').errors?.required && signupForm.get('password').touched">Required
-        </span>
-      </div>
-    </div>
-    <div class="row form-row">
-      <div class="input-field col s12">
-        <input id="password2" type="password" formControlName="password2" placeholder="Repeat the password you have chosen">
-        <label for="password2" class="active">Repeat password</label>
-        <span
-          class="helper-text red-text text-accent-4"
-          *ngIf="signupForm.get('password2').errors?.passwords && signupForm.get('password2').touched">
-          Passwords must match
-        </span>
-        <span
-          class="helper-text green-text text-accent-4"
-          *ngIf="!signupForm.get('password2').errors?.passwords">
-          Passwords match
-        </span>
-      </div>
-    </div>
-    <div class="row form-row">
-      <div class="input-field col s6">
-        <input id="apartment" type="text" formControlName="apt" [(ngModel)]="user.apt" placeholder="2ºA">
-        <label for="apartment" class="active">Apartment</label>
-        <span
-          class="helper-text red-text text-accent-4"
-          *ngIf="signupForm.get('apt').errors?.required && signupForm.get('apt').touched">Required
-        </span>
-      </div>
-      <div class="input-field col s6">
-        <input id="phone" type="text" formControlName="phone" [(ngModel)]="user.phone" placeholder="600300900">
-        <label for="phone" class="active">Phone</label>
-        <span
-          class="helper-text red-text text-accent-4"
-          *ngIf="signupForm.get('phone').errors?.minlength && signupForm.get('phone').touched">Introduce a valid phone number
-        </span>
-      </div>
-    </div>
-    <button type="submit" class="waves-effect waves-light btn" [disabled]="!signupForm.valid">Submit</button>
-  </form>
-  <span class="center-align red-text text-accent-4 fadeIn" *ngIf="apiError">Fill the fields correctly</span>
 </div>

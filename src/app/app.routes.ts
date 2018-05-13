@@ -71,6 +71,6 @@ export const routes: Routes = [
   { path: 'community/services', component: ServicesListComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: 'community/services/:id', component: ServicesItemComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 5 } },
   { path: 'room/:id', component: ChatRoomComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
-  { path: '[*_*]', component: BotComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
+  { path: 'bot', component: BotComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: '**', component: HomeComponent, data: { depth: 0 } }
 ];

@@ -89,6 +89,9 @@ p {
   .form .form-row {
     margin-bottom: 0; }
 
+.login-row {
+  margin-bottom: 0; }
+
 .btn {
   text-align: center;
   display: block;
@@ -102,7 +105,7 @@ p {
   background-color: #fff;
   padding: 1.5rem;
   border-radius: 5px;
-  margin: 4rem 2rem;
+  margin: 5rem 2rem;
   box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.05); }
   .login-container .login-register {
     text-align: center;
@@ -274,13 +277,17 @@ p {
   .detail-title h2 {
     color: #fff; }
 
-.detail-background-good, .detail-background-info, .detail-background-alert, .detail-background-danger, .detail-background-neutral {
+.detail-background-img, .detail-background-good, .detail-background-info, .detail-background-alert, .detail-background-danger, .detail-background-neutral {
   position: absolute;
   top: 0;
   left: 0;
   height: 12rem;
   width: 100%;
   z-index: -1; }
+
+.detail-background-img {
+  background-image: url("https://res.cloudinary.com/plasocloud/image/upload/v1526218237/login.jpg");
+  background-size: cover; }
 
 .detail-background-good {
   background-color: #00DF96; }
@@ -306,6 +313,13 @@ p {
   .detail-container h1 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem; }
+
+@media only screen and (min-width: 993px) {
+  .detail-background-img {
+    position: static;
+    min-height: 100vh !important; } }
+.detail-background-signup {
+  background-image: url("https://res.cloudinary.com/plasocloud/image/upload/v1526235497/signup.jpg"); }
 
 .news-input {
   background-color: #fff !important;
