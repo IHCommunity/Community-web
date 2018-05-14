@@ -33,9 +33,6 @@ export class MeetingItemComponent implements OnInit {
           }, 300);
         });
       });
-    setTimeout(() => {
-      console.log(this.meeting);
-    }, 500);
   }
 
   agree(agreement: Agreement): string {

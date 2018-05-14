@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="position: relative;">
     <div class="component-title back-title">
       <app-back></app-back>
       <h2>Agreement information</h2>
@@ -14,11 +14,21 @@
     </div>
     <p class="agree-statement">Votes</p>
     <div class="agreement-bar agreement-bar-big">
-      <div class="disagree-bar bar" [ngStyle]="{'width': disagreeWidth}">
+      <div class="disagree-bar bar" [ngStyle]="{'width': disagreeWidth}" (click)="showDisagreeVoters()">
         <p *ngIf="checkIfBigger(disagreeWidth)">{{ agreement.disagree?.length }} votes</p>
       </div>
-      <div class="agree-bar bar" [ngStyle]="{'width': agreeWidth}">
+      <div class="agree-bar bar" [ngStyle]="{'width': agreeWidth}" (click)="showAgreeVoters()">
         <p *ngIf="checkIfBigger(agreeWidth)">{{ agreement.agree?.length }} votes</p>
+      </div>
+    </div>
+    <div class="statement-voters-container">
+      <div class="triangle triangle-red fadeIn" *ngIf="disagreeVotersList"></div>
+      <div class="triangle triangle-green fadeIn" *ngIf="agreeVotersList"></div>
+      <div class="statement-voters disagree-voters fadeIn" *ngIf="disagreeVotersList">
+        <p *ngFor="let voter of disagreeVoters">{{ voter }}</p>
+      </div>
+      <div class="statement-voters agree-voters fadeIn" *ngIf="agreeVotersList">
+        <p *ngFor="let voter of agreeVoters">{{ voter }}</p>
       </div>
     </div>
     <p class="agreement-deadline" *ngIf="agreement.meeting?.active">There is <span *ngIf="deadLineTime?.d > 0">{{ deadLineTime?.d }} days</span> <span *ngIf="deadLineTime?.h > 0">{{ deadLineTime?.h }} hours</span> {{ deadLineTime?.m }} min left for voting's clousure</p>

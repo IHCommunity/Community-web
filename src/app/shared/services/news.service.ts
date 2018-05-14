@@ -1,3 +1,5 @@
+import { NotificationsToastsService } from './notifications.service';
+import { Notification } from './../model/notification.model';
 import { BaseApiService } from './base-api.service';
 import { Notice } from '../model/notice.model';
 import { environment } from './../../../environments/environment';
@@ -8,8 +10,21 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class NewsService extends BaseApiService {
   private static readonly NEWS_API = `${BaseApiService.BASE_API}/news`;
+  private messageStored: Notification = {
+    type: 'success',
+    title: 'Notice stored',
+    content: 'Your notice has been successfully stored'
+  };
+  private messageUnstored: Notification = {
+    type: 'success',
+    title: 'Notice unstored',
+    content: 'Your notice has been successfully moved into received news'
+  };
 
-  constructor(private http: Http) {
+  constructor(
+    private http: Http,
+    private _notifService: NotificationsToastsService
+  ) {
     super();
   }
 
@@ -51,7 +66,14 @@ export class NewsService extends BaseApiService {
 
   edit(notice: Notice): Observable<Notice> {
     return this.http.put(`${NewsService.NEWS_API}/${notice.id}`, JSON.stringify(notice), BaseApiService.defaultOptions)
-      .map((res: Response) => res.json())
+      .map((res: Response) => {
+        if (notice.storeNotice) {
+          this._notifService.create(this.messageStored);
+        } else {
+          this._notifService.create(this.messageUnstored);
+        }
+        return res.json();
+      })
       .catch(error => this.handleError(error));
   }
 

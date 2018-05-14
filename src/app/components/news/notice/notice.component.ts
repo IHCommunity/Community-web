@@ -37,12 +37,11 @@ export class NoticeComponent implements OnInit {
       this.newsStored.push(this.notice);
       this.newsToShow = this.newsStored;
     }
-    this.newsService.edit(this.notice)
-      .subscribe( notice => console.log('stored') );
+    this.newsService.edit(this.notice).subscribe();
   }
 
   check() {
-    this.newsService.check(this.notice).subscribe( notice => console.log('checked'));
+    this.newsService.check(this.notice).subscribe();
     this.news.splice(this.news.indexOf(this.notice), 1);
   }
 

@@ -1,3 +1,5 @@
+import { ServicesItemComponent } from './components/community/services/services-item/services-item.component';
+import { ServicesListComponent } from './components/community/services/services-list/services-list.component';
 import { MeetingsResumeComponent } from './components/community/meetings/meetings-resume/meetings-resume.component';
 import { CommunityComponent } from './components/community/community.component';
 import { HomeComponent } from './components/home/home.component';
@@ -20,6 +22,7 @@ import { PaymentsComponent } from './components/my-home/payments/payments.compon
 import { SinglePaymentComponent } from './components/my-home/payments/single-payment/single-payment.component';
 import { ProposalsNewsComponent } from './components/community/proposals/proposals-news/proposals-news.component';
 import { ProposalsFormComponent } from './components/community/proposals/proposals-form/proposals-form.component';
+import { BotComponent } from './components/bot/bot.component';
 
 import { Routes } from '@angular/router';
 import { MeetingItemComponent } from './components/community/meetings/meeting-item/meeting-item.component';
@@ -65,6 +68,9 @@ export const routes: Routes = [
   { path: 'community/proposals/review', component: ProposalsNewsComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: 'community/proposals/create', component: ProposalsFormComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: 'community/rules', component: RulesListComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
+  { path: 'community/services', component: ServicesListComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
+  { path: 'community/services/:id', component: ServicesItemComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 5 } },
   { path: 'room/:id', component: ChatRoomComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
+  { path: 'bot', component: BotComponent, canActivate: [IsAuthenticatedGuard], data: { depth: 4 } },
   { path: '**', component: HomeComponent, data: { depth: 0 } }
 ];

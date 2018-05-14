@@ -1,0 +1,37 @@
+<div class="chat-title-container">
+    <div class="container">
+            <div class="component-title chat-title back-title">
+                <app-back></app-back>
+                <div class="chat-user-info">
+                    <img src="https://res.cloudinary.com/plasocloud/image/upload/v1526214571/bot.png" class="circle responsive-img">
+                    <h2>Wall-C</h2>
+                </div>
+                <i class="material-icons">more_vert</i>
+            </div>
+        </div>
+</div>
+
+<div class="container">
+    <div class="" id="messages">
+        <div *ngFor="let msg of messages | async" class="row chat-row">
+            <div [ngClass]="{ 'col s12 right-align chat-message-container chat-sender-message': msg.sentBy === this.sessionService.user.name,
+                                'col s12': msg.sentBy === 'bot'}">
+    
+                    <p class="chat-message">{{ msg.content }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="chat-input-container grey lighten-5">
+    <div class="container chat-input-group">
+        <input  type="text"
+                name="msg"
+                class="news-input chat-input"
+                [(ngModel)]="message"
+                (keyup.enter)="sendMessage()"
+                placeholder="Send message...">
+
+        <i class="material-icons" (click)="sendMessage()">send</i>
+    </div>
+</div>

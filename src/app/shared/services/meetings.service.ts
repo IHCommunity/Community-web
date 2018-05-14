@@ -4,18 +4,28 @@ import { BaseApiService } from './base-api.service';
 import { Http, Response } from '@angular/http';
 import { Meeting } from '../model/meeting.model';
 import { Agreement } from '../model/agreement.model';
+import { Notification } from './../model/notification.model';
+import { NotificationsToastsService } from './notifications.service';
 
 @Injectable()
 export class MeetingsService extends BaseApiService {
   private static readonly MEETINGS_API = `${BaseApiService.BASE_API}/meetings/`;
+  private message: Notification = {
+      type: 'success',
+      title: 'New Meeting',
+      content: 'Meeting successfully created'
+  }
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private _notifService: NotificationsToastsService) {
     super();
   }
 
   create(meeting: Meeting): Observable<Meeting> {
     return this.http.post(MeetingsService.MEETINGS_API, JSON.stringify(meeting), BaseApiService.defaultOptions)
-      .map((res: Response) => res.json())
+      .map((res: Response) => {
+          this._notifService.create(this.message);
+          return res.json();
+      })
       .catch(error => this.handleError(error));
   }
 

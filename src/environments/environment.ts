@@ -14,6 +14,7 @@ export const environment = {
       databaseURL: "https://localhost:3000",
       projectId: "community-200317",
       storageBucket: "community-200317.appspot.com",
-      messagingSenderId: "154953353338"
+      messagingSenderId: "154953353338",
+      dialogFlowClientAccessToken: "b256a63d1b31460da4960ff022713d53"
   }
 };

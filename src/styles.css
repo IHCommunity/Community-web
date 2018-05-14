@@ -77,6 +77,9 @@ p {
       height: 1.125rem;
       margin-top: -0.375rem;
       margin-bottom: 0.375rem; }
+      .navbar .navbar-list .navbar-icon img {
+        max-width: 100%;
+        max-height: 1.5rem; }
   .navbar .active {
     background-color: #F2F2F2;
     font-weight: 900; }
@@ -85,6 +88,9 @@ p {
   margin-top: 1.5rem; }
   .form .form-row {
     margin-bottom: 0; }
+
+.login-row {
+  margin-bottom: 0; }
 
 .btn {
   text-align: center;
@@ -99,7 +105,7 @@ p {
   background-color: #fff;
   padding: 1.5rem;
   border-radius: 5px;
-  margin: 4rem 2rem;
+  margin: 5rem 2rem;
   box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.05); }
   .login-container .login-register {
     text-align: center;
@@ -217,6 +223,8 @@ p {
   margin-top: 1.5rem;
   height: 9.5rem;
   position: relative; }
+  .notice i {
+    font-weight: 700; }
 
 .notice-text {
   padding: 1rem;
@@ -242,7 +250,10 @@ p {
   z-index: 2;
   border-radius: 0 5px 5px 0;
   padding: 0.5rem 0;
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
   .notice-bar-good span, .notice-bar-info span, .notice-bar-alert span, .notice-bar-danger span, .notice-bar-neutral span {
     display: block; }
 
@@ -266,13 +277,17 @@ p {
   .detail-title h2 {
     color: #fff; }
 
-.detail-background-good, .detail-background-info, .detail-background-alert, .detail-background-danger, .detail-background-neutral {
+.detail-background-img, .detail-background-good, .detail-background-info, .detail-background-alert, .detail-background-danger, .detail-background-neutral {
   position: absolute;
   top: 0;
   left: 0;
   height: 12rem;
   width: 100%;
   z-index: -1; }
+
+.detail-background-img {
+  background-image: url("https://res.cloudinary.com/plasocloud/image/upload/v1526218237/login.jpg");
+  background-size: cover; }
 
 .detail-background-good {
   background-color: #00DF96; }
@@ -298,6 +313,13 @@ p {
   .detail-container h1 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem; }
+
+@media only screen and (min-width: 993px) {
+  .detail-background-img {
+    position: static;
+    min-height: 100vh !important; } }
+.detail-background-signup {
+  background-image: url("https://res.cloudinary.com/plasocloud/image/upload/v1526235497/signup.jpg"); }
 
 .news-input {
   background-color: #fff !important;
@@ -333,7 +355,8 @@ p {
   background-color: #E6E6E6;
   margin-top: 1rem;
   display: flex;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 0.75rem; }
   .agreement-bar .bar {
     display: flex;
     align-items: center;
@@ -365,6 +388,57 @@ p {
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#28f9b3, endColorstr=#00DF96);
     transition: all 0.6s ease;
     justify-content: flex-end; }
+
+.statement-voters-container {
+  position: absolute;
+  width: 100%; }
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  clear: both; }
+
+.triangle-red {
+  border-bottom: 10px solid #FE011A;
+  margin-left: 1rem; }
+
+.triangle-green {
+  border-bottom: 10px solid #00DF96;
+  float: right;
+  margin-right: 1rem; }
+
+.statement-voters {
+  padding: 1rem;
+  border-radius: 0.3125rem;
+  width: fit-content;
+  clear: both; }
+  .statement-voters p {
+    color: #fff;
+    margin-bottom: 0; }
+  .statement-voters p:first-child {
+    margin-top: 0; }
+
+.disagree-voters {
+  background: #fe3448;
+  background: -moz-linear-gradient(left, #FE011A 0%, #fe3448 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #FE011A), color-stop(100%, #fe3448));
+  background: -webkit-linear-gradient(left, #FE011A 0%, #fe3448 100%);
+  background: -o-linear-gradient(left, #FE011A 0%, #fe3448 100%);
+  background: linear-gradient(to right, #FE011A 0%, #fe3448 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#FE011A, endColorstr=#fe3448); }
+
+.agree-voters {
+  background: #00DF96;
+  background: -moz-linear-gradient(left, #28f9b3 0%, #00DF96 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #28f9b3), color-stop(100%, #00DF96));
+  background: -webkit-linear-gradient(left, #28f9b3 0%, #00DF96 100%);
+  background: -o-linear-gradient(left, #28f9b3 0%, #00DF96 100%);
+  background: linear-gradient(to right, #28f9b3 0%, #00DF96 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#28f9b3, endColorstr=#00DF96);
+  float: right; }
 
 .agreement-bar-big {
   height: 3rem; }
@@ -423,7 +497,8 @@ p {
   color: #999999;
   text-align: center;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  clear: both; }
 
 .chat-title {
   margin-bottom: 1.5rem; }
@@ -485,6 +560,17 @@ p {
   width: 100%;
   box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.15);
   background: #ffffff; }
+
+p.l-margin {
+  margin-top: 0.25rem; }
+
+agm-map {
+  height: 300px; }
+  agm-map > div {
+    box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.15); }
+
+.service-info {
+  margin-bottom: 1.5rem; }
 
 hr {
   border-color: #E6E6E6;
