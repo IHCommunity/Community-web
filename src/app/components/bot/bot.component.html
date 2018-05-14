@@ -11,12 +11,14 @@
         </div>
 </div>
 
-<div class="" id="messages">
-    <div *ngFor="let msg of messages | async" class="row chat-row">
-        <div [ngClass]="{ 'col s12 right-align chat-message-container chat-sender-message': msg.sentBy === this.sessionService.user.name,
-                          'col s12': msg.sentBy === 'bot'}">
-
-             <p class="chat-message">{{ msg.content }}</p>
+<div class="container">
+    <div class="" id="messages">
+        <div *ngFor="let msg of messages | async" class="row chat-row">
+            <div [ngClass]="{ 'col s12 right-align chat-message-container chat-sender-message': msg.sentBy === this.sessionService.user.name,
+                                'col s12': msg.sentBy === 'bot'}">
+    
+                    <p class="chat-message">{{ msg.content }}</p>
+            </div>
         </div>
     </div>
 </div>

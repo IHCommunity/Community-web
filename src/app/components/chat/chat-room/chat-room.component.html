@@ -11,17 +11,19 @@
         </div>
 </div>
 
-<div class="" id="messages">
-    <div *ngFor="let chat of _cs.chats" class="row chat-row">
-        <div *ngIf="chat.senderId === this.sessionService.user.id"
-             class="col s12 right-align chat-message-container chat-sender-message">
-
-            <p class="chat-message">{{ chat.body }}</p>
-        </div>
-        <div *ngIf="chat.senderId !== this.sessionService.user.id"
-             class="col s12">
-
-            <p class="chat-message">{{ chat.body }}</p>
+<div class="container">
+    <div class="" id="messages">
+        <div *ngFor="let chat of _cs.chats" class="row chat-row">
+            <div *ngIf="chat.senderId === this.sessionService.user.id"
+                    class="col s12 right-align chat-message-container chat-sender-message">
+    
+                <p class="chat-message">{{ chat.body }}</p>
+            </div>
+            <div *ngIf="chat.senderId !== this.sessionService.user.id"
+                    class="col s12">
+    
+                <p class="chat-message">{{ chat.body }}</p>
+            </div>
         </div>
     </div>
 </div>
