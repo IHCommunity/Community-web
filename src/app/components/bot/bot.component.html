@@ -1,3 +1,4 @@
+<div id="dropCloseArea" (click)="closeDropdown()"></div>
 <div class="chat-title-container">
     <div class="container">
             <div class="component-title chat-title back-title">
@@ -6,7 +7,14 @@
                     <img src="https://res.cloudinary.com/plasocloud/image/upload/v1526214571/bot.png" class="circle responsive-img">
                     <h2>Wall-C</h2>
                 </div>
-                <i class="material-icons">more_vert</i>
+                <!-- Dropdown Trigger -->
+                <i class="material-icons dropdown-trigger" data-target='dropdown1' (click)="setVisible()">info_outline</i>
+
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                  <li *ngFor="let intent of intents"><a href="#!">{{ intent }}</a></li>
+                  <li class="divider" tabindex="-1"></li>
+                </ul>
             </div>
         </div>
 </div>
@@ -16,7 +24,7 @@
         <div *ngFor="let msg of messages | async" class="row chat-row">
             <div [ngClass]="{ 'col s12 right-align chat-message-container chat-sender-message': msg.sentBy === this.sessionService.user.name,
                                 'col s12': msg.sentBy === 'bot'}">
-    
+
                     <p class="chat-message">{{ msg.content }}</p>
             </div>
         </div>

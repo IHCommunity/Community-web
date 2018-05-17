@@ -1,0 +1,25 @@
+.dropdown-trigger {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#dropdown1 li a {
+  color: black;
+}
+
+#dropdown1 {
+  height: 50vh;
+}
+
+#dropCloseArea {
+  z-index: 1000;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.chat-title-container, .chat-input-container {
+  z-index: 1500;
+}
