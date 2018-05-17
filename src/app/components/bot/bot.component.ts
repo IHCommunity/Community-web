@@ -75,4 +75,10 @@ export class BotComponent implements OnInit, AfterViewChecked {
     this.dropdownIsActive = true;
   }
 
+  sendCustomMessage(message) {
+    this.message = message;
+    this.bot.talk(message);
+    this.message = '';
+  }
+
 }

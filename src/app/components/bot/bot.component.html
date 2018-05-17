@@ -12,8 +12,7 @@
 
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
-                  <li *ngFor="let intent of intents"><a href="#!">{{ intent }}</a></li>
-                  <li class="divider" tabindex="-1"></li>
+                  <li *ngFor="let intent of intents" (click)="sendCustomMessage(intent)">{{ intent }}</li>
                 </ul>
             </div>
         </div>
