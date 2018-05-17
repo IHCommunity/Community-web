@@ -1,0 +1,42 @@
+.dropdown-trigger {
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  color: white;
+}
+
+#dropdown1 {
+  height: 50vh;
+}
+
+#dropdown1 li {
+  padding-top: 15px;
+  width: 80%;
+  border-bottom: 1px solid #d2d2d2;
+  margin-left: 10%;
+  text-align: center;
+  transition: ease 0.2s;
+}
+
+#dropdown1 li:hover {
+  background-color: white;
+  font-size: 17px;
+  padding-top: 13px;
+}
+
+#dropdown1 li:last-child {
+  border-bottom: 1px solid transparent;
+}
+
+#dropCloseArea {
+  z-index: 1000;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.chat-title-container, .chat-input-container {
+  z-index: 1500;
+}
