@@ -64,7 +64,7 @@ export class BotComponent implements OnInit, AfterViewChecked {
       this.message = '';
   }
 
-  closeDropdown(event) {
+  closeDropdown() {
     if(this.dropdownIsActive) {
       let instances = M.Dropdown.close();
       this.dropdownIsActive = false;
