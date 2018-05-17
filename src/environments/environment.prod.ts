@@ -2,6 +2,7 @@ export const environment = {
   production: true,
   baseApi: 'https://community-ih.herokuapp.com',
   firebase: {
+    dialogFlowClientAccessToken: "b256a63d1b31460da4960ff022713d53",
     apiKey: "AIzaSyBRR_Y8h3uw5gI4X0L-PvQJcA0Ui4YXTS8",
     authDomain: "community-200317.firebaseapp.com",
     // databaseURL: "https://community-200317.firebaseio.com",
