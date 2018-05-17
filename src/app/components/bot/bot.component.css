@@ -13,6 +13,7 @@
   border-bottom: 1px solid #d2d2d2;
   margin-left: 10%;
   text-align: center;
+  transition: ease 0.2s;
 }
 
 #dropdown1 li:hover {
